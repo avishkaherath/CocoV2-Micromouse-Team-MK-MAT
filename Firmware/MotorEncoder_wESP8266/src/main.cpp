@@ -6,33 +6,43 @@ const int encoderPinB = D2;  // D2 on ESP8266
 
 volatile long encoderTicks = 0;  // Variable to store encoder ticks
 volatile int lastEncoded = 0;   // Last encoded signal
+long lastReportedTicks = 0;     // Last reported encoder ticks
 
-// This function is called every time a change occurs on encoderPinA or encoderPinB
+// Interrupt Service Routine (ISR) for handling encoder changes
 void IRAM_ATTR handleInterrupt() {
-  int MSB = digitalRead(encoderPinA);  // MSB = most significant bit
-  int LSB = digitalRead(encoderPinB);  // LSB = least significant bit
+  int MSB = digitalRead(encoderPinA);  // Read the most significant bit
+  int LSB = digitalRead(encoderPinB);  // Read the least significant bit
 
-  int encoded = (MSB << 1) | LSB;      // converting the 2 pin value to single number
-  int sum = (lastEncoded << 2) | encoded; // adding it to the previous encoded value
+  int encoded = (MSB << 1) | LSB;  // Convert the 2 pin value to a single number
+  int sum = (lastEncoded << 2) | encoded;  // Combine it with the previous encoded value
 
+  // Determine the direction of the rotation
   if (sum == 0b1101 || sum == 0b0100 || sum == 0b0010 || sum == 0b1011) encoderTicks++;
   if (sum == 0b1110 || sum == 0b0111 || sum == 0b0001 || sum == 0b1000) encoderTicks--;
 
-  lastEncoded = encoded; //store this value for next time
+  lastEncoded = encoded;  // Store this value for next time
 }
 
 void setup() {
-  Serial.begin(9600);    // Start serial communication at 9600 baud
-  pinMode(encoderPinA, INPUT_PULLUP);  // Set encoder pins as inputs
+  Serial.begin(115200);  // Start serial communication at 115200 baud
+  pinMode(encoderPinA, INPUT_PULLUP);  // Set encoder pins as inputs with pull-up resistors
   pinMode(encoderPinB, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(encoderPinA), handleInterrupt, CHANGE);  // Attach interrupt
-  attachInterrupt(digitalPinToInterrupt(encoderPinB), handleInterrupt, CHANGE);  // Attach interrupt for encoderPinB as well
+
+  // Attach interrupts to both encoder pins
+  attachInterrupt(digitalPinToInterrupt(encoderPinA), handleInterrupt, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(encoderPinB), handleInterrupt, CHANGE);
 }
 
 void loop() {
-  // Print the number of encoder ticks
-  Serial.print("Encoder Ticks: ");
-  Serial.println(encoderTicks);
+  // Disable interrupts to read encoderTicks atomically
+  noInterrupts();
+  long currentTicks = encoderTicks;
+  interrupts();
 
-  delay(1000);  // Update every second
+  // Check if the current encoder ticks have changed since last reported
+  if (currentTicks != lastReportedTicks) {
+    Serial.print("Encoder Ticks: ");
+    Serial.println(currentTicks);
+    lastReportedTicks = currentTicks;  // Update last reported to the current
+  }
 }
