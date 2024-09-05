@@ -1,0 +1,27 @@
+19:49:21 **** Incremental Build of configuration Debug for project MicromouseFirmware ****
+make -j8 all 
+arm-none-eabi-g++ "../Program/Src/cppmain.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Desktop/robofest/sindib - Original/Code/SINDiB_Firmware/Drivers" -I"C:/Users/ACER/Desktop/robofest/sindib - Original/Code/SINDiB_Firmware/Program/Inc" -I"C:/Users/ACER/Desktop/robofest/sindib - Original/Code/SINDiB_Firmware/Libs/Inc" -I"C:/Users/ACER/Desktop/robofest/sindib - Original/Code/SINDiB_Firmware/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/cppmain.d" -MT"Program/Src/cppmain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/cppmain.o"
+arm-none-eabi-g++ -o "MicromouseFirmware.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ACER\Desktop\robofest\sindib - Original\Code\SINDiB_Firmware\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MicromouseFirmware.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: MicromouseFirmware.elf
+ 
+arm-none-eabi-size  MicromouseFirmware.elf 
+arm-none-eabi-objdump -h -S MicromouseFirmware.elf  > "MicromouseFirmware.list"
+   text	   data	    bss	    dec	    hex	filename
+ 236316	   3664	   9672	 249652	  3cf34	MicromouseFirmware.elf
+arm-none-eabi-objcopy  -O ihex MicromouseFirmware.elf  "MicromouseFirmware.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary MicromouseFirmware.elf  "MicromouseFirmware.bin"
+ 
+Finished building: MicromouseFirmware.hex
+Finished building: MicromouseFirmware.bin
+ 
+ 
+Finished building: MicromouseFirmware.list
+ 
+19:50:45 **** Incremental Build of configuration Debug for project MicromouseFirmware ****
+make -j8 all 
+arm-none-eabi-size  MicromouseFirmware.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 236316	   3664	   9672	 249652	  3cf34	MicromouseFirmware.elf
+Finished building: default.size.stdout
+ 
