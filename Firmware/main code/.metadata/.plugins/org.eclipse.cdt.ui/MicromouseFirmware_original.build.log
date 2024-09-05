@@ -1,0 +1,55 @@
+13:08:13 **** Incremental Build of configuration Debug for project MicromouseFirmware_original ****
+make -j8 all 
+arm-none-eabi-g++ "../Program/Src/cppmain.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Drivers" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Program/Inc" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Libs/Inc" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/cppmain.d" -MT"Program/Src/cppmain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/cppmain.o"
+arm-none-eabi-g++ "../Program/Src/floodfill.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Drivers" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Program/Inc" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Libs/Inc" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/floodfill.d" -MT"Program/Src/floodfill.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/floodfill.o"
+arm-none-eabi-gcc "../Libs/Src/L3GD20.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Drivers" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Libs/Inc" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Program/Inc" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/L3GD20.d" -MT"Libs/Src/L3GD20.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/L3GD20.o"
+arm-none-eabi-gcc "../Libs/Src/PD.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Drivers" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Libs/Inc" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Program/Inc" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/PD.d" -MT"Libs/Src/PD.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/PD.o"
+arm-none-eabi-gcc "../Libs/Src/adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Drivers" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Libs/Inc" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Program/Inc" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/adc.d" -MT"Libs/Src/adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/adc.o"
+arm-none-eabi-gcc "../Libs/Src/buzzer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Drivers" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Libs/Inc" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Program/Inc" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/buzzer.d" -MT"Libs/Src/buzzer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/buzzer.o"
+arm-none-eabi-gcc "../Libs/Src/display.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Drivers" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Libs/Inc" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Program/Inc" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/display.d" -MT"Libs/Src/display.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/display.o"
+arm-none-eabi-gcc "../Libs/Src/encoder.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Drivers" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Libs/Inc" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Program/Inc" -I"C:/Users/ACER/Desktop/robofest/sindib/Code/SINDiB_Firmware/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/encoder.d" -MT"Libs/Src/encoder.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/encoder.o"
+../Libs/Src/PD.c: In function 'finishMove':
+../Libs/Src/PD.c:56:9: warning: enumeration value 'IDLE' not handled in switch [-Wswitch]
+   56 |         switch (mv_type)
+      |         ^~~~~~
+../Libs/Src/display.c: In function 'displayUpdate':
+../Libs/Src/display.c:87:25: error: 'mouseState' undeclared (first use in this function)
+   87 |                 switch (mouseState) {
+      |                         ^~~~~~~~~~
+../Libs/Src/display.c:87:25: note: each undeclared identifier is reported only once for each function it appears in
+../Libs/Src/display.c:109:25: error: 'runState' undeclared (first use in this function)
+  109 |                 switch (runState) {
+      |                         ^~~~~~~~
+../Libs/Src/display.c:123:24: error: 'ORIENT' undeclared (first use in this function)
+  123 |                 putInt(ORIENT,20 , 24, SMALL);
+      |                        ^~~~~~
+../Libs/Src/display.c:132:26: error: 'noise' undeclared (first use in this function)
+  132 |                 putFloat(noise,64, 2, SMALL);
+      |                          ^~~~~
+../Libs/Src/display.c:135:24: error: 'offset' undeclared (first use in this function); did you mean 'off_t'?
+  135 |                 putInt(offset,64,11,SMALL);
+      |                        ^~~~~~
+      |                        off_t
+../Program/Src/cppmain.cpp: In function 'int initialization_block()':
+../Program/Src/cppmain.cpp:75:9: error: 'TIM1_START' was not declared in this scope
+   75 |         TIM1_START; ////////////////// CRUCIAL PART DON"T OFFFFFFFFFFFFFFFF ///////////////////////////
+      |         ^~~~~~~~~~
+../Libs/Src/display.c:138:26: error: 'angle_z' undeclared (first use in this function)
+  138 |                 putFloat(angle_z,64,22,SMALL);
+      |                          ^~~~~~~
+../Libs/Src/display.c:72:9: warning: enumeration value 'SPEED_ADJ' not handled in switch [-Wswitch]
+   72 |         switch (disp_state)
+      |         ^~~~~~
+make: *** [Libs/Src/subdir.mk:43: Libs/Src/display.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Program/Src/cppmain.cpp:76:9: error: 'TIM6_IT_START' was not declared in this scope
+   76 |         TIM6_IT_START;
+      |         ^~~~~~~~~~~~~
+../Program/Src/cppmain.cpp:88:9: error: 'TIM13_IT_START' was not declared in this scope
+   88 |         TIM13_IT_START;
+      |         ^~~~~~~~~~~~~~
+make: *** [Program/Src/subdir.mk:22: Program/Src/cppmain.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+13:08:15 Build Failed. 12 errors, 2 warnings. (took 1s.907ms)
+

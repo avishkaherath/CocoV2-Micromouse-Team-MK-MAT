@@ -1,0 +1,10 @@
+19:50:45 **** Incremental Build of configuration Debug for project MicromouseFirmware ****
+make -j8 all 
+arm-none-eabi-size  MicromouseFirmware.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 236316	   3664	   9672	 249652	  3cf34	MicromouseFirmware.elf
+Finished building: default.size.stdout
+ 
+
+19:50:45 Build Finished. 0 errors, 0 warnings. (took 321ms)
+
