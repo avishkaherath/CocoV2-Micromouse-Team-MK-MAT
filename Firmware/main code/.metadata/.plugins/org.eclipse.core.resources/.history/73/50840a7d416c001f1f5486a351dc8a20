@@ -47,8 +47,7 @@ int cppmain(void)
 
 	while(1)
 	{
-		gyro_reading = readGyro();
-		HAL_Delay(10);
+
 	}
 
 //	initialization_block();
