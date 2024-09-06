@@ -41,15 +41,21 @@ void mouseRun();
 
 int cppmain(void)
 {
-	int16_t gyro_reading;
-	gyroInit();
-	gyroCalibration();
+	/*Led ON/OFF*/
+	LED1_ON;
+	HAL_Delay(2000);
+	LED1_OFF;
 
-	while(1)
-	{
-		gyro_reading = readGyro();
-		HAL_Delay(10);
-	}
+	/*Gyroscope testing*/
+//	int16_t gyro_reading;
+//	gyroInit();
+//	gyroCalibration();
+//
+//	while(1)
+//	{
+//		gyro_reading = readGyro();
+//		HAL_Delay(10);
+//	}
 
 //	initialization_block();
 
