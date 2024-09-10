@@ -1,10 +1,10 @@
-12:14:27 **** Incremental Build of configuration Debug for project coco_v2 ****
+15:54:24 **** Incremental Build of configuration Debug for project coco_v2 ****
 make -j8 all 
 arm-none-eabi-size  coco_v2.elf 
    text	   data	    bss	    dec	    hex	filename
- 236772	   3664	   9672	 250108	  3d0fc	coco_v2.elf
+ 199324	    792	   9472	 209588	  332b4	coco_v2.elf
 Finished building: default.size.stdout
  
 
-12:14:27 Build Finished. 0 errors, 0 warnings. (took 326ms)
+15:54:25 Build Finished. 0 errors, 0 warnings. (took 448ms)
 

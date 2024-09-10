@@ -4,6 +4,7 @@
 #include "main.h"
 #include "typedefs.h"
 #include "melody.h"
+#include "parameters_.h"
 
 #define OFF_BUZZ __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 0)
 

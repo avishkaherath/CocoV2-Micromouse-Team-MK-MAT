@@ -22,7 +22,6 @@ HUGE			// 16x24
 #include <string.h>
 #include "typedefs.h"
 #include "read_sensors.h"
-
 #include "ssd1306.h"
 
 // THIS VARIABLE DECIDES WHAT IS ON SCREEN

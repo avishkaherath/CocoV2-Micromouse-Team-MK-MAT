@@ -43,33 +43,41 @@ void mouseRun();
 int cppmain(void)
 {
 
-	initialization_block();
+//	initialization_block();
+	TIM5_START;
 
 	HAL_Delay(1000);
-	disp_state = DEFAULT;
+//
+//	if (orient == 1)
+//	{
+//
+//		XY.x = 1;
+//		XY.y = 0;
+//		cells[0][0] = 10;
+//	}
+//	else
+//	{
+//		XY.x = 0;
+//		XY.y = 1;
+//		cells[0][0] = 9;
+//	}
+//
+//	XY_prev.y = 0;
+//	XY_prev.x = 0;
+	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3); // RPWMA
+	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1); // RPWMB
 
-	if (orient == 1)
-	{
-
-		XY.x = 1;
-		XY.y = 0;
-		cells[0][0] = 10;
-	}
-	else
-	{
-		XY.x = 0;
-		XY.y = 1;
-		cells[0][0] = 9;
-	}
-
-	XY_prev.y = 0;
-	XY_prev.x = 0;
+	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 2048); // RPWMA
+	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0); // RPWMB
 
 	while (1)
 	{
-		mouseRun();
-		i++;
-		HAL_Delay(1);
+//		playSound(TONE4);
+//		HAL_Delay(1000);
+//		mouseRun();
+
+//		i++;
+//		HAL_Delay(1);
 	}
 //	while(1)
 //	{
@@ -96,7 +104,7 @@ int initialization_block(void)
 	HAL_Delay(1000);
 	gyroCalibration();
 	disp_state = DEFAULT;
-	TIM13_IT_START;
+	//TIM13_IT_START;
 	//TIM14_IT_START;
 
 	return 0;

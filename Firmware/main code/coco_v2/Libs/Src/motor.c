@@ -27,8 +27,8 @@ void setLeftWheel(float l_speed)
 	l_pwma = (l_speed < 0) ? (-l_speed) * u12_max : 0;
 	l_pwmb = (l_speed >= 0) ? l_speed * u12_max : 0;
 
-	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, l_pwma); // LPWMA
-	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, l_pwmb); // LPWMB
+	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, l_pwma); // LPWMA
+	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2, l_pwmb); // LPWMB
 }
 
 void setRightWheel(float r_speed)
@@ -40,8 +40,8 @@ void setRightWheel(float r_speed)
 	r_pwma = (r_speed < 0) ? (-r_speed) * u12_max : 0;
 	r_pwmb = (r_speed >= 0) ? r_speed * u12_max : 0;
 
-	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, r_pwma); // RPWMA
-	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_4, r_pwmb); // RPWMB
+	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, r_pwma); // RPWMA
+	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, r_pwmb); // RPWMB
 }
 
 int setWheels()

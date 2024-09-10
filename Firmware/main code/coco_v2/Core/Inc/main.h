@@ -28,11 +28,11 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_hal.h"
-#include "cppmain.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "stm32f4xx_hal.h"
+#include "cppmain.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -55,6 +55,7 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
+/* USER CODE BEGIN EFP */
 extern ADC_HandleTypeDef hadc1;
 extern DMA_HandleTypeDef hdma_adc1;
 
@@ -81,6 +82,7 @@ extern UART_HandleTypeDef huart3;
 #define TIM13_IT_STOP HAL_TIM_Base_Stop_IT(&htim13)
 #define TIM14_IT_START HAL_TIM_Base_Start_IT(&htim14)
 #define TIM14_IT_STOP HAL_TIM_Base_Stop_IT(&htim14)
+/* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
 #define TB_Pin GPIO_PIN_13
@@ -178,9 +180,11 @@ extern UART_HandleTypeDef huart3;
 #define SDA_Pin GPIO_PIN_9
 #define SDA_GPIO_Port GPIOB
 
+/* USER CODE BEGIN Private defines */
 extern int mouseState;
 
 extern bool LF, RF, LD, RD;
+/* USER CODE END Private defines */
 
 #ifdef __cplusplus
 }
