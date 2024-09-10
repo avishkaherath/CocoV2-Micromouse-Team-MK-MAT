@@ -1,27 +1,10 @@
-19:21:58 **** Incremental Build of configuration Debug for project coco_v2 ****
+12:14:27 **** Incremental Build of configuration Debug for project coco_v2 ****
 make -j8 all 
-arm-none-eabi-g++ "../Program/Src/cppmain.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/cppmain.d" -MT"Program/Src/cppmain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/cppmain.o"
-../Program/Src/cppmain.cpp: In function 'int cppmain()':
-../Program/Src/cppmain.cpp:87:1: warning: no return statement in function returning non-void [-Wreturn-type]
-   87 | }
-      | ^
-arm-none-eabi-g++ -o "coco_v2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ACER\Documents\GitHub\CocoV2-Micromouse-Team-MK-MAT\Firmware\main code\coco_v2\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="coco_v2.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
-Finished building target: coco_v2.elf
- 
 arm-none-eabi-size  coco_v2.elf 
-arm-none-eabi-objdump -h -S coco_v2.elf  > "coco_v2.list"
    text	   data	    bss	    dec	    hex	filename
- 198604	    792	   9472	 208868	  32fe4	coco_v2.elf
-arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
-arm-none-eabi-objcopy  -O binary coco_v2.elf  "coco_v2.bin"
+ 236772	   3664	   9672	 250108	  3d0fc	coco_v2.elf
 Finished building: default.size.stdout
  
-Finished building: coco_v2.hex
-Finished building: coco_v2.bin
- 
- 
-Finished building: coco_v2.list
- 
 
-19:22:00 Build Finished. 0 errors, 1 warnings. (took 1s.834ms)
+12:14:27 Build Finished. 0 errors, 0 warnings. (took 326ms)
 

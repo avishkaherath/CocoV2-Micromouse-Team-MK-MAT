@@ -36,60 +36,54 @@ static int dumOrient;
 
 int backPtr = 0;
 int fwdPtr;
+int16_t gyro_reading;
 
 void mouseRun();
 
 int cppmain(void)
 {
-	/*Led ON/OFF*/
-	LED1_ON;
-	HAL_Delay(2000);
-	LED1_OFF;
 
-	/*Gyroscope testing*/
-//	int16_t gyro_reading;
-//	gyroInit();
-//	gyroCalibration();
-//
+	initialization_block();
+
+	HAL_Delay(1000);
+	disp_state = DEFAULT;
+
+	if (orient == 1)
+	{
+
+		XY.x = 1;
+		XY.y = 0;
+		cells[0][0] = 10;
+	}
+	else
+	{
+		XY.x = 0;
+		XY.y = 1;
+		cells[0][0] = 9;
+	}
+
+	XY_prev.y = 0;
+	XY_prev.x = 0;
+
+	while (1)
+	{
+		mouseRun();
+		i++;
+		HAL_Delay(1);
+	}
 //	while(1)
 //	{
-//		gyro_reading = readGyro();
-//		HAL_Delay(10);
-//	}
-
-//	initialization_block();
-
-//	HAL_Delay(1000);
-//	disp_state = DEFAULT;
-//
-//	if (orient == 1)
-//	{
-//		XY.x = 1;
-//		XY.y = 0;
-//		cells[0][0] = 10;
-//	}
-//	else
-//	{
-//		XY.x = 0;
-//		XY.y = 1;
-//		cells[0][0] = 9;
-//	}
-//
-//	XY_prev.y = 0;
-//	XY_prev.x = 0;
-//
-//	while (1)
-//	{
-//		mouseRun();
-//		i++;
-//		HAL_Delay(1);
+//		setLeftWheel(l_speed);
+//		HAL_Delay(100);
+//		setRightWheel(r_speed);
+//		HAL_Delay(100);
 //	}
 }
 
 int initialization_block(void)
 {
 	ALL_LED_ON;
-	TIM8_START; ////////////////// CRUCIAL PART DON"T OFFFFFFFFFFFFFFFF ///////////////////////////
+	TIM5_START; ////////////////// CRUCIAL PART DON"T OFFFFFFFFFFFFFFFF ///////////////////////////
 	TIM6_IT_START;
 
 	motorInit();

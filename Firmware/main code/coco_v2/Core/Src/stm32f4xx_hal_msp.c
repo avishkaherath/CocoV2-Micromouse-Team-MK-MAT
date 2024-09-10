@@ -410,6 +410,17 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htim_base)
 
   /* USER CODE END TIM3_MspInit 1 */
   }
+  else if(htim_base->Instance==TIM5)
+  {
+  /* USER CODE BEGIN TIM5_MspInit 0 */
+
+  /* USER CODE END TIM5_MspInit 0 */
+    /* Peripheral clock enable */
+    __HAL_RCC_TIM5_CLK_ENABLE();
+  /* USER CODE BEGIN TIM5_MspInit 1 */
+
+  /* USER CODE END TIM5_MspInit 1 */
+  }
   else if(htim_base->Instance==TIM6)
   {
   /* USER CODE BEGIN TIM6_MspInit 0 */
@@ -423,22 +434,6 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htim_base)
   /* USER CODE BEGIN TIM6_MspInit 1 */
 
   /* USER CODE END TIM6_MspInit 1 */
-  }
-  else if(htim_base->Instance==TIM8)
-  {
-  /* USER CODE BEGIN TIM8_MspInit 0 */
-
-  /* USER CODE END TIM8_MspInit 0 */
-    /* Peripheral clock enable */
-    __HAL_RCC_TIM8_CLK_ENABLE();
-    /* TIM8 interrupt Init */
-    HAL_NVIC_SetPriority(TIM8_UP_TIM13_IRQn, 0, 0);
-    HAL_NVIC_EnableIRQ(TIM8_UP_TIM13_IRQn);
-    HAL_NVIC_SetPriority(TIM8_TRG_COM_TIM14_IRQn, 0, 0);
-    HAL_NVIC_EnableIRQ(TIM8_TRG_COM_TIM14_IRQn);
-  /* USER CODE BEGIN TIM8_MspInit 1 */
-
-  /* USER CODE END TIM8_MspInit 1 */
   }
   else if(htim_base->Instance==TIM13)
   {
@@ -605,6 +600,17 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* htim_base)
 
   /* USER CODE END TIM3_MspDeInit 1 */
   }
+  else if(htim_base->Instance==TIM5)
+  {
+  /* USER CODE BEGIN TIM5_MspDeInit 0 */
+
+  /* USER CODE END TIM5_MspDeInit 0 */
+    /* Peripheral clock disable */
+    __HAL_RCC_TIM5_CLK_DISABLE();
+  /* USER CODE BEGIN TIM5_MspDeInit 1 */
+
+  /* USER CODE END TIM5_MspDeInit 1 */
+  }
   else if(htim_base->Instance==TIM6)
   {
   /* USER CODE BEGIN TIM6_MspDeInit 0 */
@@ -619,35 +625,6 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* htim_base)
 
   /* USER CODE END TIM6_MspDeInit 1 */
   }
-  else if(htim_base->Instance==TIM8)
-  {
-  /* USER CODE BEGIN TIM8_MspDeInit 0 */
-
-  /* USER CODE END TIM8_MspDeInit 0 */
-    /* Peripheral clock disable */
-    __HAL_RCC_TIM8_CLK_DISABLE();
-
-    /* TIM8 interrupt DeInit */
-  /* USER CODE BEGIN TIM8:TIM8_UP_TIM13_IRQn disable */
-    /**
-    * Uncomment the line below to disable the "TIM8_UP_TIM13_IRQn" interrupt
-    * Be aware, disabling shared interrupt may affect other IPs
-    */
-    /* HAL_NVIC_DisableIRQ(TIM8_UP_TIM13_IRQn); */
-  /* USER CODE END TIM8:TIM8_UP_TIM13_IRQn disable */
-
-  /* USER CODE BEGIN TIM8:TIM8_TRG_COM_TIM14_IRQn disable */
-    /**
-    * Uncomment the line below to disable the "TIM8_TRG_COM_TIM14_IRQn" interrupt
-    * Be aware, disabling shared interrupt may affect other IPs
-    */
-    /* HAL_NVIC_DisableIRQ(TIM8_TRG_COM_TIM14_IRQn); */
-  /* USER CODE END TIM8:TIM8_TRG_COM_TIM14_IRQn disable */
-
-  /* USER CODE BEGIN TIM8_MspDeInit 1 */
-
-  /* USER CODE END TIM8_MspDeInit 1 */
-  }
   else if(htim_base->Instance==TIM13)
   {
   /* USER CODE BEGIN TIM13_MspDeInit 0 */
@@ -657,14 +634,7 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* htim_base)
     __HAL_RCC_TIM13_CLK_DISABLE();
 
     /* TIM13 interrupt DeInit */
-  /* USER CODE BEGIN TIM13:TIM8_UP_TIM13_IRQn disable */
-    /**
-    * Uncomment the line below to disable the "TIM8_UP_TIM13_IRQn" interrupt
-    * Be aware, disabling shared interrupt may affect other IPs
-    */
-    /* HAL_NVIC_DisableIRQ(TIM8_UP_TIM13_IRQn); */
-  /* USER CODE END TIM13:TIM8_UP_TIM13_IRQn disable */
-
+    HAL_NVIC_DisableIRQ(TIM8_UP_TIM13_IRQn);
   /* USER CODE BEGIN TIM13_MspDeInit 1 */
 
   /* USER CODE END TIM13_MspDeInit 1 */
@@ -678,14 +648,7 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* htim_base)
     __HAL_RCC_TIM14_CLK_DISABLE();
 
     /* TIM14 interrupt DeInit */
-  /* USER CODE BEGIN TIM14:TIM8_TRG_COM_TIM14_IRQn disable */
-    /**
-    * Uncomment the line below to disable the "TIM8_TRG_COM_TIM14_IRQn" interrupt
-    * Be aware, disabling shared interrupt may affect other IPs
-    */
-    /* HAL_NVIC_DisableIRQ(TIM8_TRG_COM_TIM14_IRQn); */
-  /* USER CODE END TIM14:TIM8_TRG_COM_TIM14_IRQn disable */
-
+    HAL_NVIC_DisableIRQ(TIM8_TRG_COM_TIM14_IRQn);
   /* USER CODE BEGIN TIM14_MspDeInit 1 */
 
   /* USER CODE END TIM14_MspDeInit 1 */

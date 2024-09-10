@@ -42,6 +42,7 @@ extern int ptr;
 
 extern int backPtr;
 extern int fwdPtr;
+extern int16_t gyro_reading;
 
 
 // MAIN LOOP

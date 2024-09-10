@@ -90,7 +90,7 @@ int16_t readGyro(void)
 
 void gyroCalibration(void)
 {
-	LED9_ON, LED10_ON, LED11_ON;
+	LED2_ON, LED3_ON, LED4_ON;
 	int16_t calibration_buffer[BUFFER_LENGTH];
 	int32_t calibration_sum = 0;
 
@@ -107,7 +107,7 @@ void gyroCalibration(void)
 		noise += pow(calibration_buffer[idx] - offset, 2);
 	noise = pow(noise, .5) / 2 * GYRO_SENSITIVITY;
 
-	LED9_OFF, LED10_OFF, LED11_OFF;
+	LED2_OFF, LED3_OFF, LED4_OFF;
 
 	return;
 }
