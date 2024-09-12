@@ -43,12 +43,12 @@ void mouseRun();
 int cppmain(void)
 {
 
-//	initialization_block();
-	TIM5_START;
+	initialization_block();
 
-	HAL_Delay(1000);
-	displayInit();
-	disp_state = DEFAULT;
+
+	HAL_Delay(500);
+//	displayInit();
+//	disp_state = DEFAULT;
 //
 //	if (orient == 1)
 //	{
@@ -74,6 +74,10 @@ int cppmain(void)
 
 //	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
 //	__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 700);
+	setLeftWheel(0.5);
+	setRightWheel(0.5);
+	HAL_Delay(2000);
+	STOP_ROBOT;
 
 	while (1)
 	{
@@ -97,7 +101,7 @@ int initialization_block(void)
 {
 	ALL_LED_ON;
 	TIM5_START; ////////////////// CRUCIAL PART DON"T OFFFFFFFFFFFFFFFF ///////////////////////////
-	TIM6_IT_START;
+	//TIM6_IT_START;
 
 	motorInit();
 	encoderInit();
