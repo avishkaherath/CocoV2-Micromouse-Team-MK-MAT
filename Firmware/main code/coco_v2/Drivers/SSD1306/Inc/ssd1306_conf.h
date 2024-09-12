@@ -19,8 +19,8 @@
 //#define STM32G0
 
 // Choose a bus
-//#define SSD1306_USE_I2C
-#define SSD1306_USE_SPI
+#define SSD1306_USE_I2C
+//#define SSD1306_USE_SPI
 
 // I2C Configuration
 //#define SSD1306_I2C_PORT        hi2c1

@@ -47,6 +47,8 @@ int cppmain(void)
 	TIM5_START;
 
 	HAL_Delay(1000);
+	displayInit();
+	disp_state = DEFAULT;
 //
 //	if (orient == 1)
 //	{
@@ -64,11 +66,14 @@ int cppmain(void)
 //
 //	XY_prev.y = 0;
 //	XY_prev.x = 0;
-	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3); // RPWMA
-	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1); // RPWMB
+//	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3); // RPWMA
+//	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1); // RPWMB
+//
+//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 2048); // RPWMA
+//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0); // RPWMB
 
-	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 2048); // RPWMA
-	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0); // RPWMB
+//	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+//	__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 700);
 
 	while (1)
 	{
