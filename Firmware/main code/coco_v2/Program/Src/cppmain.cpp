@@ -79,8 +79,6 @@ int cppmain(void)
 	HAL_Delay(2000);
 	STOP_ROBOT;
 
-
-
 	while (1)
 	{
 //		playSound(TONE4);
