@@ -37,6 +37,8 @@ static int dumOrient;
 int backPtr = 0;
 int fwdPtr;
 int16_t gyro_reading;
+uint32_t left_pos;
+uint32_t right_pos;
 
 void mouseRun();
 
@@ -44,9 +46,10 @@ int cppmain(void)
 {
 
 	initialization_block();
+//	__HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_1,450);
 
 
-	HAL_Delay(500);
+	HAL_Delay(100);
 //	displayInit();
 //	disp_state = DEFAULT;
 //
@@ -74,19 +77,33 @@ int cppmain(void)
 
 //	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
 //	__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 700);
-	setLeftWheel(0.5);
-	setRightWheel(0.5);
-	HAL_Delay(2000);
-	STOP_ROBOT;
+//	setLeftWheel(0.5);
+//	setRightWheel(0.5);
+//	HAL_Delay(2000);
+//	STOP_ROBOT;
 
 	while (1)
 	{
-//		playSound(TONE4);
-//		HAL_Delay(1000);
-//		mouseRun();
+//		if (finishMove(STRAIGHT_RUN, 10))
+//		{
+//			STOP_ROBOT;
+//			HAL_Delay(1000);
+////			runState = 5;
+//
+//		}
+//		left_pos = l_position;
+//		right_pos = r_position;
+		playSound(TONE1);
+		HAL_Delay(1000);
+		playSound(TONE2);
+		HAL_Delay(1000);
+		playSound(TONE3);
+		HAL_Delay(1000);
+		playSound(TONE4);
+		HAL_Delay(1000);
+		playSound(WIN_TONE);
+		HAL_Delay(1000);
 
-//		i++;
-//		HAL_Delay(1);
 	}
 //	while(1)
 //	{
@@ -110,7 +127,7 @@ int initialization_block(void)
 	buzzerInit();
 
 	ALL_LED_OFF;
-	HAL_Delay(1000);
+	HAL_Delay(200);
 	gyroCalibration();
 	disp_state = DEFAULT;
 	//TIM13_IT_START;

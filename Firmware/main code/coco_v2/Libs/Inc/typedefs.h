@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-#define u32_max 4294967295
+#define u32_max 65535
 
 
 #define u32 uint32_t

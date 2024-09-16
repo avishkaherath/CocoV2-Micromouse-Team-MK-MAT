@@ -6,7 +6,8 @@
 
 #define _ENCODER_START (u32)u32_max/1e4
 #define l_position TIM1-> CNT
-#define r_position (u32_max-TIM4-> CNT)
+#define r_position TIM4-> CNT
+
 
 
 void encoderInit(void);

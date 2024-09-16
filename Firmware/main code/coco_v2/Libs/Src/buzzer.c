@@ -12,8 +12,8 @@ void buzzerInit(void)
 int setBuzz(u16 freq, float amp)
 {
   u16 period = 500000 / freq;
-  TIM9->CNT = 0;
-  TIM9->ARR = period - 1;
+  TIM3->CNT = 0;
+  TIM3->ARR = period - 1;
   __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, period * amp);
   return 0;
 }

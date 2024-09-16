@@ -42,6 +42,8 @@ extern int ptr;
 
 extern int backPtr;
 extern int fwdPtr;
+extern uint32_t left_pos;
+extern uint32_t right_pos;
 
 // MAIN LOOP
 int cppmain(void);

@@ -56,8 +56,8 @@ bool finishMove(MV_Type mv_type_, float dist_ang_)
 	switch (mv_type)
 	{
 	case STRAIGHT_RUN:
-		l_speed = PD_correction_sc - PD_correction_ac + PD_correction_ir;
-		r_speed = PD_correction_sc + PD_correction_ac - PD_correction_ir;
+		l_speed = PD_correction_sc; //- PD_correction_ac + PD_correction_ir;
+		r_speed = PD_correction_sc; // + PD_correction_ac - PD_correction_ir;
 		break;
 	case POINT_TURN:
 		l_speed = -PD_correction_sc + PD_correction_ac;
@@ -94,15 +94,15 @@ void assignParameters(void)
 		speed_th_ = st_speed;
 		counts_ = dist_ang * LINEAR_SENSITIVITY;
 
-		if (fabs(st_speed - 0.3) < .05)
+		if (fabs(st_speed - 0.5) < .05)
 		{
 			sc_kp = 1, sc_kd = 5e-3, sc_red = 200;
 			ac_kp = 1.1, ac_kd = 8e-2, ac_red = 100;
 			ir_kp = 1, ir_kd = 3e-2, ir_red = 5e2;
 		}
-		else if (fabs(st_speed - 0.5) < .05)
+		else if (fabs(st_speed - 0.8) < .05)
 		{
-			sc_kp = 1.1, sc_kd = 2e-3, sc_red = 400;
+			sc_kp = 1.1, sc_kd = 0, sc_red = 400;
 			ac_kp = 1.3, ac_kd = 1e-3, ac_red = 500;
 			ir_kp = 1, ir_kd = 1e-3, ir_red = 2000;
 		}
