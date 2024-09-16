@@ -1,4 +1,4 @@
-15:54:14 **** Incremental Build of configuration Debug for project coco_v2 ****
+20:01:23 **** Incremental Build of configuration Debug for project coco_v2 ****
 make -j8 all 
 arm-none-eabi-g++ "../Program/Src/cppmain.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/cppmain.d" -MT"Program/Src/cppmain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/cppmain.o"
 arm-none-eabi-g++ "../Program/Src/floodfill.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/floodfill.d" -MT"Program/Src/floodfill.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/floodfill.o"
@@ -8,13 +8,53 @@ arm-none-eabi-gcc "../Libs/Src/adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DU
 arm-none-eabi-gcc "../Libs/Src/buzzer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/buzzer.d" -MT"Libs/Src/buzzer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/buzzer.o"
 arm-none-eabi-gcc "../Libs/Src/display.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/display.d" -MT"Libs/Src/display.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/display.o"
 arm-none-eabi-gcc "../Libs/Src/encoder.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/encoder.d" -MT"Libs/Src/encoder.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/encoder.o"
+../Libs/Src/PD.c: In function 'finishMove':
+../Libs/Src/PD.c:56:9: warning: enumeration value 'IDLE' not handled in switch [-Wswitch]
+   56 |         switch (mv_type)
+      |         ^~~~~~
 ../Libs/Src/display.c: In function 'displayUpdate':
 ../Libs/Src/display.c:72:9: warning: enumeration value 'SPEED_ADJ' not handled in switch [-Wswitch]
    72 |         switch (disp_state)
       |         ^~~~~~
+arm-none-eabi-gcc "../Libs/Src/motor.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/motor.d" -MT"Libs/Src/motor.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/motor.o"
+arm-none-eabi-gcc "../Libs/Src/read_sensors.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/read_sensors.d" -MT"Libs/Src/read_sensors.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/read_sensors.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-g++ -o "coco_v2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ACER\Documents\GitHub\CocoV2-Micromouse-Team-MK-MAT\Firmware\main code\coco_v2\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="coco_v2.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: coco_v2.elf
+ 
+arm-none-eabi-size  coco_v2.elf 
+arm-none-eabi-objdump -h -S coco_v2.elf  > "coco_v2.list"
+arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
+   text	   data	    bss	    dec	    hex	filename
+ 211964	    872	   9600	 222436	  364e4	coco_v2.elf
+arm-none-eabi-objcopy  -O binary coco_v2.elf  "coco_v2.bin"
+Finished building: default.size.stdout
+ 
+Finished building: coco_v2.hex
+Finished building: coco_v2.bin
+ 
+ 
+Finished building: coco_v2.list
+ 
+20:02:12 **** Incremental Build of configuration Debug for project coco_v2 ****
+make -j8 all 
+arm-none-eabi-g++ "../Program/Src/cppmain.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/cppmain.d" -MT"Program/Src/cppmain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/cppmain.o"
+arm-none-eabi-g++ "../Program/Src/floodfill.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/floodfill.d" -MT"Program/Src/floodfill.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/floodfill.o"
+arm-none-eabi-gcc "../Libs/Src/L3GD20.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/L3GD20.d" -MT"Libs/Src/L3GD20.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/L3GD20.o"
+arm-none-eabi-gcc "../Libs/Src/PD.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/PD.d" -MT"Libs/Src/PD.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/PD.o"
+arm-none-eabi-gcc "../Libs/Src/adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/adc.d" -MT"Libs/Src/adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/adc.o"
+arm-none-eabi-gcc "../Libs/Src/buzzer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/buzzer.d" -MT"Libs/Src/buzzer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/buzzer.o"
+arm-none-eabi-gcc "../Libs/Src/display.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/display.d" -MT"Libs/Src/display.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/display.o"
+arm-none-eabi-gcc "../Libs/Src/encoder.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/encoder.d" -MT"Libs/Src/encoder.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/encoder.o"
 ../Libs/Src/PD.c: In function 'finishMove':
 ../Libs/Src/PD.c:56:9: warning: enumeration value 'IDLE' not handled in switch [-Wswitch]
    56 |         switch (mv_type)
+      |         ^~~~~~
+../Libs/Src/display.c: In function 'displayUpdate':
+../Libs/Src/display.c:72:9: warning: enumeration value 'SPEED_ADJ' not handled in switch [-Wswitch]
+   72 |         switch (disp_state)
       |         ^~~~~~
 arm-none-eabi-gcc "../Libs/Src/motor.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/motor.d" -MT"Libs/Src/motor.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/motor.o"
 arm-none-eabi-gcc "../Libs/Src/read_sensors.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/read_sensors.d" -MT"Libs/Src/read_sensors.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/read_sensors.o"
@@ -27,35 +67,24 @@ Finished building target: coco_v2.elf
 arm-none-eabi-size  coco_v2.elf 
 arm-none-eabi-objdump -h -S coco_v2.elf  > "coco_v2.list"
    text	   data	    bss	    dec	    hex	filename
- 199324	    792	   9472	 209588	  332b4	coco_v2.elf
+ 211964	    872	   9600	 222436	  364e4	coco_v2.elf
 arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
 arm-none-eabi-objcopy  -O binary coco_v2.elf  "coco_v2.bin"
 Finished building: default.size.stdout
  
 Finished building: coco_v2.hex
-Finished building: coco_v2.bin
  
+Finished building: coco_v2.bin
  
 Finished building: coco_v2.list
  
-15:54:22 **** Incremental Build of configuration Debug for project coco_v2 ****
+20:12:09 **** Incremental Build of configuration Debug for project coco_v2 ****
 make -j8 all 
-arm-none-eabi-size  coco_v2.elf 
-   text	   data	    bss	    dec	    hex	filename
- 199324	    792	   9472	 209588	  332b4	coco_v2.elf
-Finished building: default.size.stdout
- 
-15:54:24 **** Incremental Build of configuration Debug for project coco_v2 ****
-make -j8 all 
-arm-none-eabi-size  coco_v2.elf 
-   text	   data	    bss	    dec	    hex	filename
- 199324	    792	   9472	 209588	  332b4	coco_v2.elf
-Finished building: default.size.stdout
- 
-19:33:17 **** Incremental Build of configuration Debug for project coco_v2 ****
-make -j8 all 
-arm-none-eabi-g++ "../Program/Src/cppmain.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/cppmain.d" -MT"Program/Src/cppmain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/cppmain.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Libs/Src/PD.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/PD.d" -MT"Libs/Src/PD.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/PD.o"
+../Libs/Src/PD.c: In function 'finishMove':
+../Libs/Src/PD.c:56:9: warning: enumeration value 'IDLE' not handled in switch [-Wswitch]
+   56 |         switch (mv_type)
+      |         ^~~~~~
 arm-none-eabi-g++ -o "coco_v2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ACER\Documents\GitHub\CocoV2-Micromouse-Team-MK-MAT\Firmware\main code\coco_v2\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="coco_v2.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 Finished building target: coco_v2.elf
  
@@ -63,19 +92,72 @@ arm-none-eabi-size  coco_v2.elf
 arm-none-eabi-objdump -h -S coco_v2.elf  > "coco_v2.list"
 arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
    text	   data	    bss	    dec	    hex	filename
- 199308	    792	   9472	 209572	  332a4	coco_v2.elf
+ 212020	    872	   9600	 222492	  3651c	coco_v2.elf
 arm-none-eabi-objcopy  -O binary coco_v2.elf  "coco_v2.bin"
 Finished building: default.size.stdout
  
-Finished building: coco_v2.bin
 Finished building: coco_v2.hex
+Finished building: coco_v2.bin
  
  
 Finished building: coco_v2.list
  
-19:39:50 **** Incremental Build of configuration Debug for project coco_v2 ****
+20:12:53 **** Incremental Build of configuration Debug for project coco_v2 ****
 make -j8 all 
-arm-none-eabi-g++ "../Program/Src/cppmain.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/cppmain.d" -MT"Program/Src/cppmain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/cppmain.o"
+arm-none-eabi-gcc "../Libs/Src/PD.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/PD.d" -MT"Libs/Src/PD.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/PD.o"
+../Libs/Src/PD.c: In function 'finishMove':
+../Libs/Src/PD.c:56:9: warning: enumeration value 'IDLE' not handled in switch [-Wswitch]
+   56 |         switch (mv_type)
+      |         ^~~~~~
+arm-none-eabi-g++ -o "coco_v2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ACER\Documents\GitHub\CocoV2-Micromouse-Team-MK-MAT\Firmware\main code\coco_v2\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="coco_v2.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: coco_v2.elf
+ 
+arm-none-eabi-size  coco_v2.elf 
+arm-none-eabi-objdump -h -S coco_v2.elf  > "coco_v2.list"
+   text	   data	    bss	    dec	    hex	filename
+ 212020	    872	   9600	 222492	  3651c	coco_v2.elf
+arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
+arm-none-eabi-objcopy  -O binary coco_v2.elf  "coco_v2.bin"
+Finished building: default.size.stdout
+ 
+Finished building: coco_v2.hex
+Finished building: coco_v2.bin
+ 
+ 
+Finished building: coco_v2.list
+ 
+20:17:25 **** Incremental Build of configuration Debug for project coco_v2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Libs/Src/PD.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/PD.d" -MT"Libs/Src/PD.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/PD.o"
+../Libs/Src/PD.c: In function 'finishMove':
+../Libs/Src/PD.c:56:9: warning: enumeration value 'IDLE' not handled in switch [-Wswitch]
+   56 |         switch (mv_type)
+      |         ^~~~~~
+arm-none-eabi-g++ -o "coco_v2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ACER\Documents\GitHub\CocoV2-Micromouse-Team-MK-MAT\Firmware\main code\coco_v2\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="coco_v2.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: coco_v2.elf
+ 
+arm-none-eabi-size  coco_v2.elf 
+arm-none-eabi-objdump -h -S coco_v2.elf  > "coco_v2.list"
+   text	   data	    bss	    dec	    hex	filename
+ 211980	    872	   9600	 222452	  364f4	coco_v2.elf
+arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
+arm-none-eabi-objcopy  -O binary coco_v2.elf  "coco_v2.bin"
+Finished building: default.size.stdout
+ 
+Finished building: coco_v2.hex
+Finished building: coco_v2.bin
+ 
+ 
+Finished building: coco_v2.list
+ 
+20:41:09 **** Incremental Build of configuration Debug for project coco_v2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Libs/Src/PD.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/PD.d" -MT"Libs/Src/PD.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/PD.o"
+arm-none-eabi-gcc "../Libs/Src/motor.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/motor.d" -MT"Libs/Src/motor.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/motor.o"
+../Libs/Src/PD.c: In function 'finishMove':
+../Libs/Src/PD.c:56:9: warning: enumeration value 'IDLE' not handled in switch [-Wswitch]
+   56 |         switch (mv_type)
+      |         ^~~~~~
 arm-none-eabi-g++ -o "coco_v2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ACER\Documents\GitHub\CocoV2-Micromouse-Team-MK-MAT\Firmware\main code\coco_v2\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="coco_v2.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 Finished building target: coco_v2.elf
  
@@ -83,7 +165,7 @@ arm-none-eabi-size  coco_v2.elf
 arm-none-eabi-objdump -h -S coco_v2.elf  > "coco_v2.list"
 arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
    text	   data	    bss	    dec	    hex	filename
- 199172	    792	   9472	 209436	  3321c	coco_v2.elf
+ 211980	    872	   9600	 222452	  364f4	coco_v2.elf
 arm-none-eabi-objcopy  -O binary coco_v2.elf  "coco_v2.bin"
 Finished building: default.size.stdout
  
@@ -93,7 +175,47 @@ Finished building: coco_v2.bin
  
 Finished building: coco_v2.list
  
-19:39:54 **** Incremental Build of configuration Debug for project coco_v2 ****
+20:46:24 **** Incremental Build of configuration Debug for project coco_v2 ****
+make -j8 all 
+arm-none-eabi-g++ "../Program/Src/cppmain.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/cppmain.d" -MT"Program/Src/cppmain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/cppmain.o"
+arm-none-eabi-gcc "../Libs/Src/motor.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/motor.d" -MT"Libs/Src/motor.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/motor.o"
+../Program/Src/cppmain.cpp: In function 'int cppmain()':
+../Program/Src/cppmain.cpp:110:17: error: 'right_posv' was not declared in this scope; did you mean 'right_pos'?
+  110 |                 right_posv = r_position;
+      |                 ^~~~~~~~~~
+      |                 right_pos
+make: *** [Program/Src/subdir.mk:22: Program/Src/cppmain.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:46:35 **** Incremental Build of configuration Debug for project coco_v2 ****
+make -j8 all 
+arm-none-eabi-g++ "../Program/Src/cppmain.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/cppmain.d" -MT"Program/Src/cppmain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/cppmain.o"
+arm-none-eabi-gcc "../Libs/Src/motor.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/motor.d" -MT"Libs/Src/motor.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/motor.o"
+arm-none-eabi-g++ -o "coco_v2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ACER\Documents\GitHub\CocoV2-Micromouse-Team-MK-MAT\Firmware\main code\coco_v2\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="coco_v2.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: coco_v2.elf
+ 
+arm-none-eabi-size  coco_v2.elf 
+arm-none-eabi-objdump -h -S coco_v2.elf  > "coco_v2.list"
+   text	   data	    bss	    dec	    hex	filename
+ 212012	    872	   9608	 222492	  3651c	coco_v2.elf
+arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
+arm-none-eabi-objcopy  -O binary coco_v2.elf  "coco_v2.bin"
+Finished building: default.size.stdout
+ 
+Finished building: coco_v2.hex
+Finished building: coco_v2.bin
+ 
+ 
+Finished building: coco_v2.list
+ 
+20:46:59 **** Incremental Build of configuration Debug for project coco_v2 ****
+make -j8 all 
+arm-none-eabi-size  coco_v2.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 212012	    872	   9608	 222492	  3651c	coco_v2.elf
+Finished building: default.size.stdout
+ 
+20:48:06 **** Incremental Build of configuration Debug for project coco_v2 ****
 make -j8 all 
 arm-none-eabi-g++ "../Program/Src/cppmain.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/cppmain.d" -MT"Program/Src/cppmain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/cppmain.o"
 arm-none-eabi-g++ -o "coco_v2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ACER\Documents\GitHub\CocoV2-Micromouse-Team-MK-MAT\Firmware\main code\coco_v2\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="coco_v2.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
@@ -101,9 +223,9 @@ Finished building target: coco_v2.elf
  
 arm-none-eabi-size  coco_v2.elf 
 arm-none-eabi-objdump -h -S coco_v2.elf  > "coco_v2.list"
-arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
    text	   data	    bss	    dec	    hex	filename
- 199172	    792	   9472	 209436	  3321c	coco_v2.elf
+ 210788	    832	   9608	 221228	  3602c	coco_v2.elf
+arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
 arm-none-eabi-objcopy  -O binary coco_v2.elf  "coco_v2.bin"
 Finished building: default.size.stdout
  
@@ -113,7 +235,79 @@ Finished building: coco_v2.bin
  
 Finished building: coco_v2.list
  
-19:41:57 **** Incremental Build of configuration Debug for project coco_v2 ****
+20:51:59 **** Incremental Build of configuration Debug for project coco_v2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Libs/Src/PD.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/PD.d" -MT"Libs/Src/PD.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/PD.o"
+../Libs/Src/PD.c: In function 'finishMove':
+../Libs/Src/PD.c:56:9: warning: enumeration value 'IDLE' not handled in switch [-Wswitch]
+   56 |         switch (mv_type)
+      |         ^~~~~~
+arm-none-eabi-g++ -o "coco_v2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ACER\Documents\GitHub\CocoV2-Micromouse-Team-MK-MAT\Firmware\main code\coco_v2\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="coco_v2.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: coco_v2.elf
+ 
+arm-none-eabi-size  coco_v2.elf 
+arm-none-eabi-objdump -h -S coco_v2.elf  > "coco_v2.list"
+   text	   data	    bss	    dec	    hex	filename
+ 210788	    832	   9608	 221228	  3602c	coco_v2.elf
+arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary coco_v2.elf  "coco_v2.bin"
+ 
+Finished building: coco_v2.hex
+Finished building: coco_v2.bin
+ 
+ 
+Finished building: coco_v2.list
+ 
+20:53:36 **** Incremental Build of configuration Debug for project coco_v2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Libs/Src/PD.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/PD.d" -MT"Libs/Src/PD.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/PD.o"
+../Libs/Src/PD.c: In function 'finishMove':
+../Libs/Src/PD.c:56:9: warning: enumeration value 'IDLE' not handled in switch [-Wswitch]
+   56 |         switch (mv_type)
+      |         ^~~~~~
+arm-none-eabi-g++ -o "coco_v2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ACER\Documents\GitHub\CocoV2-Micromouse-Team-MK-MAT\Firmware\main code\coco_v2\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="coco_v2.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: coco_v2.elf
+ 
+arm-none-eabi-size  coco_v2.elf 
+arm-none-eabi-objdump -h -S coco_v2.elf  > "coco_v2.list"
+arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
+   text	   data	    bss	    dec	    hex	filename
+ 210788	    832	   9608	 221228	  3602c	coco_v2.elf
+arm-none-eabi-objcopy  -O binary coco_v2.elf  "coco_v2.bin"
+Finished building: default.size.stdout
+ 
+Finished building: coco_v2.hex
+Finished building: coco_v2.bin
+ 
+ 
+Finished building: coco_v2.list
+ 
+20:53:47 **** Incremental Build of configuration Debug for project coco_v2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Libs/Src/PD.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/PD.d" -MT"Libs/Src/PD.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/PD.o"
+../Libs/Src/PD.c: In function 'finishMove':
+../Libs/Src/PD.c:56:9: warning: enumeration value 'IDLE' not handled in switch [-Wswitch]
+   56 |         switch (mv_type)
+      |         ^~~~~~
+arm-none-eabi-g++ -o "coco_v2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ACER\Documents\GitHub\CocoV2-Micromouse-Team-MK-MAT\Firmware\main code\coco_v2\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="coco_v2.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: coco_v2.elf
+ 
+arm-none-eabi-size  coco_v2.elf 
+arm-none-eabi-objdump -h -S coco_v2.elf  > "coco_v2.list"
+   text	   data	    bss	    dec	    hex	filename
+ 210788	    832	   9608	 221228	  3602c	coco_v2.elf
+arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
+arm-none-eabi-objcopy  -O binary coco_v2.elf  "coco_v2.bin"
+Finished building: default.size.stdout
+ 
+Finished building: coco_v2.hex
+Finished building: coco_v2.bin
+ 
+ 
+Finished building: coco_v2.list
+ 
+21:05:05 **** Incremental Build of configuration Debug for project coco_v2 ****
 make -j8 all 
 arm-none-eabi-g++ "../Program/Src/cppmain.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/cppmain.d" -MT"Program/Src/cppmain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/cppmain.o"
 arm-none-eabi-g++ "../Program/Src/floodfill.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/floodfill.d" -MT"Program/Src/floodfill.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/floodfill.o"
@@ -123,19 +317,16 @@ arm-none-eabi-gcc "../Libs/Src/adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DU
 arm-none-eabi-gcc "../Libs/Src/buzzer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/buzzer.d" -MT"Libs/Src/buzzer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/buzzer.o"
 arm-none-eabi-gcc "../Libs/Src/display.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/display.d" -MT"Libs/Src/display.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/display.o"
 arm-none-eabi-gcc "../Libs/Src/encoder.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/encoder.d" -MT"Libs/Src/encoder.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/encoder.o"
-../Libs/Src/display.c: In function 'displayUpdate':
-../Libs/Src/display.c:72:9: warning: enumeration value 'SPEED_ADJ' not handled in switch [-Wswitch]
-   72 |         switch (disp_state)
-      |         ^~~~~~
 ../Libs/Src/PD.c: In function 'finishMove':
 ../Libs/Src/PD.c:56:9: warning: enumeration value 'IDLE' not handled in switch [-Wswitch]
    56 |         switch (mv_type)
       |         ^~~~~~
+../Libs/Src/display.c: In function 'displayUpdate':
+../Libs/Src/display.c:72:9: warning: enumeration value 'SPEED_ADJ' not handled in switch [-Wswitch]
+   72 |         switch (disp_state)
+      |         ^~~~~~
 arm-none-eabi-gcc "../Libs/Src/motor.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/motor.d" -MT"Libs/Src/motor.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/motor.o"
 arm-none-eabi-gcc "../Libs/Src/read_sensors.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/read_sensors.d" -MT"Libs/Src/read_sensors.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/read_sensors.o"
-arm-none-eabi-gcc "../Drivers/SSD1306/Src/ssd1306.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/SSD1306/Src/ssd1306.d" -MT"Drivers/SSD1306/Src/ssd1306.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/SSD1306/Src/ssd1306.o"
-arm-none-eabi-gcc "../Drivers/SSD1306/Src/ssd1306_fonts.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/SSD1306/Src/ssd1306_fonts.d" -MT"Drivers/SSD1306/Src/ssd1306_fonts.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/SSD1306/Src/ssd1306_fonts.o"
-arm-none-eabi-gcc "../Drivers/SSD1306/Src/ssd1306_tests.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/SSD1306/Src/ssd1306_tests.d" -MT"Drivers/SSD1306/Src/ssd1306_tests.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/SSD1306/Src/ssd1306_tests.o"
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
 arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
@@ -144,9 +335,355 @@ Finished building target: coco_v2.elf
  
 arm-none-eabi-size  coco_v2.elf 
 arm-none-eabi-objdump -h -S coco_v2.elf  > "coco_v2.list"
-arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
    text	   data	    bss	    dec	    hex	filename
- 200972	    792	   9472	 211236	  33924	coco_v2.elf
+ 210780	    832	   9608	 221220	  36024	coco_v2.elf
+arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
+arm-none-eabi-objcopy  -O binary coco_v2.elf  "coco_v2.bin"
+Finished building: default.size.stdout
+ 
+Finished building: coco_v2.hex
+Finished building: coco_v2.bin
+ 
+ 
+Finished building: coco_v2.list
+ 
+21:06:22 **** Incremental Build of configuration Debug for project coco_v2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Libs/Src/PD.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/PD.d" -MT"Libs/Src/PD.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/PD.o"
+../Libs/Src/PD.c: In function 'finishMove':
+../Libs/Src/PD.c:56:9: warning: enumeration value 'IDLE' not handled in switch [-Wswitch]
+   56 |         switch (mv_type)
+      |         ^~~~~~
+arm-none-eabi-g++ -o "coco_v2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ACER\Documents\GitHub\CocoV2-Micromouse-Team-MK-MAT\Firmware\main code\coco_v2\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="coco_v2.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: coco_v2.elf
+ 
+arm-none-eabi-size  coco_v2.elf 
+arm-none-eabi-objdump -h -S coco_v2.elf  > "coco_v2.list"
+   text	   data	    bss	    dec	    hex	filename
+ 210788	    832	   9608	 221228	  3602c	coco_v2.elf
+arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
+arm-none-eabi-objcopy  -O binary coco_v2.elf  "coco_v2.bin"
+Finished building: default.size.stdout
+ 
+Finished building: coco_v2.hex
+ 
+Finished building: coco_v2.bin
+ 
+Finished building: coco_v2.list
+ 
+21:06:35 **** Incremental Build of configuration Debug for project coco_v2 ****
+make -j8 all 
+arm-none-eabi-g++ -o "coco_v2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ACER\Documents\GitHub\CocoV2-Micromouse-Team-MK-MAT\Firmware\main code\coco_v2\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="coco_v2.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: coco_v2.elf
+ 
+arm-none-eabi-size  coco_v2.elf 
+arm-none-eabi-objdump -h -S coco_v2.elf  > "coco_v2.list"
+   text	   data	    bss	    dec	    hex	filename
+ 210788	    832	   9608	 221228	  3602c	coco_v2.elf
+arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
+Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary coco_v2.elf  "coco_v2.bin"
+ 
+Finished building: coco_v2.hex
+Finished building: coco_v2.bin
+ 
+ 
+Finished building: coco_v2.list
+ 
+21:14:32 **** Incremental Build of configuration Debug for project coco_v2 ****
+make -j8 all 
+arm-none-eabi-g++ "../Program/Src/cppmain.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/cppmain.d" -MT"Program/Src/cppmain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/cppmain.o"
+arm-none-eabi-g++ "../Program/Src/floodfill.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/floodfill.d" -MT"Program/Src/floodfill.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/floodfill.o"
+arm-none-eabi-gcc "../Libs/Src/L3GD20.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/L3GD20.d" -MT"Libs/Src/L3GD20.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/L3GD20.o"
+arm-none-eabi-gcc "../Libs/Src/PD.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/PD.d" -MT"Libs/Src/PD.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/PD.o"
+arm-none-eabi-gcc "../Libs/Src/adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/adc.d" -MT"Libs/Src/adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/adc.o"
+arm-none-eabi-gcc "../Libs/Src/buzzer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/buzzer.d" -MT"Libs/Src/buzzer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/buzzer.o"
+arm-none-eabi-gcc "../Libs/Src/display.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/display.d" -MT"Libs/Src/display.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/display.o"
+arm-none-eabi-gcc "../Libs/Src/encoder.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/encoder.d" -MT"Libs/Src/encoder.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/encoder.o"
+../Libs/Src/PD.c:11:14: error: static declaration of 'PD_correction_sc' follows non-static declaration
+   11 | static float PD_correction_sc = 0, PD_correction_ac = 0, PD_correction_ir = 0;
+      |              ^~~~~~~~~~~~~~~~
+In file included from ../Libs/Src/PD.c:1:
+C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/PD.h:16:14: note: previous declaration of 'PD_correction_sc' with type 'float'
+   16 | extern float PD_correction_sc;
+      |              ^~~~~~~~~~~~~~~~
+../Libs/Src/PD.c: In function 'finishMove':
+../Libs/Src/PD.c:56:9: warning: enumeration value 'IDLE' not handled in switch [-Wswitch]
+   56 |         switch (mv_type)
+      |         ^~~~~~
+make: *** [Libs/Src/subdir.mk:43: Libs/Src/PD.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Libs/Src/display.c: In function 'displayUpdate':
+../Libs/Src/display.c:72:9: warning: enumeration value 'SPEED_ADJ' not handled in switch [-Wswitch]
+   72 |         switch (disp_state)
+      |         ^~~~~~
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:14:57 **** Incremental Build of configuration Debug for project coco_v2 ****
+make -j8 all 
+arm-none-eabi-g++ "../Program/Src/cppmain.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/cppmain.d" -MT"Program/Src/cppmain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/cppmain.o"
+arm-none-eabi-g++ "../Program/Src/floodfill.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/floodfill.d" -MT"Program/Src/floodfill.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/floodfill.o"
+arm-none-eabi-gcc "../Libs/Src/L3GD20.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/L3GD20.d" -MT"Libs/Src/L3GD20.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/L3GD20.o"
+arm-none-eabi-gcc "../Libs/Src/PD.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/PD.d" -MT"Libs/Src/PD.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/PD.o"
+arm-none-eabi-gcc "../Libs/Src/adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/adc.d" -MT"Libs/Src/adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/adc.o"
+arm-none-eabi-gcc "../Libs/Src/buzzer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/buzzer.d" -MT"Libs/Src/buzzer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/buzzer.o"
+arm-none-eabi-gcc "../Libs/Src/display.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/display.d" -MT"Libs/Src/display.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/display.o"
+arm-none-eabi-gcc "../Libs/Src/encoder.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/encoder.d" -MT"Libs/Src/encoder.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/encoder.o"
+In file included from ../Libs/Src/PD.c:1:
+C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/PD.h:16:1: error: multiple storage classes in declaration specifiers
+   16 | extern static float PD_correction_sc;
+      | ^~~~~~
+../Libs/Src/PD.c:11:14: error: static declaration of 'PD_correction_sc' follows non-static declaration
+   11 | static float PD_correction_sc = 0, PD_correction_ac = 0, PD_correction_ir = 0;
+      |              ^~~~~~~~~~~~~~~~
+In file included from ../Libs/Src/PD.c:1:
+C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/PD.h:16:21: note: previous declaration of 'PD_correction_sc' with type 'float'
+   16 | extern static float PD_correction_sc;
+      |                     ^~~~~~~~~~~~~~~~
+../Libs/Src/PD.c: In function 'finishMove':
+../Libs/Src/PD.c:56:9: warning: enumeration value 'IDLE' not handled in switch [-Wswitch]
+   56 |         switch (mv_type)
+      |         ^~~~~~
+In file included from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc/cppmain.h:30,
+                 from ../Core/Inc/main.h:35,
+                 from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/led.h:6,
+                 from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/L3GD20.h:4,
+                 from ../Libs/Src/L3GD20.c:1:
+C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/PD.h:16:1: error: multiple storage classes in declaration specifiers
+   16 | extern static float PD_correction_sc;
+      | ^~~~~~
+In file included from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc/cppmain.h:30,
+                 from ../Core/Inc/main.h:35,
+                 from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/adc.h:5,
+                 from ../Libs/Src/adc.c:1:
+C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/PD.h:16:1: error: multiple storage classes in declaration specifiers
+   16 | extern static float PD_correction_sc;
+      | ^~~~~~
+In file included from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc/cppmain.h:30,
+                 from ../Core/Inc/main.h:35,
+                 from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/read_sensors.h:5,
+                 from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/display.h:24,
+                 from ../Libs/Src/display.c:1:
+C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/PD.h:16:1: error: multiple storage classes in declaration specifiers
+   16 | extern static float PD_correction_sc;
+      | ^~~~~~
+In file included from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc/cppmain.h:30,
+                 from ../Program/Src/cppmain.cpp:6:
+C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/PD.h:16:1: error: conflicting specifiers in declaration of 'PD_correction_sc'
+   16 | extern static float PD_correction_sc;
+      | ^~~~~~
+../Libs/Src/display.c: In function 'displayUpdate':
+../Libs/Src/display.c:72:9: warning: enumeration value 'SPEED_ADJ' not handled in switch [-Wswitch]
+   72 |         switch (disp_state)
+      |         ^~~~~~
+In file included from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc/cppmain.h:30,
+                 from ../Core/Inc/main.h:35,
+                 from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/buzzer.h:4,
+                 from ../Libs/Src/buzzer.c:1:
+C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/PD.h:16:1: error: multiple storage classes in declaration specifiers
+   16 | extern static float PD_correction_sc;
+      | ^~~~~~
+In file included from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc/cppmain.h:30,
+                 from ../Core/Inc/main.h:35,
+                 from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/encoder.h:5,
+                 from ../Libs/Src/encoder.c:1:
+C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/PD.h:16:1: error: multiple storage classes in declaration specifiers
+   16 | extern static float PD_correction_sc;
+      | ^~~~~~
+make: *** [Libs/Src/subdir.mk:43: Libs/Src/PD.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Libs/Src/subdir.mk:43: Libs/Src/L3GD20.o] Error 1
+make: *** [Libs/Src/subdir.mk:43: Libs/Src/adc.o] Error 1
+make: *** [Libs/Src/subdir.mk:43: Libs/Src/display.o] Error 1
+make: *** [Libs/Src/subdir.mk:43: Libs/Src/encoder.o] Error 1
+make: *** [Program/Src/subdir.mk:22: Program/Src/cppmain.o] Error 1
+make: *** [Libs/Src/subdir.mk:43: Libs/Src/buzzer.o] Error 1
+In file included from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc/cppmain.h:30,
+                 from ../Program/Src/floodfill.cpp:5:
+C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/PD.h:16:1: error: conflicting specifiers in declaration of 'PD_correction_sc'
+   16 | extern static float PD_correction_sc;
+      | ^~~~~~
+make: *** [Program/Src/subdir.mk:22: Program/Src/floodfill.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:15:53 **** Incremental Build of configuration Debug for project coco_v2 ****
+make -j8 all 
+arm-none-eabi-g++ "../Program/Src/cppmain.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/cppmain.d" -MT"Program/Src/cppmain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/cppmain.o"
+arm-none-eabi-g++ "../Program/Src/floodfill.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/floodfill.d" -MT"Program/Src/floodfill.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/floodfill.o"
+arm-none-eabi-gcc "../Libs/Src/L3GD20.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/L3GD20.d" -MT"Libs/Src/L3GD20.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/L3GD20.o"
+arm-none-eabi-gcc "../Libs/Src/PD.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/PD.d" -MT"Libs/Src/PD.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/PD.o"
+arm-none-eabi-gcc "../Libs/Src/adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/adc.d" -MT"Libs/Src/adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/adc.o"
+arm-none-eabi-gcc "../Libs/Src/buzzer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/buzzer.d" -MT"Libs/Src/buzzer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/buzzer.o"
+arm-none-eabi-gcc "../Libs/Src/display.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/display.d" -MT"Libs/Src/display.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/display.o"
+arm-none-eabi-gcc "../Libs/Src/encoder.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/encoder.d" -MT"Libs/Src/encoder.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/encoder.o"
+In file included from ../Libs/Src/PD.c:1:
+C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/PD.h:16:8: warning: type defaults to 'int' in declaration of 'PD_correction_sc' [-Wimplicit-int]
+   16 | extern PD_correction_sc;
+      |        ^~~~~~~~~~~~~~~~
+../Libs/Src/PD.c:11:14: error: conflicting types for 'PD_correction_sc'; have 'float'
+   11 | static float PD_correction_sc = 0, PD_correction_ac = 0, PD_correction_ir = 0;
+      |              ^~~~~~~~~~~~~~~~
+In file included from ../Libs/Src/PD.c:1:
+C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/PD.h:16:8: note: previous declaration of 'PD_correction_sc' with type 'int'
+   16 | extern PD_correction_sc;
+      |        ^~~~~~~~~~~~~~~~
+../Libs/Src/PD.c: In function 'finishMove':
+../Libs/Src/PD.c:56:9: warning: enumeration value 'IDLE' not handled in switch [-Wswitch]
+   56 |         switch (mv_type)
+      |         ^~~~~~
+In file included from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc/cppmain.h:30,
+                 from ../Core/Inc/main.h:35,
+                 from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/led.h:6,
+                 from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/L3GD20.h:4,
+                 from ../Libs/Src/L3GD20.c:1:
+C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/PD.h:16:8: warning: type defaults to 'int' in declaration of 'PD_correction_sc' [-Wimplicit-int]
+   16 | extern PD_correction_sc;
+      |        ^~~~~~~~~~~~~~~~
+make: *** [Libs/Src/subdir.mk:43: Libs/Src/PD.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc/cppmain.h:30,
+                 from ../Core/Inc/main.h:35,
+                 from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/read_sensors.h:5,
+                 from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/display.h:24,
+                 from ../Libs/Src/display.c:1:
+C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/PD.h:16:8: warning: type defaults to 'int' in declaration of 'PD_correction_sc' [-Wimplicit-int]
+   16 | extern PD_correction_sc;
+      |        ^~~~~~~~~~~~~~~~
+In file included from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc/cppmain.h:30,
+                 from ../Core/Inc/main.h:35,
+                 from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/adc.h:5,
+                 from ../Libs/Src/adc.c:1:
+C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/PD.h:16:8: warning: type defaults to 'int' in declaration of 'PD_correction_sc' [-Wimplicit-int]
+   16 | extern PD_correction_sc;
+      |        ^~~~~~~~~~~~~~~~
+../Libs/Src/display.c: In function 'displayUpdate':
+../Libs/Src/display.c:72:9: warning: enumeration value 'SPEED_ADJ' not handled in switch [-Wswitch]
+   72 |         switch (disp_state)
+      |         ^~~~~~
+In file included from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc/cppmain.h:30,
+                 from ../Core/Inc/main.h:35,
+                 from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/buzzer.h:4,
+                 from ../Libs/Src/buzzer.c:1:
+C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/PD.h:16:8: warning: type defaults to 'int' in declaration of 'PD_correction_sc' [-Wimplicit-int]
+   16 | extern PD_correction_sc;
+      |        ^~~~~~~~~~~~~~~~
+In file included from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc/cppmain.h:30,
+                 from ../Core/Inc/main.h:35,
+                 from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/encoder.h:5,
+                 from ../Libs/Src/encoder.c:1:
+C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/PD.h:16:8: warning: type defaults to 'int' in declaration of 'PD_correction_sc' [-Wimplicit-int]
+   16 | extern PD_correction_sc;
+      |        ^~~~~~~~~~~~~~~~
+In file included from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc/cppmain.h:30,
+                 from ../Program/Src/cppmain.cpp:6:
+C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/PD.h:16:8: error: 'PD_correction_sc' does not name a type
+   16 | extern PD_correction_sc;
+      |        ^~~~~~~~~~~~~~~~
+make: *** [Program/Src/subdir.mk:22: Program/Src/cppmain.o] Error 1
+In file included from C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc/cppmain.h:30,
+                 from ../Program/Src/floodfill.cpp:5:
+C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/PD.h:16:8: error: 'PD_correction_sc' does not name a type
+   16 | extern PD_correction_sc;
+      |        ^~~~~~~~~~~~~~~~
+make: *** [Program/Src/subdir.mk:22: Program/Src/floodfill.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:16:29 **** Incremental Build of configuration Debug for project coco_v2 ****
+make -j8 all 
+arm-none-eabi-g++ "../Program/Src/cppmain.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/cppmain.d" -MT"Program/Src/cppmain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/cppmain.o"
+arm-none-eabi-g++ "../Program/Src/floodfill.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/floodfill.d" -MT"Program/Src/floodfill.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/floodfill.o"
+arm-none-eabi-gcc "../Libs/Src/L3GD20.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/L3GD20.d" -MT"Libs/Src/L3GD20.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/L3GD20.o"
+arm-none-eabi-gcc "../Libs/Src/PD.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/PD.d" -MT"Libs/Src/PD.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/PD.o"
+arm-none-eabi-gcc "../Libs/Src/adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/adc.d" -MT"Libs/Src/adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/adc.o"
+arm-none-eabi-gcc "../Libs/Src/buzzer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/buzzer.d" -MT"Libs/Src/buzzer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/buzzer.o"
+arm-none-eabi-gcc "../Libs/Src/display.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/display.d" -MT"Libs/Src/display.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/display.o"
+arm-none-eabi-gcc "../Libs/Src/encoder.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/encoder.d" -MT"Libs/Src/encoder.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/encoder.o"
+../Libs/Src/PD.c:11:14: error: static declaration of 'PD_correction_sc' follows non-static declaration
+   11 | static float PD_correction_sc = 0, PD_correction_ac = 0, PD_correction_ir = 0;
+      |              ^~~~~~~~~~~~~~~~
+In file included from ../Libs/Src/PD.c:1:
+C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc/PD.h:16:14: note: previous declaration of 'PD_correction_sc' with type 'float'
+   16 | extern float PD_correction_sc;
+      |              ^~~~~~~~~~~~~~~~
+../Libs/Src/PD.c: In function 'finishMove':
+../Libs/Src/PD.c:56:9: warning: enumeration value 'IDLE' not handled in switch [-Wswitch]
+   56 |         switch (mv_type)
+      |         ^~~~~~
+make: *** [Libs/Src/subdir.mk:43: Libs/Src/PD.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Libs/Src/display.c: In function 'displayUpdate':
+../Libs/Src/display.c:72:9: warning: enumeration value 'SPEED_ADJ' not handled in switch [-Wswitch]
+   72 |         switch (disp_state)
+      |         ^~~~~~
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:17:28 **** Incremental Build of configuration Debug for project coco_v2 ****
+make -j8 all 
+arm-none-eabi-g++ "../Program/Src/cppmain.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/cppmain.d" -MT"Program/Src/cppmain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/cppmain.o"
+arm-none-eabi-g++ "../Program/Src/floodfill.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/floodfill.d" -MT"Program/Src/floodfill.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/floodfill.o"
+arm-none-eabi-gcc "../Libs/Src/L3GD20.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/L3GD20.d" -MT"Libs/Src/L3GD20.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/L3GD20.o"
+arm-none-eabi-gcc "../Libs/Src/PD.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/PD.d" -MT"Libs/Src/PD.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/PD.o"
+arm-none-eabi-gcc "../Libs/Src/adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/adc.d" -MT"Libs/Src/adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/adc.o"
+arm-none-eabi-gcc "../Libs/Src/buzzer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/buzzer.d" -MT"Libs/Src/buzzer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/buzzer.o"
+arm-none-eabi-gcc "../Libs/Src/display.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/display.d" -MT"Libs/Src/display.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/display.o"
+arm-none-eabi-gcc "../Libs/Src/encoder.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/encoder.d" -MT"Libs/Src/encoder.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/encoder.o"
+../Libs/Src/PD.c: In function 'finishMove':
+../Libs/Src/PD.c:56:9: warning: enumeration value 'IDLE' not handled in switch [-Wswitch]
+   56 |         switch (mv_type)
+      |         ^~~~~~
+../Libs/Src/display.c: In function 'displayUpdate':
+../Libs/Src/display.c:72:9: warning: enumeration value 'SPEED_ADJ' not handled in switch [-Wswitch]
+   72 |         switch (disp_state)
+      |         ^~~~~~
+arm-none-eabi-gcc "../Libs/Src/motor.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/motor.d" -MT"Libs/Src/motor.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/motor.o"
+arm-none-eabi-gcc "../Libs/Src/read_sensors.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/read_sensors.d" -MT"Libs/Src/read_sensors.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/read_sensors.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-g++ -o "coco_v2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ACER\Documents\GitHub\CocoV2-Micromouse-Team-MK-MAT\Firmware\main code\coco_v2\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="coco_v2.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: coco_v2.elf
+ 
+arm-none-eabi-size  coco_v2.elf 
+arm-none-eabi-objdump -h -S coco_v2.elf  > "coco_v2.list"
+   text	   data	    bss	    dec	    hex	filename
+ 210788	    832	   9608	 221228	  3602c	coco_v2.elf
+arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
+arm-none-eabi-objcopy  -O binary coco_v2.elf  "coco_v2.bin"
+Finished building: default.size.stdout
+ 
+Finished building: coco_v2.hex
+Finished building: coco_v2.bin
+ 
+ 
+Finished building: coco_v2.list
+ 
+21:20:30 **** Incremental Build of configuration Debug for project coco_v2 ****
+make -j8 all 
+arm-none-eabi-g++ "../Program/Src/cppmain.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/cppmain.d" -MT"Program/Src/cppmain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/cppmain.o"
+arm-none-eabi-g++ "../Program/Src/floodfill.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/floodfill.d" -MT"Program/Src/floodfill.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/floodfill.o"
+arm-none-eabi-gcc "../Libs/Src/L3GD20.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/L3GD20.d" -MT"Libs/Src/L3GD20.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/L3GD20.o"
+arm-none-eabi-gcc "../Libs/Src/PD.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/PD.d" -MT"Libs/Src/PD.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/PD.o"
+arm-none-eabi-gcc "../Libs/Src/adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/adc.d" -MT"Libs/Src/adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/adc.o"
+arm-none-eabi-gcc "../Libs/Src/buzzer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/buzzer.d" -MT"Libs/Src/buzzer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/buzzer.o"
+arm-none-eabi-gcc "../Libs/Src/display.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/display.d" -MT"Libs/Src/display.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/display.o"
+arm-none-eabi-gcc "../Libs/Src/encoder.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/encoder.d" -MT"Libs/Src/encoder.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/encoder.o"
+../Libs/Src/PD.c: In function 'finishMove':
+../Libs/Src/PD.c:56:9: warning: enumeration value 'IDLE' not handled in switch [-Wswitch]
+   56 |         switch (mv_type)
+      |         ^~~~~~
+../Libs/Src/display.c: In function 'displayUpdate':
+../Libs/Src/display.c:72:9: warning: enumeration value 'SPEED_ADJ' not handled in switch [-Wswitch]
+   72 |         switch (disp_state)
+      |         ^~~~~~
+arm-none-eabi-gcc "../Libs/Src/motor.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/motor.d" -MT"Libs/Src/motor.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/motor.o"
+arm-none-eabi-gcc "../Libs/Src/read_sensors.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/read_sensors.d" -MT"Libs/Src/read_sensors.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/read_sensors.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-g++ -o "coco_v2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ACER\Documents\GitHub\CocoV2-Micromouse-Team-MK-MAT\Firmware\main code\coco_v2\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="coco_v2.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: coco_v2.elf
+ 
+arm-none-eabi-size  coco_v2.elf 
+arm-none-eabi-objdump -h -S coco_v2.elf  > "coco_v2.list"
+   text	   data	    bss	    dec	    hex	filename
+ 210796	    832	   9608	 221236	  36034	coco_v2.elf
+arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
 arm-none-eabi-objcopy  -O binary coco_v2.elf  "coco_v2.bin"
 Finished building: default.size.stdout
  

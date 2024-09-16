@@ -7,7 +7,7 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:MicromouseFirmware\ Debug/activ
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:MicromouseFirmware\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SINDiB_Firmware_copy/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SINDiB_Firmware_copy/activeLaunchTarget=null\:---
-org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:coco_v2\ (1)/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:coco_v2\ (1)/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:coco_v2\ (1)/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:coco_v2/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:coco_v2/activeLaunchTarget=null\:---

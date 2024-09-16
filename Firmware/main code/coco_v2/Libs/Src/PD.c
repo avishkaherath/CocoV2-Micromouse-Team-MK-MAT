@@ -118,7 +118,7 @@ void assignParameters(void)
 		counts_ = dist_ang * TURN_SENSITIVITY;
 		speed_th_ = rt_speed;
 
-		sc_kp = 1.2, sc_kd = 0e-2, sc_red = 60; // 2e-3, 1e-3
+		sc_kp = 1.2, sc_kd = 1e-3, sc_red = 60; // 2e-3
 		ac_kp = 1, ac_kd = 3e-3, ac_red = 1000;
 		break;
 
@@ -145,10 +145,11 @@ void speedController(void)
 		break;
 
 	case POINT_TURN:
-		// ENCODER BASED TURN : sc_error  = (counts_ - (l_start - l_position)) + (counts_ - (r_position - r_start))
-		// sc_error = 2*counts_ - l_start + r_start, sc_error += l_position, sc_error -=r_position;                                    // BACK UP : ENCODER BASED TURN
+		// ENCODER BASED TURN :
+		sc_error  = (counts_ - (l_start - l_position)) + (counts_ - (r_position - r_start));
+//		sc_error = 2*counts_ - l_start + r_start, sc_error += l_position, sc_error -= r_position; // BACK UP : ENCODER BASED TURN
 		// GYRO BASED TURN
-		sc_error = (start_angle + dist_ang) - angle_z;
+//		sc_error = (start_angle + dist_ang) - angle_z;
 		break;
 
 	case FRONT_ALIGN:
