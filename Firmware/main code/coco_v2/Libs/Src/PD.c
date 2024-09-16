@@ -39,7 +39,7 @@ bool finishMove(MV_Type mv_type_, float dist_ang_)
 	speedController();
 
 	//	 TERMINATION CODITION
-	if (fabs(PD_correction_sc) < fabs(TERMINATION_TH) || (current_time - start_time > 2000) ||( (current_time - last_exit_time) > 100 && last_exit_time != 0))
+	if (fabs(PD_correction_sc) < fabs(TERMINATION_TH) || (current_time - start_time > 4000) ||( (current_time - last_exit_time) > 100 && last_exit_time != 0))
 	{
 		if (fm_counter > 5)
 		{
@@ -60,8 +60,8 @@ bool finishMove(MV_Type mv_type_, float dist_ang_)
 		r_speed = PD_correction_sc; // + PD_correction_ac - PD_correction_ir;
 		break;
 	case POINT_TURN:
-		l_speed = -PD_correction_sc + PD_correction_ac;
-		r_speed = +PD_correction_sc - PD_correction_ac;
+		l_speed = -PD_correction_sc; // + PD_correction_ac;
+		r_speed = +PD_correction_sc; // - PD_correction_ac;
 		break;
 	case FRONT_ALIGN:
 		l_speed = -PD_correction_sc ;
@@ -102,7 +102,7 @@ void assignParameters(void)
 		}
 		else if (fabs(st_speed - 0.8) < .05)
 		{
-			sc_kp = 1.1, sc_kd = 0, sc_red = 400;
+			sc_kp = 1.0, sc_kd = 50e-3, sc_red = 400;
 			ac_kp = 1.3, ac_kd = 1e-3, ac_red = 500;
 			ir_kp = 1, ir_kd = 1e-3, ir_red = 2000;
 		}
@@ -118,7 +118,7 @@ void assignParameters(void)
 		counts_ = dist_ang * TURN_SENSITIVITY;
 		speed_th_ = rt_speed;
 
-		sc_kp = 1.2, sc_kd = 1e-2, sc_red = 60; // 2e-3
+		sc_kp = 1.2, sc_kd = 0e-2, sc_red = 60; // 2e-3, 1e-3
 		ac_kp = 1, ac_kd = 3e-3, ac_red = 1000;
 		break;
 

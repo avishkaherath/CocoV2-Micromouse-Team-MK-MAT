@@ -82,36 +82,32 @@ int cppmain(void)
 //	HAL_Delay(2000);
 //	STOP_ROBOT;
 
-	while (1)
-	{
-//		if (finishMove(STRAIGHT_RUN, 10))
-//		{
-//			STOP_ROBOT;
-//			HAL_Delay(1000);
-////			runState = 5;
-//
-//		}
+//	while (1)
+//	{
 //		left_pos = l_position;
 //		right_pos = r_position;
-		playSound(TONE1);
-		HAL_Delay(1000);
-		playSound(TONE2);
-		HAL_Delay(1000);
-		playSound(TONE3);
-		HAL_Delay(1000);
-		playSound(TONE4);
-		HAL_Delay(1000);
-		playSound(WIN_TONE);
-		HAL_Delay(1000);
-
-	}
-//	while(1)
-//	{
-//		setLeftWheel(l_speed);
-//		HAL_Delay(100);
-//		setRightWheel(r_speed);
-//		HAL_Delay(100);
+//		playSound(TONE1);
+//		HAL_Delay(1000);
+//		playSound(TONE2);
+//		HAL_Delay(1000);
+//		playSound(TONE3);
+//		HAL_Delay(1000);
+//		playSound(TONE4);
+//		HAL_Delay(1000);
+//		playSound(WIN_TONE);
+//		HAL_Delay(1000);
+//
 //	}
+	while(1)
+	{
+		if (finishMove(POINT_TURN, 90))
+		{
+			STOP_ROBOT;
+			HAL_Delay(500);
+//			break;
+		}
+		HAL_Delay(1);
+	}
 }
 
 int initialization_block(void)
