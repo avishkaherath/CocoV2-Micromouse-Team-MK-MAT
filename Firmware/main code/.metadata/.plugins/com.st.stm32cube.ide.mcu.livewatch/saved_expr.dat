@@ -1,1 +1,3 @@
-gyro_reading
+left_pos
+right_pos
+PD_correction_sc

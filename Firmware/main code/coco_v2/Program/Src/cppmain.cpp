@@ -100,10 +100,11 @@ int cppmain(void)
 //	}
 	while(1)
 	{
-		if (finishMove(POINT_TURN, 90))
+		if (finishMove(STRAIGHT_RUN, 18))
 		{
+			resetEncoder();
 			STOP_ROBOT;
-			HAL_Delay(500);
+			HAL_Delay(1000);
 //			break;
 		}
 		left_pos = l_position;

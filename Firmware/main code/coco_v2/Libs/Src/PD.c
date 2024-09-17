@@ -13,12 +13,11 @@ static float sc_last_error = 0, ac_last_error = 0, ir_last_error = 0;
 
 /////////////////////////////////////////////////// CONTROLLER /////////////////////////////////////////////////////////////////
 static int fm_counter = 0;
-const float TERMINATION_TH = 4e-2;
+const float TERMINATION_TH = 1e-1;
 bool align_select = false;
 
 bool finishMove(MV_Type mv_type_, float dist_ang_)
 {
-
 	mv_type = mv_type_, dist_ang = dist_ang_;
 	current_time = HAL_GetTick();
 
@@ -56,12 +55,12 @@ bool finishMove(MV_Type mv_type_, float dist_ang_)
 	switch (mv_type)
 	{
 	case STRAIGHT_RUN:
-		l_speed = PD_correction_sc; //- PD_correction_ac + PD_correction_ir;
-		r_speed = PD_correction_sc; // + PD_correction_ac - PD_correction_ir;
+		l_speed = PD_correction_sc - PD_correction_ac; // + PD_correction_ir;
+		r_speed = PD_correction_sc + PD_correction_ac; // - PD_correction_ir;
 		break;
 	case POINT_TURN:
-		l_speed = -PD_correction_sc; // + PD_correction_ac;
-		r_speed = +PD_correction_sc; // - PD_correction_ac;
+		l_speed = +PD_correction_ac; // - PD_correction_sc;
+		r_speed = -PD_correction_ac; // + PD_correction_sc;
 		break;
 	case FRONT_ALIGN:
 		l_speed = -PD_correction_sc ;
@@ -118,7 +117,7 @@ void assignParameters(void)
 		counts_ = dist_ang * TURN_SENSITIVITY;
 		speed_th_ = rt_speed;
 
-		sc_kp = 1.2, sc_kd = 1e-3, sc_red = 60; // 2e-3
+		sc_kp = 1.35, sc_kd = 60e-3, sc_red = 60; // 2e-3, 1e-3
 		ac_kp = 1, ac_kd = 3e-3, ac_red = 1000;
 		break;
 
@@ -146,10 +145,10 @@ void speedController(void)
 
 	case POINT_TURN:
 		// ENCODER BASED TURN :
-		sc_error  = (counts_ - (l_start - l_position)) + (counts_ - (r_position - r_start));
+//		sc_error  = (counts_ - (l_start - l_position)) + (counts_ - (r_position - r_start));
 //		sc_error = 2*counts_ - l_start + r_start, sc_error += l_position, sc_error -= r_position; // BACK UP : ENCODER BASED TURN
 		// GYRO BASED TURN
-//		sc_error = (start_angle + dist_ang) - angle_z;
+		sc_error = (start_angle + dist_ang) - angle_z;
 		break;
 
 	case FRONT_ALIGN:
@@ -158,7 +157,14 @@ void speedController(void)
 	}
 
 	PD_correction_sc = (float)(sc_kp * sc_error + sc_kd * 1e3 * (sc_error - sc_last_error) / (current_time - previous_time)) / sc_red;
+
+	if (fabs(sc_error-sc_last_error)>1e-3)
+	{
+		last_exit_time = current_time;
+	}
+
 	sc_last_error = sc_error;
+
 	if (fabs(PD_correction_sc) > speed_th_)
 	{
 		PD_correction_sc = (PD_correction_sc > 0) ? speed_th_ : -speed_th_;
@@ -199,7 +205,7 @@ void angularController(void)
 		break;
 	}
 
-	PD_correction_ac = (ac_kp * ac_error + sc_kd * 1e3 * (sc_error - sc_last_error) / (current_time - previous_time)) / ac_red;
+	PD_correction_ac = (ac_kp * ac_error + sc_kd * 1e3 * (ac_error - ac_last_error) / (current_time - previous_time)) / ac_red;
 	ac_last_error = ac_error;
 	if (fabs(PD_correction_ac) > .5 * speed_th_)
 		PD_correction_ac = (PD_correction_ac > 0) ? .5 * speed_th_ : -.5 * speed_th_;
