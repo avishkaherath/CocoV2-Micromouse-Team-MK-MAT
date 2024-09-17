@@ -1,5 +1,0 @@
-../Program/Src/cppmain.cpp:43:5:int cppmain()	8	static
-../Program/Src/cppmain.cpp:85:5:int initialization_block()	8	static
-../Program/Src/cppmain.cpp:107:6:void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)	16	static
-../Program/Src/cppmain.cpp:118:6:void HAL_GPIO_EXTI_Callback(uint16_t)	16	static,ignoring_inline_asm
-../Program/Src/cppmain.cpp:130:6:void mouseRun()	32	static

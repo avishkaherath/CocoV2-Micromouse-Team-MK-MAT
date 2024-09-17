@@ -39,6 +39,7 @@ int fwdPtr;
 int16_t gyro_reading;
 uint32_t left_pos;
 uint32_t right_pos;
+uint16_t m_reciever,l_reciever,r_reciever,rf_reciever,lf_reciever,dl_reciever,dr_reciever;
 
 void mouseRun();
 
@@ -100,16 +101,68 @@ int cppmain(void)
 //	}
 	while(1)
 	{
-		if (finishMove(STRAIGHT_RUN, 18))
-		{
-			resetEncoder();
-			STOP_ROBOT;
-			HAL_Delay(1000);
-//			break;
-		}
-		left_pos = l_position;
-		right_pos = r_position;
-		HAL_Delay(1);
+
+//		m_reciever   = readADC(M_RECEIVER, 1);
+		LF_EM_ON;
+		HAL_Delay(1000);
+		lf_reciever  = readADC(LF_RECEIVER, 1);
+		LF_EM_OFF;
+		HAL_Delay(100);
+
+		RF_EM_ON;
+		HAL_Delay(1000);
+		rf_reciever  = readADC(RF_RECEIVER, 1);
+		RF_EM_OFF;
+		HAL_Delay(100);
+
+		L_EM_ON;
+		HAL_Delay(1000);
+		l_reciever   = readADC(L_RECEIVER, 1);
+		L_EM_OFF;
+		HAL_Delay(100);
+
+		R_EM_ON;
+		HAL_Delay(1000);
+		r_reciever   = readADC(R_RECEIVER, 1);
+		R_EM_OFF;
+		HAL_Delay(100);
+
+		D_EM_ON;
+		HAL_Delay(1000);
+		dl_reciever  = readADC(DL_RECEIVER, 1);
+		D_EM_OFF;
+		HAL_Delay(100);
+
+		D_EM_ON;
+		HAL_Delay(1000);
+		dr_reciever  = readADC(DR_RECEIVER, 1);
+		D_EM_OFF;
+		HAL_Delay(100);
+
+
+
+
+
+
+//		if (finishMove(STRAIGHT_RUN, 18))
+//		{
+//			resetEncoder();
+//			STOP_ROBOT;
+//			HAL_Delay(1000);
+////			break;
+//		}
+//		left_pos = l_position;
+//		right_pos = r_position;
+//		LF_EM_ON;
+//		HAL_Delay(2000);
+//	    LF_EM_OFF;
+////		HAL_Delay(2000);
+//
+//		RF_EM_ON;
+//		HAL_Delay(2000);
+//		RF_EM_OFF;
+//		HAL_Delay(2000);
+
 	}
 }
 

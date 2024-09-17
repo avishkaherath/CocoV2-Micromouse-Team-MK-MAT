@@ -32,7 +32,7 @@ uint16_t readADC(adc_channels channel, uint8_t timeout)
             break;
 
         case M_RECEIVER:
-        	sConfig.Channel = ADC_CHANNEL_15;
+        	sConfig.Channel = ADC_CHANNEL_13;
             break;
 
         case BAT_VOL:
