@@ -31,7 +31,7 @@ void readSensor(void)
 {
 	LED7_ON;
 
-	__HAL_TIM_SET_COUNTER(&htim1,0);
+	__HAL_TIM_SET_COUNTER(&htim5,0);
 	//read DC value	
 	LFSensor = read_LF_Sensor;	
 	RFSensor = read_RF_Sensor;	
@@ -41,25 +41,27 @@ void readSensor(void)
 	
     //left front sensor
 	LF_EM_ON;
+	while(__HAL_TIM_GET_COUNTER(&htim5)<60);
 	LFSensor = read_LF_Sensor - LFSensor;
-	while(__HAL_TIM_GET_COUNTER(&htim1)<60);
+
 	LF_EM_OFF;
 	if(LFSensor < 0)//error check
 		LFSensor = 0;
-	while(__HAL_TIM_GET_COUNTER(&htim1)<140);
+	while(__HAL_TIM_GET_COUNTER(&htim5)<140);
 
 	//right front sensor
 	RF_EM_ON;
+	while(__HAL_TIM_GET_COUNTER(&htim5)<200);
 	RFSensor = read_RF_Sensor - RFSensor;
-	while(__HAL_TIM_GET_COUNTER(&htim1)<200);
+
 	RF_EM_OFF;
 	if(RFSensor < 0)
 		RFSensor = 0;
-	while(__HAL_TIM_GET_COUNTER(&htim1)<280);
+	while(__HAL_TIM_GET_COUNTER(&htim5)<280);
 
     //diagonal sensors
 	D_EM_ON;
-	while(__HAL_TIM_GET_COUNTER(&htim1)<340);
+	while(__HAL_TIM_GET_COUNTER(&htim5)<340);
 	DLSensor = read_DL_Sensor - DLSensor;
 	DRSensor = read_DR_Sensor - DRSensor;
 	D_EM_OFF;
@@ -108,9 +110,7 @@ void stop_it_all(void){
 	OFF_BUZZ;
 	STOP_ROBOT;
 	ALL_LED_OFF;
-	TIM6_IT_STOP;
 	TIM13_IT_STOP;
-	TIM14_IT_STOP;
 	return;
 }
 

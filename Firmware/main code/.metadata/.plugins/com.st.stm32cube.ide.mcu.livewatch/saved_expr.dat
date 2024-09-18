@@ -1,4 +1,11 @@
 left_pos
 right_pos
 PD_correction_sc
-m_sensor
+m_reciever
+lf_reciever
+rf_reciever
+l_reciever
+r_reciever
+dl_reciever
+dr_reciever
+buttonPress

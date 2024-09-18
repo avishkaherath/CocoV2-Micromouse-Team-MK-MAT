@@ -55,12 +55,12 @@ bool finishMove(MV_Type mv_type_, float dist_ang_)
 	switch (mv_type)
 	{
 	case STRAIGHT_RUN:
-		l_speed = PD_correction_sc - PD_correction_ac; // + PD_correction_ir;
-		r_speed = PD_correction_sc + PD_correction_ac; // - PD_correction_ir;
+		l_speed = PD_correction_sc - PD_correction_ac + PD_correction_ir;
+		r_speed = PD_correction_sc + PD_correction_ac - PD_correction_ir;
 		break;
 	case POINT_TURN:
-		l_speed = +PD_correction_ac; // - PD_correction_sc;
-		r_speed = -PD_correction_ac; // + PD_correction_sc;
+		l_speed = +PD_correction_ac - PD_correction_sc;
+		r_speed = -PD_correction_ac + PD_correction_sc;
 		break;
 	case FRONT_ALIGN:
 		l_speed = -PD_correction_sc ;

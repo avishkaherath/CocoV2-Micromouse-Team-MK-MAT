@@ -23,15 +23,15 @@
 //#define SSD1306_USE_SPI
 
 // I2C Configuration
-//#define SSD1306_I2C_PORT        hi2c1
-//#define SSD1306_I2C_ADDR        (0x3C << 1)
+#define SSD1306_I2C_PORT        hi2c1
+#define SSD1306_I2C_ADDR       (0x3c << 1)
 
 // SPI Configuration
-#define SSD1306_SPI_PORT        hspi2
-#define SSD1306_CS_Port         GPIOC
-#define SSD1306_CS_Pin          GPIO_PIN_6
-#define SSD1306_DC_Port         GPIOC
-#define SSD1306_DC_Pin          GPIO_PIN_2
+//#define SSD1306_SPI_PORT        hspi2
+//#define SSD1306_CS_Port         GPIOC
+//#define SSD1306_CS_Pin          GPIO_PIN_6
+//#define SSD1306_DC_Port         GPIOC
+//#define SSD1306_DC_Pin          GPIO_PIN_2
 //#define SSD1306_Reset_Port      OLED_Res_GPIO_Port
 //#define SSD1306_Reset_Pin       OLED_Res_Pin
 
@@ -61,6 +61,6 @@
 
 // The height can be changed as well if necessary.
 // It can be 32, 64 or 128. The default value is 64.
- #define SSD1306_HEIGHT          32
+ #define SSD1306_HEIGHT          64
 
 #endif /* __SSD1306_CONF_H__ */

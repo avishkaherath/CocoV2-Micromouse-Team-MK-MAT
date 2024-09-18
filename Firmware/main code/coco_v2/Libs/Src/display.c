@@ -167,4 +167,5 @@ void displayUpdate(void)
 	}
 	ssd1306_UpdateScreen();
 	LED6_TOG;
+	return;
 }

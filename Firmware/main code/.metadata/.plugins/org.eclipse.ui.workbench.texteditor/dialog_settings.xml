@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="align_select"/>
+		<item key="selection" value="disp_state"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="disp_state"/>
+			<item value="htim14"/>
+			<item value="TIM7"/>
 			<item value="align_select"/>
 			<item value="last_exit_time"/>
 			<item value="sc_red"/>

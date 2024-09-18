@@ -68,7 +68,6 @@ extern TIM_HandleTypeDef htim2;
 extern TIM_HandleTypeDef htim3;
 extern TIM_HandleTypeDef htim4;
 extern TIM_HandleTypeDef htim5;
-extern TIM_HandleTypeDef htim6;
 extern TIM_HandleTypeDef htim13;
 extern TIM_HandleTypeDef htim14;
 
@@ -76,17 +75,17 @@ extern UART_HandleTypeDef huart3;
 
 #define TIM5_START HAL_TIM_Base_Start(&htim5)
 #define TIM5_STOP HAL_TIM_Base_Stop(&htim5)
-#define TIM6_IT_START HAL_TIM_Base_Start_IT(&htim6)
-#define TIM6_IT_STOP HAL_TIM_Base_Stop_IT(&htim6)
 #define TIM13_IT_START HAL_TIM_Base_Start_IT(&htim13)
 #define TIM13_IT_STOP HAL_TIM_Base_Stop_IT(&htim13)
 #define TIM14_IT_START HAL_TIM_Base_Start_IT(&htim14)
 #define TIM14_IT_STOP HAL_TIM_Base_Stop_IT(&htim14)
+
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
 #define TB_Pin GPIO_PIN_13
 #define TB_GPIO_Port GPIOC
+#define TB_EXTI_IRQn EXTI15_10_IRQn
 #define RF_EMITTER_Pin GPIO_PIN_14
 #define RF_EMITTER_GPIO_Port GPIOC
 #define D_EMITTER_Pin GPIO_PIN_15
@@ -169,8 +168,6 @@ extern UART_HandleTypeDef huart3;
 #define LPWMB_GPIO_Port GPIOB
 #define LED1_Pin GPIO_PIN_4
 #define LED1_GPIO_Port GPIOB
-#define BOOT0_Pin GPIO_PIN_5
-#define BOOT0_GPIO_Port GPIOB
 #define ENC_RB_Pin GPIO_PIN_6
 #define ENC_RB_GPIO_Port GPIOB
 #define ENC_RA_Pin GPIO_PIN_7

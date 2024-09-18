@@ -47,122 +47,32 @@ int cppmain(void)
 {
 
 	initialization_block();
-//	__HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_1,450);
 
+	if (orient == 1)
+	{
+		XY.x = 1;
+		XY.y = 0;
+		cells[0][0] = 10;
+	}
+	else
+	{
+		XY.x = 0;
+		XY.y = 1;
+		cells[0][0] = 9;
+	}
 
-	HAL_Delay(100);
-//	displayInit();
-//	disp_state = DEFAULT;
-//
-//	if (orient == 1)
-//	{
-//
-//		XY.x = 1;
-//		XY.y = 0;
-//		cells[0][0] = 10;
-//	}
-//	else
-//	{
-//		XY.x = 0;
-//		XY.y = 1;
-//		cells[0][0] = 9;
-//	}
-//
-//	XY_prev.y = 0;
-//	XY_prev.x = 0;
-//	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3); // RPWMA
-//	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1); // RPWMB
-//
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 2048); // RPWMA
-//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0); // RPWMB
+	XY_prev.y = 0;
+	XY_prev.x = 0;
 
-//	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
-//	__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 700);
-//	setLeftWheel(0.5);
-//	setRightWheel(0.5);
-//	HAL_Delay(2000);
-//	STOP_ROBOT;
-
-//	while (1)
-//	{
-//		left_pos = l_position;
-//		right_pos = r_position;
-//		playSound(TONE1);
-//		HAL_Delay(1000);
-//		playSound(TONE2);
-//		HAL_Delay(1000);
-//		playSound(TONE3);
-//		HAL_Delay(1000);
-//		playSound(TONE4);
-//		HAL_Delay(1000);
-//		playSound(WIN_TONE);
-//		HAL_Delay(1000);
-//
-//	}
 	while(1)
 	{
-
-//		m_reciever   = readADC(M_RECEIVER, 1);
-		LF_EM_ON;
-		HAL_Delay(1000);
-		lf_reciever  = readADC(LF_RECEIVER, 1);
-		LF_EM_OFF;
-		HAL_Delay(100);
-
-		RF_EM_ON;
-		HAL_Delay(1000);
-		rf_reciever  = readADC(RF_RECEIVER, 1);
-		RF_EM_OFF;
-		HAL_Delay(100);
-
-		L_EM_ON;
-		HAL_Delay(1000);
-		l_reciever   = readADC(L_RECEIVER, 1);
-		L_EM_OFF;
-		HAL_Delay(100);
-
-		R_EM_ON;
-		HAL_Delay(1000);
-		r_reciever   = readADC(R_RECEIVER, 1);
-		R_EM_OFF;
-		HAL_Delay(100);
-
-		D_EM_ON;
-		HAL_Delay(1000);
-		dl_reciever  = readADC(DL_RECEIVER, 1);
-		D_EM_OFF;
-		HAL_Delay(100);
-
-		D_EM_ON;
-		HAL_Delay(1000);
-		dr_reciever  = readADC(DR_RECEIVER, 1);
-		D_EM_OFF;
-		HAL_Delay(100);
-
-
-
-
-
-
-//		if (finishMove(STRAIGHT_RUN, 18))
-//		{
-//			resetEncoder();
-//			STOP_ROBOT;
-//			HAL_Delay(1000);
-////			break;
-//		}
-//		left_pos = l_position;
-//		right_pos = r_position;
-//		LF_EM_ON;
-//		HAL_Delay(2000);
-//	    LF_EM_OFF;
-////		HAL_Delay(2000);
-//
-//		RF_EM_ON;
-//		HAL_Delay(2000);
-//		RF_EM_OFF;
-//		HAL_Delay(2000);
-
+		mouseRun();
+		i++;
+		HAL_Delay(1);
+//		ALL_LED_ON;
+//		HAL_Delay(1000);
+//		ALL_LED_OFF;
+//		HAL_Delay(1000);
 	}
 }
 
@@ -170,33 +80,32 @@ int initialization_block(void)
 {
 	ALL_LED_ON;
 	TIM5_START; ////////////////// CRUCIAL PART DON"T OFFFFFFFFFFFFFFFF ///////////////////////////
-	//TIM6_IT_START;
+	HAL_Delay(1000);
 
 	motorInit();
 	encoderInit();
 	gyroInit();
-	displayInit();
-//	buzzerInit();
 
-	ALL_LED_OFF;
-	HAL_Delay(200);
-	gyroCalibration();
+	displayInit();
 	disp_state = DEFAULT;
-	//TIM13_IT_START;
-	//TIM14_IT_START;
+
+	buzzerInit();
+	gyroCalibration();
+
+	TIM13_IT_START;
+	HAL_Delay(1000);
+	TIM14_IT_START;
+	ALL_LED_OFF;
 
 	return 0;
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-	if (htim == &htim14)
-		;
-	else if (htim == &htim13)
-		gyroUpdate(),
-			readSensor();
-	else if (htim == &htim6)
-		displayUpdate();
+	if (htim == &htim13)
+		gyroUpdate(),readSensor();
+	else if (htim == &htim14)
+		;//displayUpdate();
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
