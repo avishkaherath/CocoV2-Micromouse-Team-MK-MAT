@@ -1,23 +1,10 @@
-14:46:47 **** Incremental Build of configuration Debug for project coco_v2 ****
+18:14:16 **** Build of configuration Debug for project coco_v2 ****
 make -j8 all 
-arm-none-eabi-g++ "../Program/Src/cppmain.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Program/Src/cppmain.d" -MT"Program/Src/cppmain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Program/Src/cppmain.o"
-arm-none-eabi-g++ -o "coco_v2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ACER\Documents\GitHub\CocoV2-Micromouse-Team-MK-MAT\Firmware\main code\coco_v2\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="coco_v2.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
-Finished building target: coco_v2.elf
- 
 arm-none-eabi-size  coco_v2.elf 
-arm-none-eabi-objdump -h -S coco_v2.elf  > "coco_v2.list"
-arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
    text	   data	    bss	    dec	    hex	filename
- 237900	   3664	  10112	 251676	  3d71c	coco_v2.elf
-arm-none-eabi-objcopy  -O binary coco_v2.elf  "coco_v2.bin"
+ 207212	   1608	   9896	 218716	  3565c	coco_v2.elf
 Finished building: default.size.stdout
  
-Finished building: coco_v2.hex
-Finished building: coco_v2.bin
- 
- 
-Finished building: coco_v2.list
- 
 
-14:46:49 Build Finished. 0 errors, 0 warnings. (took 2s.96ms)
+18:14:17 Build Finished. 0 errors, 0 warnings. (took 453ms)
 

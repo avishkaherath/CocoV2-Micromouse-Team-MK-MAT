@@ -20,12 +20,14 @@ int32_t LLSensor_bg = 0;
 int32_t RRSensor_bg = 0;
 
 // dc offset due to the reflections from robot itself
-int32_t LFSensor_DC = 1965;
+int32_t LFSensor_DC = 2000;
 int32_t RFSensor_DC = 1330;
 int32_t DLSensor_DC = 1560;
 int32_t DRSensor_DC = 745;
 int32_t LLSensor_DC = 0;
 int32_t RRSensor_DC = 0;
+
+int32_t count=0;
 
 static int32_t LBuff[15] = {0};
 static int32_t RBuff[15] = {0};
@@ -61,53 +63,54 @@ void readSensor(void)
 
     //left front sensor
 	LF_EM_ON;
-	start_count = __HAL_TIM_GET_COUNTER(&htim5);
-	while(__HAL_TIM_GET_COUNTER(&htim5)<start_count + elapse_count);
+//	start_count = __HAL_TIM_GET_COUNTER(&htim5);
+	while(__HAL_TIM_GET_COUNTER(&htim5)< 60); //start_count + elapse_count);
 	LFSensor = read_LF_Sensor - LFSensor_bg - LFSensor_DC;
 	LF_EM_OFF;
-	start_count = __HAL_TIM_GET_COUNTER(&htim5);
+//	start_count = __HAL_TIM_GET_COUNTER(&htim5);
 	if(LFSensor < 0)//error check
 		LFSensor = 0;
-	while(__HAL_TIM_GET_COUNTER(&htim5)<start_count + elapse_count);
+	while(__HAL_TIM_GET_COUNTER(&htim5)<140); //start_count + elapse_count);
 
     //right side sensor
-	R_EM_ON;
-	start_count = __HAL_TIM_GET_COUNTER(&htim5);
-	while(__HAL_TIM_GET_COUNTER(&htim5)<start_count + elapse_count);
-	RRSensor = read_RR_Sensor - RRSensor_bg - RRSensor_DC;
-	R_EM_OFF;
-	start_count = __HAL_TIM_GET_COUNTER(&htim5);
-	if(RRSensor < 0)//error check
-		RRSensor = 0;
-	while(__HAL_TIM_GET_COUNTER(&htim5)<start_count + elapse_count);
-
-    //Left side sensor
-	L_EM_ON;
-	start_count = __HAL_TIM_GET_COUNTER(&htim5);
-	while(__HAL_TIM_GET_COUNTER(&htim5)<start_count + elapse_count);
-	LLSensor = read_LL_Sensor - LLSensor_bg - LLSensor_DC;
-	L_EM_OFF;
-	start_count = __HAL_TIM_GET_COUNTER(&htim5);
-	if(LLSensor < 0)//error check
-		LLSensor = 0;
-	while(__HAL_TIM_GET_COUNTER(&htim5)<start_count + elapse_count);
+//	R_EM_ON;
+//	start_count = __HAL_TIM_GET_COUNTER(&htim5);
+//	while(__HAL_TIM_GET_COUNTER(&htim5)<start_count + elapse_count);
+//	RRSensor = read_RR_Sensor - RRSensor_bg - RRSensor_DC;
+//	R_EM_OFF;
+//	start_count = __HAL_TIM_GET_COUNTER(&htim5);
+//	if(RRSensor < 0)//error check
+//		RRSensor = 0;
+//	while(__HAL_TIM_GET_COUNTER(&htim5)<start_count + elapse_count);
+//
+//    //Left side sensor
+//	L_EM_ON;
+//	start_count = __HAL_TIM_GET_COUNTER(&htim5);
+//	while(__HAL_TIM_GET_COUNTER(&htim5)<start_count + elapse_count);
+//	LLSensor = read_LL_Sensor - LLSensor_bg - LLSensor_DC;
+//	L_EM_OFF;
+//	start_count = __HAL_TIM_GET_COUNTER(&htim5);
+//	if(LLSensor < 0)//error check
+//		LLSensor = 0;
+//	while(__HAL_TIM_GET_COUNTER(&htim5)<start_count + elapse_count);
 
 	//right front sensor
 	RF_EM_ON;
-	start_count = __HAL_TIM_GET_COUNTER(&htim5);
-	while(__HAL_TIM_GET_COUNTER(&htim5)<start_count + elapse_count);
+//	start_count = __HAL_TIM_GET_COUNTER(&htim5);
+	while(__HAL_TIM_GET_COUNTER(&htim5)<200); //start_count + elapse_count);
 	RFSensor = read_RF_Sensor - RFSensor_bg - RFSensor_DC;
 	RF_EM_OFF;
-	start_count = __HAL_TIM_GET_COUNTER(&htim5);
+//	start_count = __HAL_TIM_GET_COUNTER(&htim5);
 	if(RFSensor < 0)
 		RFSensor = 0;
-	while(__HAL_TIM_GET_COUNTER(&htim5)<start_count + elapse_count);
+	while(__HAL_TIM_GET_COUNTER(&htim5)<280); //start_count + elapse_count);
 
 
     //diagonal sensors
 	D_EM_ON;
-	start_count = __HAL_TIM_GET_COUNTER(&htim5);
-	while(__HAL_TIM_GET_COUNTER(&htim5)<start_count + elapse_count);
+//	start_count = __HAL_TIM_GET_COUNTER(&htim5);
+	while(__HAL_TIM_GET_COUNTER(&htim5)<340); //start_count + elapse_count);
+	count = __HAL_TIM_GET_COUNTER(&htim5);
 	DLSensor = read_DL_Sensor - DLSensor_bg - DLSensor_DC;
 	DRSensor = read_DR_Sensor - DRSensor_bg - DRSensor_DC;
 	D_EM_OFF;
@@ -116,6 +119,7 @@ void readSensor(void)
 	if(DRSensor < 0)
 		DRSensor = 0;
 	// while(__HAL_TIM_GET_COUNTER(&htim1)<500);
+
 
 	readVolMeter();
 //

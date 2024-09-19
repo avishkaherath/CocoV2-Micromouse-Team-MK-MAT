@@ -29,6 +29,7 @@ extern int32_t DLSensor_bg;
 extern int32_t DRSensor_bg;
 extern int32_t RSensor_bg;
 extern int32_t LSensor_bg;
+extern int32_t count;
 
 extern bool L;
 extern bool R;
