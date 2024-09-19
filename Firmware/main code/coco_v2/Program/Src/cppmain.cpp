@@ -66,9 +66,35 @@ int cppmain(void)
 
 	while(1)
 	{
-		mouseRun();
-		i++;
+//		LF_EM_ON;
+//		HAL_Delay(1);
+//		lf_reciever = readADC(LF_RECEIVER,2);
+//		LF_EM_OFF;
+//		HAL_Delay(1);
+//
+//		RF_EM_ON;
+//		HAL_Delay(1);
+//		rf_reciever = readADC(RF_RECEIVER,2);
+//		RF_EM_OFF;
+//		HAL_Delay(1);
+//
+//		D_EM_ON;
+//		HAL_Delay(1);
+//		dl_reciever = readADC(DL_RECEIVER,2);
+//		D_EM_OFF;
+//		HAL_Delay(1);
+//
+//		D_EM_ON;
+//		HAL_Delay(1);
+//		dr_reciever = readADC(DR_RECEIVER,2);
+//		D_EM_OFF;
 		HAL_Delay(1);
+
+
+
+//		mouseRun();
+//		i++;
+//		HAL_Delay(1);
 //		ALL_LED_ON;
 //		HAL_Delay(1000);
 //		ALL_LED_OFF;
@@ -89,7 +115,7 @@ int initialization_block(void)
 	displayInit();
 	disp_state = DEFAULT;
 
-	buzzerInit();
+//	buzzerInit();
 	gyroCalibration();
 
 	TIM13_IT_START;
@@ -103,6 +129,7 @@ int initialization_block(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if (htim == &htim13)
+
 		gyroUpdate(),readSensor();
 	else if (htim == &htim14)
 		;//displayUpdate();

@@ -23,6 +23,13 @@ extern int32_t DRSensor;
 extern int32_t RSensor;
 extern int32_t LSensor;
 
+extern int32_t LFSensor_bg;
+extern int32_t RFSensor_bg;
+extern int32_t DLSensor_bg;
+extern int32_t DRSensor_bg;
+extern int32_t RSensor_bg;
+extern int32_t LSensor_bg;
+
 extern bool L;
 extern bool R;
 extern bool F;
