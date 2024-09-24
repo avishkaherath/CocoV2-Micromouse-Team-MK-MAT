@@ -6,7 +6,7 @@
 #include "typedefs.h"
 
 
-#define _ENCODER_START (u32)u32_max/10  //1e4
+#define _ENCODER_START (u32)u32_max/2  //1e4
 #define l_position TIM1 -> CNT
 #define r_position TIM4 -> CNT
 

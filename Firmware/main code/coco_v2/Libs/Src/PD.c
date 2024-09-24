@@ -24,6 +24,7 @@ bool finishMove(MV_Type mv_type_, float dist_ang_)
 	// FIRST CALL
 	if (l_start == 0)
 	{
+		resetEncoder();
 		l_start = l_position, r_start = r_position, start_angle = angle_z;
 		(mv_type == STRAIGHT_RUN) ? LED1_ON : ((mv_type == POINT_TURN) ? LED2_ON : LED3_ON);
 		sc_last_error = 0, ac_last_error = 0, fm_counter = 0;
@@ -59,8 +60,8 @@ bool finishMove(MV_Type mv_type_, float dist_ang_)
 		r_speed = PD_correction_sc + PD_correction_ac - PD_correction_ir;
 		break;
 	case POINT_TURN:
-		l_speed = +PD_correction_ac - PD_correction_sc;
-		r_speed = -PD_correction_ac + PD_correction_sc;
+		l_speed = -PD_correction_sc;// + PD_correction_ac;
+		r_speed = +PD_correction_sc;// - PD_correction_ac;
 		break;
 	case FRONT_ALIGN:
 		l_speed = -PD_correction_sc ;
@@ -145,7 +146,7 @@ void speedController(void)
 
 	case POINT_TURN:
 		// ENCODER BASED TURN :
-//		sc_error  = (counts_ - (l_start - l_position)) + (counts_ - (r_position - r_start));
+//		sc_error  = (counts_ - (l_start - l_position)) + (counts_ + (r_start - r_position));
 //		sc_error = 2*counts_ - l_start + r_start, sc_error += l_position, sc_error -= r_position; // BACK UP : ENCODER BASED TURN
 		// GYRO BASED TURN
 		sc_error = (start_angle + dist_ang) - angle_z;

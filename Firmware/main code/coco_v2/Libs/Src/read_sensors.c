@@ -212,7 +212,7 @@ void getSensorReadings() {
 
 	calculateAndSaveAverages();
 
-	static float t1 = 500.0;
+	static float t1 = 600.0;
 	static float t2 = 150.0;
 
 

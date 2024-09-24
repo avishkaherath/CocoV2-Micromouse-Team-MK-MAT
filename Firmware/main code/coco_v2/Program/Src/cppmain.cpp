@@ -18,11 +18,11 @@ int ORIENT = 0;
 
 char direction;
 bool starting = false;
-float startingDist = 7.0;
-float edgeToCenter = 12.5;
-float centerToEdgeSides = 3;
-float centerToEdgeForward = 3.5;
-float centerToEdgeBack = 2;
+float startingDist = 8.0;
+float edgeToCenter = 13.0;
+float centerToEdgeSides = 3.5;
+float centerToEdgeForward = 4.0;
+float centerToEdgeBack = 2.5;
 float Angle180 = 180;
 float centerToEdge;
 
@@ -37,8 +37,9 @@ static int dumOrient;
 int backPtr = 0;
 int fwdPtr;
 int16_t gyro_reading;
-uint32_t left_pos;
-uint32_t right_pos;
+uint32_t l_pos;
+uint32_t r_pos;
+float omega;
 uint16_t m_reciever,l_reciever,r_reciever,rf_reciever,lf_reciever,dl_reciever,dr_reciever;
 
 void mouseRun();
@@ -48,57 +49,39 @@ int cppmain(void)
 
 	initialization_block();
 
-	if (orient == 1)
-	{
-		XY.x = 1;
-		XY.y = 0;
-		cells[0][0] = 10;
-	}
-	else
-	{
-		XY.x = 0;
-		XY.y = 1;
-		cells[0][0] = 9;
-	}
-
-	XY_prev.y = 0;
-	XY_prev.x = 0;
+//	if (orient == 1)
+//	{
+//		XY.x = 1;
+//		XY.y = 0;
+//		cells[0][0] = 10;
+//	}
+//	else
+//	{
+//		XY.x = 0;
+//		XY.y = 1;
+//		cells[0][0] = 9;
+//	}
+//
+//	XY_prev.y = 0;
+//	XY_prev.x = 0;
 
 	while(1)
 	{
-//		LF_EM_ON;
-//		HAL_Delay(1);
-//		lf_reciever = readADC(LF_RECEIVER,2);
-//		LF_EM_OFF;
-//		HAL_Delay(1);
-//
-//		RF_EM_ON;
-//		HAL_Delay(1);
-//		rf_reciever = readADC(RF_RECEIVER,2);
-//		RF_EM_OFF;
-//		HAL_Delay(1);
-//
-//		D_EM_ON;
-//		HAL_Delay(1);
-//		dl_reciever = readADC(DL_RECEIVER,2);
-//		D_EM_OFF;
-//		HAL_Delay(1);
-//
-//		D_EM_ON;
-//		HAL_Delay(1);
-//		dr_reciever = readADC(DR_RECEIVER,2);
-//		D_EM_OFF;
+		mouseRun();
+		i++;
 		HAL_Delay(1);
 
-
-
-//		mouseRun();
-//		i++;
+//		if (finishMove(POINT_TURN, -90))
+//		{
+//			STOP_ROBOT;
+//			HAL_Delay(1000);
+//			resetEncoder();
+//		}
 //		HAL_Delay(1);
-//		ALL_LED_ON;
-//		HAL_Delay(1000);
-//		ALL_LED_OFF;
-//		HAL_Delay(1000);
+
+
+//		omega = readGyro();
+//		r_pos = r_position;
 	}
 }
 
@@ -112,15 +95,15 @@ int initialization_block(void)
 	encoderInit();
 	gyroInit();
 
-	displayInit();
-	disp_state = DEFAULT;
+//	displayInit();
+//	disp_state = DEFAULT;
 
-//	buzzerInit();
+	buzzerInit();
 	gyroCalibration();
 
 	TIM13_IT_START;
-	HAL_Delay(1000);
 //	TIM14_IT_START;
+	HAL_Delay(100);
 	ALL_LED_OFF;
 
 	return 0;
@@ -131,8 +114,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	if (htim == &htim13)
 
 		gyroUpdate(),readSensor();
-	else if (htim == &htim14)
-		;//displayUpdate();
+//	else if (htim == &htim14)
+		//displayUpdate();
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
@@ -297,6 +280,7 @@ void mouseRun()
 					STOP_ROBOT;
 					HAL_Delay(DELAY_MID);
 					resetEncoder();
+					playSound(TONE4);
 					orient = orientation(orient, direction);
 					runState = 4;
 				}
