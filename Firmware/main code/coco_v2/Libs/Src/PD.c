@@ -13,7 +13,7 @@ static float sc_last_error = 0, ac_last_error = 0, ir_last_error = 0;
 
 /////////////////////////////////////////////////// CONTROLLER /////////////////////////////////////////////////////////////////
 static int fm_counter = 0;
-const float TERMINATION_TH = 1e-1;
+const float TERMINATION_TH = 2e-1;
 bool align_select = false;
 
 bool finishMove(MV_Type mv_type_, float dist_ang_)
@@ -39,7 +39,7 @@ bool finishMove(MV_Type mv_type_, float dist_ang_)
 	speedController();
 
 	//	 TERMINATION CODITION
-	if (fabs(PD_correction_sc) < fabs(TERMINATION_TH) || (current_time - start_time > 4000) ||( (current_time - last_exit_time) > 100 && last_exit_time != 0))
+	if (fabs(PD_correction_sc) < fabs(TERMINATION_TH) || (current_time - start_time > 2000) ||( (current_time - last_exit_time) > 100 && last_exit_time != 0))
 	{
 		if (fm_counter > 5)
 		{
@@ -118,7 +118,7 @@ void assignParameters(void)
 		counts_ = dist_ang * TURN_SENSITIVITY;
 		speed_th_ = rt_speed;
 
-		sc_kp = 1.35, sc_kd = 60e-3, sc_red = 60; // 2e-3, 1e-3
+		sc_kp = 1.0, sc_kd = 60e-3, sc_red = 60; // 2e-3, 1e-3
 		ac_kp = 1, ac_kd = 3e-3, ac_red = 1000;
 		break;
 
@@ -147,9 +147,9 @@ void speedController(void)
 	case POINT_TURN:
 		// ENCODER BASED TURN :
 //		sc_error  = (counts_ - (l_start - l_position)) + (counts_ + (r_start - r_position));
-//		sc_error = 2*counts_ - l_start + r_start, sc_error += l_position, sc_error -= r_position; // BACK UP : ENCODER BASED TURN
+		sc_error = 2*counts_ - l_start + r_start, sc_error += l_position, sc_error -= r_position; // BACK UP : ENCODER BASED TURN
 		// GYRO BASED TURN
-		sc_error = (start_angle + dist_ang) - angle_z;
+//		sc_error = (start_angle + dist_ang) - angle_z;
 		break;
 
 	case FRONT_ALIGN:

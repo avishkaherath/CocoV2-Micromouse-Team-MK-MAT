@@ -19,7 +19,7 @@ int ORIENT = 0;
 char direction;
 bool starting = false;
 float startingDist = 8.0;
-float edgeToCenter = 13.0;
+float edgeToCenter = 17;
 float centerToEdgeSides = 3.5;
 float centerToEdgeForward = 4.0;
 float centerToEdgeBack = 2.5;
@@ -64,20 +64,31 @@ int cppmain(void)
 //
 //	XY_prev.y = 0;
 //	XY_prev.x = 0;
+	align_select = 1;
 
 	while(1)
 	{
-		mouseRun();
-		i++;
+		calculateAndSaveAverages();
 		HAL_Delay(1);
 
-//		if (finishMove(POINT_TURN, -90))
+//		if (runState == 0 && finishMove(STRAIGHT_RUN,edgeToCenter ))
 //		{
 //			STOP_ROBOT;
 //			HAL_Delay(1000);
 //			resetEncoder();
+////			break;
+//			runState = 1;
+//		}
+//
+//		if (runState == 1 && finishMove(POINT_TURN, -90))
+//		{
+//			STOP_ROBOT;
+//			HAL_Delay(1000);
+//			resetEncoder();
+//			runState = 0;
 //		}
 //		HAL_Delay(1);
+
 
 
 //		omega = readGyro();
@@ -89,7 +100,7 @@ int initialization_block(void)
 {
 	ALL_LED_ON;
 	TIM5_START; ////////////////// CRUCIAL PART DON"T OFFFFFFFFFFFFFFFF ///////////////////////////
-	HAL_Delay(1000);
+	HAL_Delay(100);
 
 	motorInit();
 	encoderInit();
@@ -98,12 +109,12 @@ int initialization_block(void)
 //	displayInit();
 //	disp_state = DEFAULT;
 
-	buzzerInit();
+//	buzzerInit();
 	gyroCalibration();
 
 	TIM13_IT_START;
 //	TIM14_IT_START;
-	HAL_Delay(100);
+//	HAL_Delay(100);
 	ALL_LED_OFF;
 
 	return 0;

@@ -5,4 +5,4 @@
 ../Libs/Src/read_sensors.c:178:6:rightIrBlink	2
 ../Libs/Src/read_sensors.c:186:6:leftIrBlink	2
 ../Libs/Src/read_sensors.c:194:6:calculateAndSaveAverages	2
-../Libs/Src/read_sensors.c:211:6:getSensorReadings	4
+../Libs/Src/read_sensors.c:215:6:getSensorReadings	4

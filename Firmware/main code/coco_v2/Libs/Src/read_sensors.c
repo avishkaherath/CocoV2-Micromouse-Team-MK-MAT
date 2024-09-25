@@ -65,7 +65,7 @@ void readSensor(void)
 	LF_EM_ON;
 //	start_count = __HAL_TIM_GET_COUNTER(&htim5);
 	while(__HAL_TIM_GET_COUNTER(&htim5)< 60); //start_count + elapse_count);
-	LFSensor = read_LF_Sensor - LFSensor_bg - LFSensor_DC;
+	LFSensor = read_LF_Sensor - LFSensor_bg; // - LFSensor_DC;
 	LF_EM_OFF;
 //	start_count = __HAL_TIM_GET_COUNTER(&htim5);
 	if(LFSensor < 0)//error check
@@ -98,7 +98,7 @@ void readSensor(void)
 	RF_EM_ON;
 //	start_count = __HAL_TIM_GET_COUNTER(&htim5);
 	while(__HAL_TIM_GET_COUNTER(&htim5)<200); //start_count + elapse_count);
-	RFSensor = read_RF_Sensor - RFSensor_bg - RFSensor_DC;
+	RFSensor = read_RF_Sensor - RFSensor_bg; // - RFSensor_DC;
 	RF_EM_OFF;
 //	start_count = __HAL_TIM_GET_COUNTER(&htim5);
 	if(RFSensor < 0)
@@ -111,8 +111,8 @@ void readSensor(void)
 //	start_count = __HAL_TIM_GET_COUNTER(&htim5);
 	while(__HAL_TIM_GET_COUNTER(&htim5)<340); //start_count + elapse_count);
 	count = __HAL_TIM_GET_COUNTER(&htim5);
-	DLSensor = read_DL_Sensor - DLSensor_bg - DLSensor_DC;
-	DRSensor = read_DR_Sensor - DRSensor_bg - DRSensor_DC;
+	DLSensor = read_DL_Sensor - DLSensor_bg; // - DLSensor_DC;
+	DRSensor = read_DR_Sensor - DRSensor_bg; // - DRSensor_DC;
 	D_EM_OFF;
 	if(DLSensor < 0)
 		DLSensor = 0;
@@ -192,6 +192,10 @@ bool leftIrBlink(){
 }
 
 void calculateAndSaveAverages() {
+	averageL = 0;
+	averageR = 0;
+	averageFL = 0;
+	averageFR = 0;
     int i;
     // Calculate the average for each buffer
     for (i = 0; i < 15; i++) {
@@ -212,8 +216,8 @@ void getSensorReadings() {
 
 	calculateAndSaveAverages();
 
-	static float t1 = 600.0;
-	static float t2 = 150.0;
+	static float t1 = 490.0;  //600
+	static float t2 = 350.0;
 
 
 	if (averageR > t1){

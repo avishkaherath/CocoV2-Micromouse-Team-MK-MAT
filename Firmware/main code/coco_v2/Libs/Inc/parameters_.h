@@ -5,14 +5,14 @@
 #define LOW_BAT_TH_ 7.4
 
 // ENCODER.h
-#define LINEAR_SENSITIVITY 153 //67.7
-#define TURN_SENSITIVITY 10.5  //5
+#define LINEAR_SENSITIVITY 144 //67.7
+#define TURN_SENSITIVITY 10.8  //5
 ///////////////////////////// MOTOR.H //////////////////////////////////////////
 #define SPEED_THRESHOLD_ 1
 
 /////////////////////////////////// L3GD20.h /////////////////////////////////////////
-#define GYRO_SENSITIVITY_ 0.0365
-#define NOISE_THRESHOLD_ 0.95
+#define GYRO_SENSITIVITY_ 0.0373
+#define NOISE_THRESHOLD_ 0.98
 
 //////////////////////////////////// DISPLAY.h ////////////////////////////////////////
 #define FPS 2  // MIN_ALLOWED --> .5
