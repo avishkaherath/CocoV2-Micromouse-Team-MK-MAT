@@ -12,6 +12,8 @@ int32_t DRSensor = 0;
 int32_t LLSensor = 0;
 int32_t RRSensor = 0;
 
+int32_t LFSensor_ = 0;
+
 int32_t LFSensor_bg = 0;
 int32_t RFSensor_bg = 0;
 int32_t DLSensor_bg = 0;
@@ -20,10 +22,10 @@ int32_t LLSensor_bg = 0;
 int32_t RRSensor_bg = 0;
 
 // dc offset due to the reflections from robot itself
-int32_t LFSensor_DC = 2000;
-int32_t RFSensor_DC = 1330;
-int32_t DLSensor_DC = 1560;
-int32_t DRSensor_DC = 745;
+int32_t LFSensor_DC = 0; //1100;
+int32_t RFSensor_DC = 0; //1330;
+int32_t DLSensor_DC = 0; //530;
+int32_t DRSensor_DC = 0; //500;
 int32_t LLSensor_DC = 0;
 int32_t RRSensor_DC = 0;
 
@@ -51,7 +53,7 @@ static int point = 0;
 /*read IR sensors*/
 void readSensor(void)
 {
-	LED7_ON;
+//	LED7_ON;
 
 	//read ambient values
 	LFSensor_bg = read_LF_Sensor;
@@ -65,7 +67,8 @@ void readSensor(void)
 	LF_EM_ON;
 //	start_count = __HAL_TIM_GET_COUNTER(&htim5);
 	while(__HAL_TIM_GET_COUNTER(&htim5)< 60); //start_count + elapse_count);
-	LFSensor = read_LF_Sensor - LFSensor_bg; // - LFSensor_DC;
+	LFSensor = read_LF_Sensor - LFSensor_bg - LFSensor_DC;
+//	LFSensor = (int32_t)1.142*LFSensor - 539.4;
 	LF_EM_OFF;
 //	start_count = __HAL_TIM_GET_COUNTER(&htim5);
 	if(LFSensor < 0)//error check
@@ -98,7 +101,7 @@ void readSensor(void)
 	RF_EM_ON;
 //	start_count = __HAL_TIM_GET_COUNTER(&htim5);
 	while(__HAL_TIM_GET_COUNTER(&htim5)<200); //start_count + elapse_count);
-	RFSensor = read_RF_Sensor - RFSensor_bg; // - RFSensor_DC;
+	RFSensor = read_RF_Sensor - RFSensor_bg - RFSensor_DC;
 	RF_EM_OFF;
 //	start_count = __HAL_TIM_GET_COUNTER(&htim5);
 	if(RFSensor < 0)
@@ -111,8 +114,8 @@ void readSensor(void)
 //	start_count = __HAL_TIM_GET_COUNTER(&htim5);
 	while(__HAL_TIM_GET_COUNTER(&htim5)<340); //start_count + elapse_count);
 	count = __HAL_TIM_GET_COUNTER(&htim5);
-	DLSensor = read_DL_Sensor - DLSensor_bg; // - DLSensor_DC;
-	DRSensor = read_DR_Sensor - DRSensor_bg; // - DRSensor_DC;
+	DLSensor = read_DL_Sensor - DLSensor_bg - DLSensor_DC;
+	DRSensor = read_DR_Sensor - DRSensor_bg - DRSensor_DC;
 	D_EM_OFF;
 	if(DLSensor < 0)
 		DLSensor = 0;
@@ -139,7 +142,7 @@ void readSensor(void)
 	FLBuff[point] = LFSensor;
 	FRBuff[point] = RFSensor;
 	
-	LED7_OFF;
+//	LED7_OFF;
 }
 
 
@@ -216,8 +219,8 @@ void getSensorReadings() {
 
 	calculateAndSaveAverages();
 
-	static float t1 = 490.0;  //600
-	static float t2 = 350.0;
+	static float t1 = 800.0;  //490
+	static float t2 = 500.0; //350
 
 
 	if (averageR > t1){
@@ -229,19 +232,21 @@ void getSensorReadings() {
 	}
 
 	if (averageL > t1){
-		LED9_ON;
+		LED7_ON;
 		L = true;
 	} else {
 		L = false;
-		LED9_OFF;
+		LED7_OFF;
 	}
 
 	if ((averageFL+averageFR)/2 > t2){
-		LED11_ON;
+		LED8_ON;
+		LED9_ON;
 		F = true;
 	} else {
 		F = false;
-		LED11_OFF;
+		LED8_OFF;
+		LED9_OFF;
 	}
 
 	// if (DLSensor > t1 && DRSensor > t1 && DRSensor > t1 && RFSensor > t1){

@@ -80,13 +80,19 @@ void displayUpdate(void)
 	// DEFAULT SCREEN --> BATTERY PERCENTAGE, STATE OF THE ROBOT
 	case (DEFAULT):
 		// DISPLAYING BATTERY VOLTAGE
-		putString("V:",86,24,SMALL);
-		putFloat(voltage,104 , 24, SMALL);
+//		putString("V:",86,24,SMALL);
+//		putFloat(voltage,104 , 24, SMALL);
 
 		// putString(turn,44,16,MEDIUM);
 		switch (mouseState) {
 		case (0):
-			putString("IDLE", 42, 2, SMALL);break;
+			putString("RFSensor", 42, 2, SMALL);
+			putInt(RFSensor , 42, 2, SMALL);
+
+			putString("LFSensor", 42, 12, SMALL);
+			putInt(LFSensor , 42, 12, SMALL);
+			break;
+//			putString("IDLE", 42, 2, SMALL);break;
 		case (1):
 			putString("SEARCH IDLE", 42, 2, SMALL);break;
 		case (2):

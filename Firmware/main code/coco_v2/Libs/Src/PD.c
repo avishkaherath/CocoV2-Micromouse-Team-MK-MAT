@@ -118,13 +118,13 @@ void assignParameters(void)
 		counts_ = dist_ang * TURN_SENSITIVITY;
 		speed_th_ = rt_speed;
 
-		sc_kp = 1.0, sc_kd = 60e-3, sc_red = 60; // 2e-3, 1e-3
+		sc_kp = 1.0, sc_kd = 65e-3, sc_red = 60; // 2e-3, 1e-3
 		ac_kp = 1, ac_kd = 3e-3, ac_red = 1000;
 		break;
 
 	case FRONT_ALIGN:
 		speed_th_ = al_speed;
-		sc_kp = 1, sc_kd = 0, sc_red = 500;
+		sc_kp = 1, sc_kd = 3e-3, sc_red = 500;
 		break;
 	}
 	return;

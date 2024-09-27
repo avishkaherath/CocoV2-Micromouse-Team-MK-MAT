@@ -6,7 +6,7 @@
 
 // ENCODER.h
 #define LINEAR_SENSITIVITY 144 //67.7
-#define TURN_SENSITIVITY 10.8  //5
+#define TURN_SENSITIVITY 10.95  //5
 ///////////////////////////// MOTOR.H //////////////////////////////////////////
 #define SPEED_THRESHOLD_ 1
 

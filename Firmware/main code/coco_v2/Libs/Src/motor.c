@@ -4,7 +4,7 @@ const float SPEED_THRESHOLD = SPEED_THRESHOLD_;
 
 uint16_t u12_max = 4095;
 float l_speed, r_speed;
-float st_speed = 0.8, rt_speed = .8, al_speed = .2;  // ONLY ALLOWED SPEED {.25, .6, .3} //0.8
+float st_speed = 0.8, rt_speed = .8, al_speed = .4;  // ONLY ALLOWED SPEED {.25, .6, .3} //0.8
 
 
 void motorInit(void)
