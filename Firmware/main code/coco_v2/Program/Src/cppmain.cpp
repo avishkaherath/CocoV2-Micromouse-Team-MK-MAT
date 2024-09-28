@@ -25,6 +25,7 @@ float centerToEdgeForward = 2.2;
 float centerToEdgeBack = 2.5;
 float Angle180 = 180;
 float centerToEdge;
+float cellDist = 19.2;
 
 char back_path[ROWS * COLUMNS] = {'x'};
 char fwd_path[ROWS * COLUMNS] = {'x'};
@@ -70,27 +71,26 @@ int cppmain(void)
 	{
 		mouseRun();
 		HAL_Delay(1);
-//
-//		getSensorReadings();
 
-//		align_select = 1;
-//		if (finishMove(STRAIGHT_RUN, 19.2))
+//		if(runState == 0 && finishMove(STRAIGHT_RUN, edgeToCenter))
 //		{
 //			STOP_ROBOT;
-//			HAL_Delay(1000);
-//			runState ++;
+//			HAL_Delay(DELAY_MID);
+//			runState = 1;
 //		}
-//		if (runState == 3)
+//		if(runState == 1 && finishMove(POINT_TURN, 90))
 //		{
 //			STOP_ROBOT;
-//		break;
+//			HAL_Delay(DELAY_MID);
+//			runState = 2;
 //		}
-//		HAL_Delay(1);
-//		if (finishMove(STRAIGHT_RUN, 10))
+//		if(runState == 2 && finishMove(STRAIGHT_RUN, centerToEdgeSides))
 //		{
 //			STOP_ROBOT;
+//			HAL_Delay(DELAY_MID);
 //			break;
 //		}
+//		HAL_Delay(1);
 	}
 }
 
@@ -555,7 +555,7 @@ void mouseRun()
 		switch (runState)
 		{
 
-		case 0: // statig
+		case 0: // starting
 			if (finishMove(STRAIGHT_RUN, startingDist))
 			{
 //				STOP_ROBOT;
@@ -589,7 +589,7 @@ void mouseRun()
 				align_select = true;
 			}
 			if(direction =='F'){
-						if (finishMove(STRAIGHT_RUN, 16))
+						if (finishMove(STRAIGHT_RUN, cellDist))
 						{
 
 
