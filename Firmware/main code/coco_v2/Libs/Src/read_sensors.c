@@ -30,6 +30,8 @@ int32_t LLSensor_DC = 0;
 int32_t RRSensor_DC = 0;
 
 int32_t count=0;
+float l_offset;
+float r_offset;
 
 static int32_t LBuff[15] = {0};
 static int32_t RBuff[15] = {0};
@@ -219,7 +221,7 @@ void getSensorReadings() {
 
 	calculateAndSaveAverages();
 
-	static float t1 = 700.0;  //490
+	static float t1 = 500.0;  //490
 	static float t2 = 500.0; //350
 
 
@@ -284,4 +286,52 @@ void getSensorReadings() {
 	// }
 }
 
+void irSideCalibrate(void)
+{
+	LED1_ON;
+	float L_calibration_buffer[IR_BUFFER_LENGTH];
+	float R_calibration_buffer[IR_BUFFER_LENGTH];
+	float l_calibration_sum = 0;
+	float r_calibration_sum = 0;
 
+	for (u32 idx = 0; idx < BUFFER_LENGTH; idx++)
+	{
+		calculateAndSaveAverages();
+		L_calibration_buffer[idx] = averageL;
+		R_calibration_buffer[idx] = averageR;
+		HAL_Delay(2);
+		l_calibration_sum += L_calibration_buffer[idx];
+		r_calibration_sum += R_calibration_buffer[idx];
+	}
+
+	l_offset = (float)l_calibration_sum / BUFFER_LENGTH;
+	r_offset = (float)r_calibration_sum / BUFFER_LENGTH;
+	MIDDLE_VALUE_DL = ((l_offset + r_offset)/2);
+	LED1_OFF;
+	return;
+}
+
+void irFrontCalibrate(void)
+{
+	LED5_ON;
+	float FL_calibration_buffer[IR_BUFFER_LENGTH];
+	float FR_calibration_buffer[IR_BUFFER_LENGTH];
+	float FL_calibration_sum = 0;
+	float FR_calibration_sum = 0;
+
+	for (u32 idx = 0; idx < BUFFER_LENGTH; idx++)
+	{
+		calculateAndSaveAverages();
+		FL_calibration_buffer[idx] = averageL;
+		FR_calibration_buffer[idx] = averageR;
+		HAL_Delay(2);
+		FL_calibration_sum += FL_calibration_buffer[idx];
+		FR_calibration_sum += FR_calibration_buffer[idx];
+	}
+
+	fl_offset = (float)FL_calibration_sum / BUFFER_LENGTH;
+	fr_offset = (float)FR_calibration_sum / BUFFER_LENGTH;
+
+	LED5_OFF;
+	return;
+}

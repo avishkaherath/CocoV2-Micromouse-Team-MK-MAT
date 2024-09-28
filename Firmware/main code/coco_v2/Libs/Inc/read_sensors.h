@@ -10,8 +10,10 @@
 #include "buzzer.h"
 #include "parameters_.h"
 #include "display.h"
+#include "PD.h"
 
 #define ADC_REF_VOL 3.322
+#define IR_BUFFER_LENGTH ((u32)1000u)  // 1000u
 
 extern int reflectionRate;
 
@@ -52,5 +54,7 @@ bool leftIrBlink();
 void getSensorReadings();
 void stop_it_all(void);
 void calculateAndSaveAverages();
+void irFrontCalibrate(void);
+void irSideCalibrate(void);
 
 #endif /* INC_READ_SENSORS_H_ */

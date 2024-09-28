@@ -58,7 +58,8 @@ Libs/Src/read_sensors.o: ../Libs/Src/read_sensors.c \
  D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/L3GD20.h \
  D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/adc.h \
  D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/buzzer.h \
- D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/display.h
+ D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/display.h \
+ D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/PD.h
 D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/read_sensors.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
@@ -120,3 +121,4 @@ D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc
 D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/adc.h:
 D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/buzzer.h:
 D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/display.h:
+D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/PD.h:

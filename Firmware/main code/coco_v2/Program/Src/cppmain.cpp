@@ -64,6 +64,7 @@ int cppmain(void)
 
 	XY_prev.y = 0;
 	XY_prev.x = 0;
+	runState = 0;
 
 	while(1)
 	{
@@ -72,36 +73,24 @@ int cppmain(void)
 //
 //		getSensorReadings();
 
-//		if (finishMove(FR, 4))
+//		align_select = 1;
+//		if (finishMove(STRAIGHT_RUN, 19.2))
 //		{
 //			STOP_ROBOT;
-//			HAL_Delay(1);
-////			runState = 3;
+//			HAL_Delay(1000);
+//			runState ++;
 //		}
-//		displayUpdate();
-//		HAL_Delay(2000);
-//		HAL_Delay(1);
-//		if (finishMove(FRONT_ALIGN, 16))
+//		if (runState == 3)
 //		{
-//					STOP_ROBOT;
-////					HAL_Delay(1000);
-//					resetEncoder();
-////					runState = 2;
-//				}
-//		if (runState == 2 && finishMove(STRAIGHT_RUN, centerToEdgeBack))
-//		{
-//					STOP_ROBOT;
-//					HAL_Delay(1000);
-//					resetEncoder();
-//					break;
-//				}
-//
+//			STOP_ROBOT;
+//		break;
+//		}
 //		HAL_Delay(1);
-
-
-
-//		omega = readGyro();
-//		r_pos = r_position;
+//		if (finishMove(STRAIGHT_RUN, 10))
+//		{
+//			STOP_ROBOT;
+//			break;
+//		}
 	}
 }
 
@@ -115,15 +104,15 @@ int initialization_block(void)
 	encoderInit();
 //	gyroInit();
 
-//	displayInit();
-//	disp_state = DEFAULT;
+	displayInit();
+	disp_state = DEFAULT;
 
 	buzzerInit();
 //	gyroCalibration();
 
 	TIM13_IT_START;
 //	TIM14_IT_START;
-//	HAL_Delay(100);
+	HAL_Delay(100);
 	ALL_LED_OFF;
 
 	return 0;
@@ -157,6 +146,7 @@ void mouseRun()
 
 	case 0: // Idle
 		LED7_ON;
+		displayUpdate();
 		if (buttonPress)
 		{
 			STOP_ROBOT;
@@ -171,6 +161,7 @@ void mouseRun()
 
 	case 1: // search Idle
 		LED9_ON;
+		displayUpdate();
 		if (irBlink())
 		{
 			LED9_OFF;
@@ -285,6 +276,16 @@ void mouseRun()
 				runState = 3;
 			}
 
+			break;
+
+		case 6: // front distance adjust
+
+			if (finishMove(FRONT_DIST, 16))
+				{
+					STOP_ROBOT;
+					HAL_Delay(DELAY_MID);
+					runState = 3;
+				}
 			break;
 
 		case 3: // turning
@@ -508,6 +509,7 @@ void mouseRun()
 		break;
 
 	case 4: // fast idle
+		displayUpdate();
 		LED10_ON;
 
 		if (irBlink())
@@ -850,15 +852,64 @@ void mouseRun()
 
 	case 7:
 		//			mouseState = speedAdjust();
-		if (rightIrBlink()){
-			playSound(TONE1);
-			st_speed += 0.1;
+		displayUpdate();
+//		if (rightIrBlink()){
+//			playSound(TONE1);
+//			st_speed += 0.1;
+//			HAL_Delay(500);
+//		}
+//		if (leftIrBlink()){
+//			playSound(TONE1);
+//			st_speed -= 0.1;
+//			HAL_Delay(500);
+//		}
+		if (irBlink())
+		{
+			STOP_ROBOT;
+			playSound(TONE4);
 			HAL_Delay(500);
+			irSideCalibrate();
+			mouseState = 10;
+			buttonPress = false;
+			l_start = 0;
 		}
-		if (leftIrBlink()){
-			playSound(TONE1);
-			st_speed -= 0.1;
+
+
+		if (buttonPress)
+		{
+			STOP_ROBOT;
+			playSound(TONE4);
 			HAL_Delay(500);
+			mouseState = 0;
+			buttonPress = false;
+			l_start = 0;
+		}
+		break;
+
+	case 10:
+		displayUpdate();
+		if (buttonPress)
+		{
+			STOP_ROBOT;
+			playSound(TONE4);
+			HAL_Delay(500);
+			mouseState = 9;
+			buttonPress = false;
+			l_start = 0;
+		}
+		break;
+
+	case 9:
+		displayUpdate();
+		if (irBlink())
+		{
+			STOP_ROBOT;
+			playSound(TONE4);
+			HAL_Delay(500);
+			irFrontCalibrate();
+			mouseState = 0;
+			buttonPress = false;
+			l_start = 0;
 		}
 
 		if (buttonPress)
@@ -870,11 +921,11 @@ void mouseRun()
 			buttonPress = false;
 			l_start = 0;
 		}
-
 		break;
 
 	case 8: // set initial //////////////////////////////////////////////////////////// ASK FROM ISHRATH //////////////////////////////////////////////////////////
 		LED8_ON;
+		displayUpdate();
 		if (irBlink())
 		{
 			HAL_Delay(1000);

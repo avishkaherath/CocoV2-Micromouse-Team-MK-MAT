@@ -5,8 +5,9 @@
 #define LOW_BAT_TH_ 7.4
 
 // ENCODER.h
-#define LINEAR_SENSITIVITY 144 //67.7
+#define LINEAR_SENSITIVITY 144.2 //67.7, 145
 #define TURN_SENSITIVITY 10.95  //5
+
 ///////////////////////////// MOTOR.H //////////////////////////////////////////
 #define SPEED_THRESHOLD_ 1
 

@@ -59,7 +59,8 @@ typedef enum
 	IDLE,
 	STRAIGHT_RUN,
 	POINT_TURN,
-	FRONT_ALIGN
+	FRONT_ALIGN,
+	FRONT_DIST
 } MV_Type;
 
 typedef enum

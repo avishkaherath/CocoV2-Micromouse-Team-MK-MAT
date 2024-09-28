@@ -50,14 +50,15 @@ Libs/Src/buzzer.o: ../Libs/Src/buzzer.c \
  D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/motor.h \
  D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/buzzer.h \
  D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/display.h \
+ D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/PD.h \
+ D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/encoder.h \
+ D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/L3GD20.h \
  D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Drivers/SSD1306/Inc/ssd1306.h \
  D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Drivers/SSD1306/Inc/ssd1306_conf.h \
  D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Drivers/SSD1306/Inc/ssd1306_fonts.h \
  D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/L3GD20.h \
  D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/read_sensors.h \
  D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/PD.h \
- D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/encoder.h \
- D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/L3GD20.h \
  D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/melody.h
 D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/buzzer.h:
 ../Core/Inc/main.h:
@@ -111,12 +112,13 @@ D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc
 D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/motor.h:
 D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/buzzer.h:
 D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/display.h:
+D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/PD.h:
+D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/encoder.h:
+D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/L3GD20.h:
 D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Drivers/SSD1306/Inc/ssd1306.h:
 D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Drivers/SSD1306/Inc/ssd1306_conf.h:
 D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Drivers/SSD1306/Inc/ssd1306_fonts.h:
 D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/L3GD20.h:
 D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/read_sensors.h:
 D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/PD.h:
-D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/encoder.h:
-D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/L3GD20.h:
 D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main\ code/coco_v2/Libs/Inc/melody.h:

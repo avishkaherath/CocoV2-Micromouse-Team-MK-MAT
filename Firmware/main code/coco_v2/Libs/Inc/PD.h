@@ -12,6 +12,10 @@
 #include <math.h>
 
 extern bool align_select;
+extern float MIDDLE_VALUE_DL;
+extern float fl_offset;
+extern float fr_offset;
+
 extern u32 l_start;
 // ULTIMATE PID CONTROLLING STRATEGY
 bool finishMove(MV_Type mv_type_, float dist_ang);

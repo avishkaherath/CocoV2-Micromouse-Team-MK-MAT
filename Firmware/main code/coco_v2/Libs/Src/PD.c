@@ -7,6 +7,9 @@ static float start_angle = 0;
 
 static MV_Type mv_type = IDLE;
 static float dist_ang;
+float MIDDLE_VALUE_DL = 1050;
+float fl_offset = 3800;
+float fr_offset = 3800;
 
 static float PD_correction_sc = 0, PD_correction_ac = 0, PD_correction_ir = 0;
 static float sc_last_error = 0, ac_last_error = 0, ir_last_error = 0;
@@ -67,6 +70,10 @@ bool finishMove(MV_Type mv_type_, float dist_ang_)
 		l_speed = -PD_correction_sc ;
 		r_speed = PD_correction_sc ;
 		break;
+	case FRONT_DIST:
+		l_speed = -PD_correction_sc ;
+		r_speed = -PD_correction_sc ;
+		break;
 	}
 	setWheels();
 	previous_time = current_time;
@@ -104,7 +111,7 @@ void assignParameters(void)
 		{
 			sc_kp = 1.0, sc_kd = 50e-3, sc_red = 400;
 			ac_kp = 1.3, ac_kd = 1e-3, ac_red = 500;
-			ir_kp = 1, ir_kd = 1e-3, ir_red = 2000;
+			ir_kp = 100, ir_kd = 1e-3, ir_red = 1000;
 		}
 		else
 		{
@@ -123,6 +130,11 @@ void assignParameters(void)
 		break;
 
 	case FRONT_ALIGN:
+		speed_th_ = al_speed;
+		sc_kp = 10, sc_kd = 300e-3, sc_red = 400;
+		break;
+
+	case FRONT_DIST:
 		speed_th_ = al_speed;
 		sc_kp = 1, sc_kd = 3e-3, sc_red = 500;
 		break;
@@ -155,6 +167,10 @@ void speedController(void)
 	case FRONT_ALIGN:
 		sc_error = (LFSensor - RFSensor);
 		break;
+
+	case FRONT_DIST:
+		sc_error = (LFSensor - fl_offset) + (RFSensor - fr_offset);
+		break;
 	}
 
 	PD_correction_sc = (float)(sc_kp * sc_error + sc_kd * 1e3 * (sc_error - sc_last_error) / (current_time - previous_time)) / sc_red;
@@ -168,11 +184,14 @@ void speedController(void)
 
 	if (fabs(PD_correction_sc) > speed_th_)
 	{
+
 		PD_correction_sc = (PD_correction_sc > 0) ? speed_th_ : -speed_th_;
 		if (irController() && align_select)
 		{
+//			LED2_ON;
 			PD_correction_ac = 0;
 			irController();
+
 		}
 		else
 		{
@@ -216,7 +235,7 @@ void angularController(void)
 
 ///////////////////////////////////////////////////////  IR-CONTROLLER /////////////////////////////////////////////////////////////////////////////////
 static float ir_error = 0;
-const float MIDDLE_VALUE_DL = 1210;
+
 
 bool twoWalls(void)
 {

@@ -86,13 +86,7 @@ void displayUpdate(void)
 		// putString(turn,44,16,MEDIUM);
 		switch (mouseState) {
 		case (0):
-			putString("RFSensor", 42, 2, SMALL);
-			putInt(RFSensor , 42, 2, SMALL);
-
-			putString("LFSensor", 42, 12, SMALL);
-			putInt(LFSensor , 42, 12, SMALL);
-			break;
-//			putString("IDLE", 42, 2, SMALL);break;
+		    putString("IDLE", 42, 2, SMALL);break;
 		case (1):
 			putString("SEARCH IDLE", 42, 2, SMALL);break;
 		case (2):
@@ -105,10 +99,14 @@ void displayUpdate(void)
 			putString("FAST FWD", 42, 2, SMALL);break;
 		case (6):
 			putString("FAST BWD", 42, 2, SMALL);break;
+		case (9):
+			putString("Front Calib", 42, 2, SMALL);break;
 		case (7):
-			putString("SPEED ADJ", 42, 2, SMALL);break;
+			putString("Side Calib", 42, 2, SMALL);break;
 		case (8):
 			putString("SET INITIAL", 42, 2, SMALL);break;
+		case (10):
+			putString("Front Calib IDLE", 42, 2, SMALL);break;
 		}
 		
 
@@ -172,6 +170,6 @@ void displayUpdate(void)
 		break;
 	}
 	ssd1306_UpdateScreen();
-	LED6_TOG;
+//	LED6_TOG;
 	return;
 }
