@@ -93,6 +93,7 @@ int backFlood[ROWS][COLUMNS]={
 
 
 void updateWalls(struct coordinate point, int orient, bool L, bool R, bool F) {
+// Update the combination of walls in global frame
 	if ((L && R) && F) {
 		if (orient == 0) {
 			cells[point.y][point.x] = 13;
@@ -190,6 +191,7 @@ void updateWalls(struct coordinate point, int orient, bool L, bool R, bool F) {
 }
 
 bool isAccessible(struct coordinate p, struct coordinate p1) {
+//	 gives whether accessible the p1 from p
 	if (p1.x < 0 || p1.y < 0 || p1.x >=ROWS  || p1.y >= COLUMNS) {
 		return false;
 	}
@@ -245,6 +247,7 @@ bool isAccessible(struct coordinate p, struct coordinate p1) {
 }
 
 struct surroundCoor getSurrounds(struct coordinate p) {
+//	 Gives the coordinates of surrounding cells
 	struct surroundCoor surCoor;
 	surCoor.N.x = p.x;
 	surCoor.N.y = p.y + 1;
@@ -269,6 +272,7 @@ struct surroundCoor getSurrounds(struct coordinate p) {
 }
 
 bool isConsistant(struct coordinate p) {
+//	check whether there is a path to go from next cell without altering the flood
 	struct surroundCoor surr = getSurrounds(p);
 	int minVals[4]={-1,-1,-1,-1};
 	if (surr.N.x >= 0 && surr.N.y >= 0) {
@@ -308,6 +312,7 @@ bool isConsistant(struct coordinate p) {
 }
 
 void makeConsistant(struct coordinate p) {
+	// create consistent
 	struct surroundCoor surr = getSurrounds(p);
 	int minVals[4]={-1,-1,-1,-1};
 	if (surr.N.y >= 0 && surr.N.x >= 0) {
@@ -472,13 +477,13 @@ char toMove(struct coordinate p, struct coordinate prevPos, int orient) {
 	}
 
 
-    using namespace std;
-    string line ="";
-    for(int b = 0; b < 4; b++)
-    {
-        line = line +  to_string(minVals[b])+"\t";
-    }
-    string minCellS = to_string(minCell);
+//    using namespace std;
+//    string line ="";
+//    for(int b = 0; b < 4; b++)
+//    {
+//        line = line +  to_string(minVals[b])+"\t";
+//    }
+//    string minCellS = to_string(minCell);
 
 
 	if (minCell == orient) {

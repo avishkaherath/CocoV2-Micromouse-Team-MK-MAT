@@ -119,7 +119,7 @@ int initialization_block(void)
 //	disp_state = DEFAULT;
 
 	buzzerInit();
-	gyroCalibration();
+//	gyroCalibration();
 
 	TIM13_IT_START;
 //	TIM14_IT_START;
@@ -156,10 +156,12 @@ void mouseRun()
 	{
 
 	case 0: // Idle
+		LED7_ON;
 		if (buttonPress)
 		{
 			STOP_ROBOT;
 			playSound(TONE4);
+			LED7_OFF;
 			HAL_Delay(500);
 			mouseState = 8;
 			buttonPress = false;
@@ -168,8 +170,10 @@ void mouseRun()
 		break;
 
 	case 1: // search Idle
+		LED9_ON;
 		if (irBlink())
 		{
+			LED9_OFF;
 			HAL_Delay(1000);
 			mouseState = 2;
 
@@ -306,7 +310,7 @@ void mouseRun()
 					LED11_OFF;
 					HAL_Delay(DELAY_MID);
 					resetEncoder();
-					playSound(TONE4);
+//					playSound(TONE4);
 					orient = orientation(orient, direction);
 					runState = 4;
 				}
@@ -377,6 +381,7 @@ void mouseRun()
 				STOP_ROBOT;
 				HAL_Delay(DELAY_MID);
 				mouseState = 0;
+				ALL_LED_OFF;
 			}
 			break;
 
@@ -503,9 +508,11 @@ void mouseRun()
 		break;
 
 	case 4: // fast idle
+		LED10_ON;
 
 		if (irBlink())
 		{
+			LED10_OFF;
 			HAL_Delay(1000);
 			mouseState = 5;
 
@@ -867,7 +874,7 @@ void mouseRun()
 		break;
 
 	case 8: // set initial //////////////////////////////////////////////////////////// ASK FROM ISHRATH //////////////////////////////////////////////////////////
-
+		LED8_ON;
 		if (irBlink())
 		{
 			HAL_Delay(1000);
@@ -903,6 +910,7 @@ void mouseRun()
 		{
 			STOP_ROBOT;
 			playSound(TONE4);
+			LED8_OFF;
 			HAL_Delay(500);
 			mouseState = 1;
 			buttonPress = false;

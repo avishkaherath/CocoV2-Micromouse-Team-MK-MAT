@@ -124,7 +124,7 @@ void readSensor(void)
 	// while(__HAL_TIM_GET_COUNTER(&htim1)<500);
 
 
-	readVolMeter();
+//	readVolMeter();
 //
 //	LFSensor = LFSensor*reflectionRate/1000;
 //	RFSensor = RFSensor*reflectionRate/1000;
@@ -219,7 +219,7 @@ void getSensorReadings() {
 
 	calculateAndSaveAverages();
 
-	static float t1 = 800.0;  //490
+	static float t1 = 700.0;  //490
 	static float t2 = 500.0; //350
 
 
