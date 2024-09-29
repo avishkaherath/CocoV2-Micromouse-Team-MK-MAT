@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ../Libs/Src/PD.c:19:6:finishMove	16	static
 ../Libs/Src/PD.c:85:6:assignParameters	24	static
 ../Libs/Src/PD.c:135:6:speedController	32	static
@@ -6,3 +7,13 @@
 ../Libs/Src/PD.c:220:6:leftWall	4	static
 ../Libs/Src/PD.c:227:6:rightWall	4	static
 ../Libs/Src/PD.c:235:6:irController	24	static
+=======
+../Libs/Src/PD.c:24:6:finishMove	16	static
+../Libs/Src/PD.c:94:6:assignParameters	24	static
+../Libs/Src/PD.c:150:6:speedController	24	static
+../Libs/Src/PD.c:213:6:angularController	24	static
+../Libs/Src/PD.c:259:6:twoWalls	4	static
+../Libs/Src/PD.c:266:6:leftWall	4	static
+../Libs/Src/PD.c:273:6:rightWall	4	static
+../Libs/Src/PD.c:281:6:irController	24	static
+>>>>>>> Stashed changes

@@ -63,8 +63,42 @@ int cppmain(void)
 
 	while (1)
 	{
+<<<<<<< Updated upstream
 		mouseRun();
 		i++;
+=======
+//		calculateAndSaveAverages();
+//		mouseRun();
+//		HAL_Delay(1);
+
+		LED2_OFF;
+
+//		if(finishMove(FRONT_ALIGN,16))
+//		{
+//			STOP_ROBOT;
+////			HAL_Delay(DELAY_MID);
+////			resetEncoder();
+//		}
+
+		if(runState == 0 && finishMove(FRONT_ALIGN, 1))
+		{
+			STOP_ROBOT;
+			HAL_Delay(DELAY_MID);
+			runState = 1;
+		}
+		if(runState == 1 && finishMove(FRONT_DIST, 1))
+		{
+			STOP_ROBOT;
+			HAL_Delay(1000);
+			runState = 0;
+		}
+//		if(runState == 2 && finishMove(STRAIGHT_RUN, centerToEdgeSides))
+//		{
+//			STOP_ROBOT;
+//			HAL_Delay(DELAY_MID);
+//			break;
+//		}
+>>>>>>> Stashed changes
 		HAL_Delay(1);
 	}
 }

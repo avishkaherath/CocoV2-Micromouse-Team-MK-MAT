@@ -64,6 +64,13 @@ bool finishMove(MV_Type mv_type_, float dist_ang_)
 		r_speed = +PD_correction_sc - PD_correction_ac;
 		break;
 	case FRONT_ALIGN:
+<<<<<<< Updated upstream
+=======
+		l_speed = -PD_correction_sc; // - PD_correction_ac ;
+		r_speed = PD_correction_sc; // + PD_correction_ac ;
+		break;
+	case FRONT_DIST:
+>>>>>>> Stashed changes
 		l_speed = -PD_correction_sc ;
 		r_speed = PD_correction_sc ;
 		break;
@@ -124,8 +131,19 @@ void assignParameters(void)
 
 	case FRONT_ALIGN:
 		speed_th_ = al_speed;
+<<<<<<< Updated upstream
 		sc_kp = 1, sc_kd = 0, sc_red = 500;
 		break;
+=======
+		sc_kp = 10, sc_kd = 300e-3, sc_red = 400;
+//		ac_kp = 5, ac_kd = 300e-3, ac_red = 400;
+		break;
+//
+	case FRONT_DIST:
+		speed_th_ = al_speed;
+		sc_kp = 10, sc_kd = 300e-3, sc_red = 400;
+		break;
+>>>>>>> Stashed changes
 	}
 	return;
 }
@@ -152,8 +170,18 @@ void speedController(void)
 		break;
 
 	case FRONT_ALIGN:
+<<<<<<< Updated upstream
 		sc_error = (LFSensor - RFSensor);
 		break;
+=======
+		sc_error = LFSensor - RFSensor; //(LFSensor - fl_offset) + (RFSensor - fr_offset);
+//		frontAlignController();
+		break;
+
+	case FRONT_DIST:
+		sc_error = (LFSensor - fl_offset) + (RFSensor - fr_offset);
+		break;
+>>>>>>> Stashed changes
 	}
 
 	PD_correction_sc = (float)(sc_kp * sc_error + sc_kd * 1e3 * (sc_error - sc_last_error) / (current_time - previous_time)) / sc_red;
@@ -193,6 +221,14 @@ void angularController(void)
 	case (POINT_TURN):
 		ac_error = r_position, ac_error += l_position, ac_error -= (l_start + r_start), ac_error = (float)ac_error; // a_error = (l_position - l_start) + (r_position - r_start)
 		break;
+<<<<<<< Updated upstream
+=======
+
+//	case (FRONT_ALIGN):
+//		ac_error = (LFSensor - RFSensor);
+//		break;
+
+>>>>>>> Stashed changes
 	default:
 		ac_error = 0;
 		break;
@@ -202,9 +238,25 @@ void angularController(void)
 	ac_last_error = ac_error;
 	if (fabs(PD_correction_ac) > .5 * speed_th_)
 		PD_correction_ac = (PD_correction_ac > 0) ? .5 * speed_th_ : -.5 * speed_th_;
+<<<<<<< Updated upstream
 
 	return;
 }
+=======
+	return;
+}
+
+//void frontAlignController(void)
+//{
+//	ac_error = (LFSensor - RFSensor);
+//	PD_correction_ac = (ac_kp * ac_error + ac_kd * 1e3 * (ac_error - ac_last_error) / (current_time - previous_time)) / ac_red;
+//	ac_last_error = ac_error;
+//	if (fabs(PD_correction_ac) > speed_th_)
+//		PD_correction_ac = (PD_correction_ac > 0) ? speed_th_ : -1* speed_th_;
+//
+//	return;
+//}
+>>>>>>> Stashed changes
 
 ///////////////////////////////////////////////////////  IR-CONTROLLER /////////////////////////////////////////////////////////////////////////////////
 static float ir_error = 0;
