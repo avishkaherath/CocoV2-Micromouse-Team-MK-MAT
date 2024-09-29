@@ -134,7 +134,7 @@ void assignParameters(void)
 	case FRONT_ALIGN:
 		speed_th_ = al_speed;
 		sc_kp = 10, sc_kd = 300e-3, sc_red = 400;
-		ac_kp = 5, ac_kd = 300e-3, ac_red = 400;
+		ac_kp = 10, ac_kd = 300e-3, ac_red = 400;
 		break;
 //
 //	case FRONT_DIST:

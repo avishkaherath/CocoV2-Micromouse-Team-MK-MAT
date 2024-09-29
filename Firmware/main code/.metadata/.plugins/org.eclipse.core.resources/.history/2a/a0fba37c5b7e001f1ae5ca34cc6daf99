@@ -134,7 +134,7 @@ void assignParameters(void)
 	case FRONT_ALIGN:
 		speed_th_ = al_speed;
 		sc_kp = 10, sc_kd = 300e-3, sc_red = 400;
-		ac_kp = 5, ac_kd = 300e-3, ac_red = 400;
+		ac_kp = 10, ac_kd = 300e-3, ac_red = 400;
 		break;
 //
 //	case FRONT_DIST:
@@ -188,13 +188,14 @@ void speedController(void)
 
 	if (fabs(PD_correction_sc) > speed_th_)
 	{
-		PD_correction_sc = (PD_correction_sc > 0) ? speed_th_ : -speed_th_;
 
+		PD_correction_sc = (PD_correction_sc > 0) ? speed_th_ : -speed_th_;
 		if (irController() && align_select)
 		{
 //			LED2_ON;
 			PD_correction_ac = 0;
 			irController();
+
 		}
 		else
 		{
@@ -225,10 +226,6 @@ void angularController(void)
 		ac_error = r_position, ac_error += l_position, ac_error -= (l_start + r_start), ac_error = (float)ac_error; // a_error = (l_position - l_start) + (r_position - r_start)
 		break;
 
-	case (FRONT_ALIGN):
-		ac_error = (LFSensor - RFSensor);
-		break;
-
 	default:
 		return;
 	}
@@ -237,6 +234,7 @@ void angularController(void)
 	ac_last_error = ac_error;
 	if (fabs(PD_correction_ac) > .5 * speed_th_)
 		PD_correction_ac = (PD_correction_ac > 0) ? .5 * speed_th_ : -.5 * speed_th_;
+
 	return;
 }
 

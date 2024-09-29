@@ -1,4 +1,4 @@
-17:19:59 **** Incremental Build of configuration Debug for project coco_v2 ****
+17:49:46 **** Incremental Build of configuration Debug for project coco_v2 ****
 make -j8 all 
 arm-none-eabi-gcc "../Libs/Src/PD.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/PD.d" -MT"Libs/Src/PD.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/PD.o"
 ../Libs/Src/PD.c: In function 'finishMove':
@@ -18,18 +18,18 @@ Finished building target: coco_v2.elf
  
 arm-none-eabi-size  coco_v2.elf 
 arm-none-eabi-objdump -h -S coco_v2.elf  > "coco_v2.list"
-arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
    text	   data	    bss	    dec	    hex	filename
- 206676	   1848	  10096	 218620	  355fc	coco_v2.elf
-arm-none-eabi-objcopy  -O binary coco_v2.elf  "coco_v2.bin"
+ 206716	   1848	  10096	 218660	  35624	coco_v2.elf
+arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
 Finished building: default.size.stdout
+arm-none-eabi-objcopy  -O binary coco_v2.elf  "coco_v2.bin"
  
 Finished building: coco_v2.hex
- 
 Finished building: coco_v2.bin
+ 
  
 Finished building: coco_v2.list
  
 
-17:20:01 Build Finished. 0 errors, 3 warnings. (took 2s.236ms)
+17:49:49 Build Finished. 0 errors, 3 warnings. (took 2s.352ms)
 
