@@ -1,10 +1,11 @@
-17:49:46 **** Incremental Build of configuration Debug for project coco_v2 ****
+19:41:17 **** Incremental Build of configuration Debug for project coco_v2 ****
 make -j8 all 
 arm-none-eabi-gcc "../Libs/Src/PD.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Libs/Src/PD.d" -MT"Libs/Src/PD.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Libs/Src/PD.o"
 ../Libs/Src/PD.c: In function 'finishMove':
 ../Libs/Src/PD.c:61:9: warning: enumeration value 'IDLE' not handled in switch [-Wswitch]
    61 |         switch (mv_type)
       |         ^~~~~~
+../Libs/Src/PD.c:61:9: warning: enumeration value 'FRONT_DIST' not handled in switch [-Wswitch]
 ../Libs/Src/PD.c: In function 'assignParameters':
 ../Libs/Src/PD.c:96:9: warning: enumeration value 'FRONT_DIST' not handled in switch [-Wswitch]
    96 |         switch (mv_type)
@@ -18,11 +19,11 @@ Finished building target: coco_v2.elf
  
 arm-none-eabi-size  coco_v2.elf 
 arm-none-eabi-objdump -h -S coco_v2.elf  > "coco_v2.list"
-   text	   data	    bss	    dec	    hex	filename
- 206716	   1848	  10096	 218660	  35624	coco_v2.elf
 arm-none-eabi-objcopy  -O ihex coco_v2.elf  "coco_v2.hex"
-Finished building: default.size.stdout
+   text	   data	    bss	    dec	    hex	filename
+ 206508	   1848	  10016	 218372	  35504	coco_v2.elf
 arm-none-eabi-objcopy  -O binary coco_v2.elf  "coco_v2.bin"
+Finished building: default.size.stdout
  
 Finished building: coco_v2.hex
 Finished building: coco_v2.bin
@@ -31,5 +32,5 @@ Finished building: coco_v2.bin
 Finished building: coco_v2.list
  
 
-17:49:49 Build Finished. 0 errors, 3 warnings. (took 2s.352ms)
+19:41:19 Build Finished. 0 errors, 4 warnings. (took 2s.46ms)
 

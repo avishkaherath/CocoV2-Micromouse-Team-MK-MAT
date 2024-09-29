@@ -69,13 +69,13 @@ bool finishMove(MV_Type mv_type_, float dist_ang_)
 		r_speed = +PD_correction_sc;// - PD_correction_ac;
 		break;
 	case FRONT_ALIGN:
-		l_speed = -PD_correction_sc - PD_correction_ac ;
-		r_speed = -PD_correction_sc + PD_correction_ac ;
+		l_speed = -PD_correction_sc - PD_correction_ac;
+		r_speed = -PD_correction_sc + PD_correction_ac;
 		break;
-	case FRONT_DIST:
-		l_speed = -PD_correction_sc ;
-		r_speed = -PD_correction_sc ;
-		break;
+//	case FRONT_DIST:
+//		l_speed = -PD_correction_sc ;
+//		r_speed = -PD_correction_sc ;
+//		break;
 	}
 	setWheels();
 	previous_time = current_time;
@@ -134,9 +134,9 @@ void assignParameters(void)
 	case FRONT_ALIGN:
 		speed_th_ = al_speed;
 		sc_kp = 10, sc_kd = 300e-3, sc_red = 400;
-		ac_kp = 5, ac_kd = 300e-3, ac_red = 400;
+		ac_kp = 50, ac_kd = 300e-3, ac_red = 400;
 		break;
-//
+
 //	case FRONT_DIST:
 //		speed_th_ = al_speed;
 //		sc_kp = 10, sc_kd = 300e-3, sc_red = 400;
@@ -169,7 +169,6 @@ void speedController(void)
 
 	case FRONT_ALIGN:
 		sc_error = (LFSensor - fl_offset) + (RFSensor - fr_offset);
-//		frontAlignController();
 		break;
 
 //	case FRONT_DIST:
@@ -214,7 +213,6 @@ void angularController(void)
 {
 	switch (mv_type)
 	{
-
 	// STRAIGHT RUN
 	case (STRAIGHT_RUN):
 		ac_error = l_position, ac_error -= r_position;

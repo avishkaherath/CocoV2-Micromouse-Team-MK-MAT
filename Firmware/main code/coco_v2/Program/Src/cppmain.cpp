@@ -76,8 +76,7 @@ int cppmain(void)
 		if(finishMove(FRONT_ALIGN,16))
 		{
 			STOP_ROBOT;
-//			HAL_Delay(DELAY_MID);
-//			resetEncoder();
+			HAL_Delay(1000);
 		}
 
 //		if(runState == 0 && finishMove(STRAIGHT_RUN, edgeToCenter))
