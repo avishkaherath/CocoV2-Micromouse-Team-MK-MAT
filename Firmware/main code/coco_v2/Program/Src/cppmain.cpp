@@ -69,8 +69,16 @@ int cppmain(void)
 
 	while(1)
 	{
-		mouseRun();
-		HAL_Delay(1);
+//		calculateAndSaveAverages();
+//		mouseRun();
+//		HAL_Delay(1);
+		LED2_OFF;
+		if(finishMove(FRONT_ALIGN,16))
+		{
+			STOP_ROBOT;
+//			HAL_Delay(DELAY_MID);
+//			resetEncoder();
+		}
 
 //		if(runState == 0 && finishMove(STRAIGHT_RUN, edgeToCenter))
 //		{
@@ -90,7 +98,7 @@ int cppmain(void)
 //			HAL_Delay(DELAY_MID);
 //			break;
 //		}
-//		HAL_Delay(1);
+		HAL_Delay(1);
 	}
 }
 
@@ -107,7 +115,7 @@ int initialization_block(void)
 	displayInit();
 	disp_state = DEFAULT;
 
-	buzzerInit();
+//	buzzerInit();
 //	gyroCalibration();
 
 	TIM13_IT_START;
@@ -611,7 +619,7 @@ void mouseRun()
 
 			break;
 
-		case 5: // fron align
+		case 5: // front align
 			if (F)
 			{
 				if (finishMove(FRONT_ALIGN, 16))
@@ -758,7 +766,7 @@ void mouseRun()
 			}
 			break;
 
-		case 5: // fron align
+		case 5: // front align
 			if (F)
 			{
 				if (finishMove(FRONT_ALIGN, 16))

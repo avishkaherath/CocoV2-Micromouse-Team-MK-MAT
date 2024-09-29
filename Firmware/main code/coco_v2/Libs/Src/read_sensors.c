@@ -11,6 +11,8 @@ int32_t DLSensor = 0;
 int32_t DRSensor = 0;
 int32_t LLSensor = 0;
 int32_t RRSensor = 0;
+int32_t MTRSensor_L = 0;
+int32_t MTRSensor_R = 0;
 
 int32_t LFSensor_ = 0;
 
@@ -20,8 +22,9 @@ int32_t DLSensor_bg = 0;
 int32_t DRSensor_bg = 0;
 int32_t LLSensor_bg = 0;
 int32_t RRSensor_bg = 0;
+int32_t MTRSensor_bg = 0;
 
-// dc offset due to the reflections from robot itself
+// DC offset due to the reflections from robot itself
 int32_t LFSensor_DC = 0; //1100;
 int32_t RFSensor_DC = 0; //1330;
 int32_t DLSensor_DC = 0; //530;
@@ -37,11 +40,13 @@ static int32_t LBuff[15] = {0};
 static int32_t RBuff[15] = {0};
 static int32_t FLBuff[15] = {0};
 static int32_t FRBuff[15] = {0};
+static int32_t MTRBuff[15] = {0};
 
 float averageL = 0;
 float averageR = 0;
 float averageFL = 0;
 float averageFR = 0;
+float averageMTR = 0;
 
 bool L = false;
 bool R = false;
@@ -62,6 +67,7 @@ void readSensor(void)
 	RFSensor_bg = read_RF_Sensor;
 	DLSensor_bg = read_DL_Sensor;
 	DRSensor_bg = read_DR_Sensor;
+	MTRSensor_bg = read_MTR_Sensor;
 	
 	__HAL_TIM_SET_COUNTER(&htim5,0);
 
@@ -70,6 +76,7 @@ void readSensor(void)
 //	start_count = __HAL_TIM_GET_COUNTER(&htim5);
 	while(__HAL_TIM_GET_COUNTER(&htim5)< 60); //start_count + elapse_count);
 	LFSensor = read_LF_Sensor - LFSensor_bg - LFSensor_DC;
+	MTRSensor_L = read_MTR_Sensor - MTRSensor_bg;
 //	LFSensor = (int32_t)1.142*LFSensor - 539.4;
 	LF_EM_OFF;
 //	start_count = __HAL_TIM_GET_COUNTER(&htim5);
@@ -104,6 +111,7 @@ void readSensor(void)
 //	start_count = __HAL_TIM_GET_COUNTER(&htim5);
 	while(__HAL_TIM_GET_COUNTER(&htim5)<200); //start_count + elapse_count);
 	RFSensor = read_RF_Sensor - RFSensor_bg - RFSensor_DC;
+	MTRSensor_R = read_MTR_Sensor - MTRSensor_bg;
 	RF_EM_OFF;
 //	start_count = __HAL_TIM_GET_COUNTER(&htim5);
 	if(RFSensor < 0)
@@ -143,6 +151,7 @@ void readSensor(void)
 	RBuff[point] = DRSensor;
 	FLBuff[point] = LFSensor;
 	FRBuff[point] = RFSensor;
+	MTRBuff[point] = (int32_t)((MTRSensor_R+MTRSensor_L)/2);
 	
 //	LED7_OFF;
 }
@@ -201,6 +210,7 @@ void calculateAndSaveAverages() {
 	averageR = 0;
 	averageFL = 0;
 	averageFR = 0;
+	averageMTR = 0;
     int i;
     // Calculate the average for each buffer
     for (i = 0; i < 15; i++) {
@@ -208,6 +218,7 @@ void calculateAndSaveAverages() {
         averageR += RBuff[i];
         averageFL += FLBuff[i];
         averageFR += FRBuff[i];
+        averageMTR += MTRBuff[i];
     }
 
     // Divide the sums by 15 to get the average
@@ -215,6 +226,7 @@ void calculateAndSaveAverages() {
     averageR = averageR/15;
     averageFL = averageFL/15;
     averageFR = averageFR/15;
+    averageMTR = averageMTR/15;
 }
 
 void getSensorReadings() {

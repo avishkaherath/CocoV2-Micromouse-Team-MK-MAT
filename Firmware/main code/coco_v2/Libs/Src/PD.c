@@ -19,6 +19,8 @@ static int fm_counter = 0;
 const float TERMINATION_TH = 2e-1;
 bool align_select = false;
 
+void frontAlignController(void);
+
 bool finishMove(MV_Type mv_type_, float dist_ang_)
 {
 	mv_type = mv_type_, dist_ang = dist_ang_;
@@ -67,8 +69,8 @@ bool finishMove(MV_Type mv_type_, float dist_ang_)
 		r_speed = +PD_correction_sc;// - PD_correction_ac;
 		break;
 	case FRONT_ALIGN:
-		l_speed = -PD_correction_sc ;
-		r_speed = PD_correction_sc ;
+		l_speed = -PD_correction_sc - PD_correction_ac ;
+		r_speed = -PD_correction_sc + PD_correction_ac ;
 		break;
 	case FRONT_DIST:
 		l_speed = -PD_correction_sc ;
@@ -110,7 +112,7 @@ void assignParameters(void)
 		else if (fabs(st_speed - 0.8) < .05)
 		{
 			sc_kp = 1.0, sc_kd = 50e-3, sc_red = 400;
-			ac_kp = 1.3, ac_kd = 1e-3, ac_red = 500;
+			ac_kp = 1.3, ac_kd = 50e-3, ac_red = 500;	//1e-3
 			ir_kp = 100, ir_kd = 1e-3, ir_red = 1000;
 		}
 		else
@@ -126,18 +128,19 @@ void assignParameters(void)
 		speed_th_ = rt_speed;
 
 		sc_kp = 1.0, sc_kd = 65e-3, sc_red = 60; // 2e-3, 1e-3
-		ac_kp = 1, ac_kd = 3e-3, ac_red = 1000;
+		ac_kp = 1, ac_kd = 65e-3, ac_red = 1000; // 1e-3
 		break;
 
 	case FRONT_ALIGN:
 		speed_th_ = al_speed;
 		sc_kp = 10, sc_kd = 300e-3, sc_red = 400;
+		ac_kp = 10, ac_kd = 300e-3, ac_red = 400;
 		break;
-
-	case FRONT_DIST:
-		speed_th_ = al_speed;
-		sc_kp = 1, sc_kd = 3e-3, sc_red = 500;
-		break;
+//
+//	case FRONT_DIST:
+//		speed_th_ = al_speed;
+//		sc_kp = 10, sc_kd = 300e-3, sc_red = 400;
+//		break;
 	}
 	return;
 }
@@ -165,12 +168,13 @@ void speedController(void)
 		break;
 
 	case FRONT_ALIGN:
-		sc_error = (LFSensor - RFSensor);
+		sc_error = (LFSensor - fl_offset) + (RFSensor - fr_offset);
+//		frontAlignController();
 		break;
 
-	case FRONT_DIST:
-		sc_error = (LFSensor - fl_offset) + (RFSensor - fr_offset);
-		break;
+//	case FRONT_DIST:
+//		sc_error = (LFSensor - fl_offset) + (RFSensor - fr_offset);
+//		break;
 	}
 
 	PD_correction_sc = (float)(sc_kp * sc_error + sc_kd * 1e3 * (sc_error - sc_last_error) / (current_time - previous_time)) / sc_red;
@@ -195,6 +199,7 @@ void speedController(void)
 		}
 		else
 		{
+			LED2_ON;
 			PD_correction_ir = 0;
 			angularController();
 		}
@@ -220,15 +225,26 @@ void angularController(void)
 	case (POINT_TURN):
 		ac_error = r_position, ac_error += l_position, ac_error -= (l_start + r_start), ac_error = (float)ac_error; // a_error = (l_position - l_start) + (r_position - r_start)
 		break;
+
 	default:
-		ac_error = 0;
-		break;
+		return;
 	}
 
-	PD_correction_ac = (ac_kp * ac_error + sc_kd * 1e3 * (ac_error - ac_last_error) / (current_time - previous_time)) / ac_red;
+	PD_correction_ac = (ac_kp * ac_error + ac_kd * 1e3 * (ac_error - ac_last_error) / (current_time - previous_time)) / ac_red;
 	ac_last_error = ac_error;
 	if (fabs(PD_correction_ac) > .5 * speed_th_)
 		PD_correction_ac = (PD_correction_ac > 0) ? .5 * speed_th_ : -.5 * speed_th_;
+
+	return;
+}
+
+void frontAlignController(void)
+{
+	ac_error = (LFSensor - RFSensor);
+	PD_correction_ac = (ac_kp * ac_error + ac_kd * 1e3 * (ac_error - ac_last_error) / (current_time - previous_time)) / ac_red;
+	ac_last_error = ac_error;
+	if (fabs(PD_correction_ac) > speed_th_)
+		PD_correction_ac = (PD_correction_ac > 0) ? speed_th_ : -1* speed_th_;
 
 	return;
 }

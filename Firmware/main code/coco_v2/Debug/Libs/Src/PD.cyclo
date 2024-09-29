@@ -1,8 +1,9 @@
-../Libs/Src/PD.c:22:6:finishMove	15
-../Libs/Src/PD.c:92:6:assignParameters	8
-../Libs/Src/PD.c:147:6:speedController	11
-../Libs/Src/PD.c:209:6:angularController	5
-../Libs/Src/PD.c:240:6:twoWalls	3
-../Libs/Src/PD.c:247:6:leftWall	2
-../Libs/Src/PD.c:254:6:rightWall	2
-../Libs/Src/PD.c:262:6:irController	7
+../Libs/Src/PD.c:24:6:finishMove	15
+../Libs/Src/PD.c:94:6:assignParameters	7
+../Libs/Src/PD.c:150:6:speedController	10
+../Libs/Src/PD.c:214:6:angularController	5
+../Libs/Src/PD.c:242:6:frontAlignController	3
+../Libs/Src/PD.c:257:6:twoWalls	3
+../Libs/Src/PD.c:264:6:leftWall	2
+../Libs/Src/PD.c:271:6:rightWall	2
+../Libs/Src/PD.c:279:6:irController	7
