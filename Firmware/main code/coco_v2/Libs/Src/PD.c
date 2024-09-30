@@ -255,21 +255,21 @@ static float ir_error = 0;
 
 bool twoWalls(void)
 {
-	if (((averageLL - 2300) * (averageLL - 4500) < 0) && ((averageRR - 2300) * (averageRR - 4500) < 0))  //900  //2300
+	if (((averageLL - 2100) * (averageLL - 4500) < 0) && ((averageRR - 1900) * (averageRR - 4500) < 0))  //900  //2300
 		return true;
 	return false;
 }
 
 bool leftWall(void)
 {
-	if ((averageLL - 2300) * (averageLL - 4500) < 0) //900  //2300
+	if ((averageLL - 2100) * (averageLL - 4500) < 0) //900  //2300
 		return true;
 	return false;
 }
 
 bool rightWall(void)
 {
-	if ((averageRR - 2300) * (averageRR - 4500) < 0) //900  //2300
+	if ((averageRR - 1900) * (averageRR - 4500) < 0) //900  //2300
 		return true;
 	return false;
 }

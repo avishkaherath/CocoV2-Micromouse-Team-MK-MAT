@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (11.3.rel1)
+# Toolchain: GNU Tools for STM32 (12.3.rel1)
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
@@ -22,7 +22,7 @@ OBJS += \
 
 # Each subdirectory must supply rules for building sources it contributes
 Drivers/SSD1306/Src/%.o Drivers/SSD1306/Src/%.su Drivers/SSD1306/Src/%.cyclo: ../Drivers/SSD1306/Src/%.c Drivers/SSD1306/Src/subdir.mk
-	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"C:/Users/ACER/Documents/GitHub/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers" -I"D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Libs/Inc" -I"D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Program/Inc" -I"D:/MicroMouse/CocoV2-Micromouse-Team-MK-MAT/Firmware/main code/coco_v2/Drivers/SSD1306/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 
 clean: clean-Drivers-2f-SSD1306-2f-Src
 

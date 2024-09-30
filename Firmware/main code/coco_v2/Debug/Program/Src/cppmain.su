@@ -2,4 +2,4 @@
 ../Program/Src/cppmain.cpp:111:5:int initialization_block()	8	static
 ../Program/Src/cppmain.cpp:135:6:void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)	16	static
 ../Program/Src/cppmain.cpp:145:6:void HAL_GPIO_EXTI_Callback(uint16_t)	16	static,ignoring_inline_asm
-../Program/Src/cppmain.cpp:157:6:void mouseRun()	32	static
+../Program/Src/cppmain.cpp:157:6:void mouseRun()	40	static

@@ -39,6 +39,14 @@ int backFlood[ROWS][COLUMNS]={
 		{-1,-1,-1,-1,-1,-1}
 };
 
+ int backFloodCells[ROWS][COLUMNS]={
+ 		{0,1,2,3,4,5},
+ 		{1,2,3,4,5,6},
+ 		{2,3,4,5,6,7},
+ 		{3,4,5,6,7,8},
+ 		{4,5,6,7,8,9},
+ 		{5,6,7,8,9,10}
+ };
 
 //int flood[ROWS][COLUMNS]={
 //{14,13,12,11,10,9,8,7,7,8,9,10,11,12,13,14},
@@ -95,6 +103,25 @@ int backFlood[ROWS][COLUMNS]={
 //        {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
 //		{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1}
 //};
+
+// int backFloodCells[ROWS][COLUMNS] = {
+// 	{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15},
+// 	{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16},
+// 	{2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17},
+// 	{3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18},
+// 	{4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19},
+// 	{5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20},
+// 	{6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21},
+// 	{7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22},
+// 	{8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23},
+// 	{9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24},
+// 	{10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25},
+// 	{11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26},
+// 	{12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27},
+// 	{13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28},
+// 	{14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29},
+// 	{15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30}
+// };
 
 
 
@@ -597,10 +624,12 @@ char toMoveFastForward(struct coordinate p, struct coordinate prevPos, int orien
 	}
 }
 
-void backtrack() {
+void backtrack()
+{
 	struct coordinate p;
-	p.y = 0;
+	p.y = 0; 	// destination cell (0,0)
 	p.x = 0;
+
 	int distance = 1;
 
 	backFlood[0][0] = 0;
@@ -608,59 +637,67 @@ void backtrack() {
 
 	q.push(p);
 
-	while (!q.empty()) {
+	while (!q.empty())
+	{
 		std::queue<coordinate> temq;
 
 		int br = 0;
 
-		while (!q.empty()) {
+		while (!q.empty())
+		{
 			p = q.front();
 			q.pop();
 
-			if (flood[p.y][p.x] == 0) {
+			if ((p.x == ROWS / 2 - 1 || p.x == ROWS / 2) && (p.y == ROWS / 2 - 1 || p.y == ROWS / 2))
+			{
 				br = 1;
 				break;
 			}
 			struct surroundCoor surr = getSurrounds(p);
 
-			if (surr.N.y >= 0 && surr.N.x >= 0 && cells[surr.N.y][surr.N.x] >= 0
-					&& backFlood[surr.N.y][surr.N.x] == -1) {
-				if (isAccessible(p, surr.N)) {
+			if (surr.N.y >= 0 && surr.N.x >= 0 && cells[surr.N.y][surr.N.x] >= 0 && backFlood[surr.N.y][surr.N.x] == -1)
+			{
+				if (isAccessible(p, surr.N))
+				{
 					temq.push(surr.N);
 					backFlood[surr.N.y][surr.N.x] = distance;
 				}
 			}
-			if (surr.E.y >= 0 && surr.E.x >= 0 && cells[surr.E.y][surr.E.x] >= 0
-					&& backFlood[surr.E.y][surr.E.x] == -1) {
-				if (isAccessible(p, surr.E)) {
+			if (surr.E.y >= 0 && surr.E.x >= 0 && cells[surr.E.y][surr.E.x] >= 0 && backFlood[surr.E.y][surr.E.x] == -1)
+			{
+				if (isAccessible(p, surr.E))
+				{
 					temq.push(surr.E);
 					backFlood[surr.E.y][surr.E.x] = distance;
 				}
 			}
-			if (surr.S.y >= 0 && surr.S.x >= 0 && cells[surr.S.y][surr.S.x] >= 0
-					&& backFlood[surr.S.y][surr.S.x] == -1) {
-				if (isAccessible(p, surr.S)) {
+			if (surr.S.y >= 0 && surr.S.x >= 0 && cells[surr.S.y][surr.S.x] >= 0 && backFlood[surr.S.y][surr.S.x] == -1)
+			{
+				if (isAccessible(p, surr.S))
+				{
 					temq.push(surr.S);
 					backFlood[surr.S.y][surr.S.x] = distance;
 				}
 			}
-			if (surr.W.y >= 0 && surr.W.x >= 0 && cells[surr.W.y][surr.W.x] >= 0
-					&& backFlood[surr.W.y][surr.W.x] == -1) {
-				if (isAccessible(p, surr.W)) {
+			if (surr.W.y >= 0 && surr.W.x >= 0 && cells[surr.W.y][surr.W.x] >= 0 && backFlood[surr.W.y][surr.W.x] == -1)
+			{
+				if (isAccessible(p, surr.W))
+				{
 					temq.push(surr.W);
 					backFlood[surr.W.y][surr.W.x] = distance;
 				}
 			}
 		}
 
-		if (br) {
+		if (br)
+		{
 			break;
 		}
 		q = temq;
 		distance += 1;
 	}
-
 }
+
 
 int orientation(int orient, char turning) {
 	if (turning == 'L') {

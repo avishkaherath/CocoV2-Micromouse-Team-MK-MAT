@@ -19,7 +19,7 @@ int ORIENT = 0;
 char direction;
 bool starting = false;
 float startingDist = 8.8;  //8.0
-float edgeToCenter = 17;
+float edgeToCenter = 16.9;
 float centerToEdgeSides = 2.1;
 float centerToEdgeForward = 2.15;
 float centerToEdgeBack = 2.5;
@@ -344,20 +344,35 @@ void mouseRun()
 			}
 			else
 			{ // in center
-				backtrack();
+				if(!(XY.x == 0 && XY.y == 0))//in center
+				{
+					dumXY.x = XY.x;
+					dumXY.y = XY.y;
+					dumXY_prev.x = XY_prev.x;
+					dumXY_prev.y = XY_prev.y;
+					dumOrient = orient;
+					playSound(TONE2);
 
-				dumXY.x = XY.x;
-				dumXY.y = XY.y;
-				dumXY_prev.x = XY_prev.x;
-				dumXY_prev.y = XY_prev.y;
-				dumOrient = orient;
+					backtrack();
+					forwardtrack(dumXY, dumXY_prev, dumOrient);
 
-				forwardtrack(dumXY, dumXY_prev, dumOrient);
+					for (int i = 0; i < ROWS; ++i)
+					{
+						for (int j = 0; j < COLUMNS; ++j)
+						{
+							flood[i][j] = backFloodCells[i][j];
+						}
+					}
+				}
+				else// in starting cell
+				{
+					backtrack();
+					forwardtrack(dumXY, dumXY_prev, dumOrient);
 
-				playSound(TONE2);
+					runState = 7;
 
-				mouseState = 6;
-				runState = 1;
+				}
+
 				backPtr = 0;
 				LED5_ON;
 			}
@@ -377,36 +392,7 @@ void mouseRun()
 				HAL_Delay(DELAY_MID);
 				runState = 5;
 			}
-//			if (!F)
-//			{
-//				align_select = true;
-//				if (finishMove(STRAIGHT_RUN, edgeToCenter))
-//				{
-//					STOP_ROBOT;
-//					LED2_OFF;
-//					HAL_Delay(DELAY_MID);
-//					runState = 5;
-//				}
-//			}
-//			else
-//			{
-//				if (finishMove(STRAIGHT_RUN, edgeToCenter - 0.3))
-//				{
-//					STOP_ROBOT;
-//					LED2_OFF;
-//					HAL_Delay(DELAY_MID);
-//					runState = 5;
-//				}
-//			}
-//
-//
-//			if (finishMove(STRAIGHT_RUN, edgeToCenter))
-//			{
-//				STOP_ROBOT;
-//				LED2_OFF;
-//				HAL_Delay(DELAY_MID);
-//				runState = 5;
-//			}
+
 			break;
 
 		case 5: // front align
@@ -505,6 +491,17 @@ void mouseRun()
 				XY_prev = XY;
 				XY = updateCoordinates(XY, orient);
 			}
+			break;
+
+		case 7: // finishing
+			if (finishMove(STRAIGHT_RUN, edgeToCenter))
+			{
+				STOP_ROBOT;
+				HAL_Delay(DELAY_MID);
+				mouseState = 0;
+				playSound(TONE4);
+				ALL_LED_OFF;
+				}
 			break;
 		}
 
@@ -717,7 +714,7 @@ void mouseRun()
 		case 1: // decision
 			getSensorReadings();
 
-			if (flood[XY.y][XY.x] >= 1)
+			if (!((XY.x == ROWS / 2 - 1 || XY.x == ROWS / 2) && (XY.y == ROWS / 2 - 1 || XY.y == ROWS / 2)))
 			{
 				direction = fwd_path[fwdPtr];
 				fwdPtr -= 1;

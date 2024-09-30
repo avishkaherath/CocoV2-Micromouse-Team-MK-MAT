@@ -22,6 +22,7 @@ extern "C" {
 
 extern int flood[ROWS][COLUMNS];
 extern int backFlood[ROWS][COLUMNS];
+extern int backFloodCells[ROWS][COLUMNS];
 extern int cells[ROWS][COLUMNS];
 
 
