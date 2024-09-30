@@ -176,57 +176,55 @@ void mouseRun()
 		break;
 
 	case 1:    //near wall calibration
-		LED7_ON;
-		displayUpdate();
-		if(irBlink())
-		{
-			HAL_Delay(2000);
-			nearVal = frontWallCalibrate();
-			mouseState = 2;
-			playSound(TONE1);
+			LED7_ON;
 			displayUpdate();
-			HAL_Delay(1000);
-			LED7_OFF;
-		}
-		if (buttonPress)
-		{
-			STOP_ROBOT;
-			playSound(TONE4);
-			LED7_OFF;
-			HAL_Delay(500);
-			mouseState = 2;
-			buttonPress = false;
-			l_start = 0;
-		}
-		break;
+			if(irBlink())
+			{
+				LED7_OFF;
+				HAL_Delay(1000);
+				nearVal = frontWallCalibrate();
+				playSound(TONE1);
+				displayUpdate();
+				HAL_Delay(1000);
+				mouseState = 2;
+			}
+			if (buttonPress)
+			{
+				STOP_ROBOT;
+				playSound(TONE4);
+				LED7_OFF;
+				HAL_Delay(500);
+				mouseState = 2;
+				buttonPress = false;
+				l_start = 0;
+			}
+			break;
 
-	case 2:    //far wall calibration
-		LED8_ON;
-		displayUpdate();
-		if(irBlink())
-		{
-			HAL_Delay(2000);
-			farVal = frontWallCalibrate();
-			fr_thresh = (nearVal+farVal)/2;
+		case 2:    //far wall calibration
+			LED8_ON;
 			displayUpdate();
-			HAL_Delay(1000);
-			mouseState = 3;
-			playSound(TONE1);
-
-			HAL_Delay(1000);
-			LED8_OFF;
-		}
-		if (buttonPress)
-		{
-			STOP_ROBOT;
-			playSound(TONE4);
-			LED8_OFF;
-			HAL_Delay(500);
-			mouseState = 3;
-			buttonPress = false;
-			l_start = 0;
-		}
-		break;
+			if(irBlink())
+			{
+				LED8_OFF;
+				HAL_Delay(1000);
+				farVal = frontWallCalibrate();
+				fr_thresh = (nearVal+farVal)/2;
+				playSound(TONE1);
+				displayUpdate();
+				HAL_Delay(1000);
+				mouseState = 3;
+			}
+			if (buttonPress)
+			{
+				STOP_ROBOT;
+				playSound(TONE4);
+				LED8_OFF;
+				HAL_Delay(500);
+				mouseState = 3;
+				buttonPress = false;
+				l_start = 0;
+			}
+			break;
 
 	case 3:   //set initial
 		LED9_ON;
@@ -353,8 +351,8 @@ void mouseRun()
 					dumOrient = orient;
 					playSound(TONE2);
 
-					backtrack();
-					forwardtrack(dumXY, dumXY_prev, dumOrient);
+//					backtrack();
+//					forwardtrack(dumXY, dumXY_prev, dumOrient);
 
 					for (int i = 0; i < ROWS; ++i)
 					{

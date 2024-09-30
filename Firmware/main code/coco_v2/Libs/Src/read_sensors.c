@@ -376,7 +376,7 @@ float frontWallCalibrate(void)
 		FR_calibration_sum += FR_calibration_buffer[idx];
 	}
 
-	return (((float)FL_calibration_sum / BUFFER_LENGTH)+((float)FR_calibration_sum / BUFFER_LENGTH))/2;
 	LED1_OFF;
+	return (((float)FL_calibration_sum / BUFFER_LENGTH)+((float)FR_calibration_sum / BUFFER_LENGTH))/2;
 }
 
