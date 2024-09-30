@@ -22,27 +22,28 @@ extern int32_t LFSensor;
 extern int32_t RFSensor;
 extern int32_t DLSensor;
 extern int32_t DRSensor;
-extern int32_t RSensor;
-extern int32_t LSensor;
+extern int32_t RRSensor;
+extern int32_t LLSensor;
 
 extern int32_t LFSensor_bg;
 extern int32_t RFSensor_bg;
 extern int32_t DLSensor_bg;
 extern int32_t DRSensor_bg;
-extern int32_t RSensor_bg;
-extern int32_t LSensor_bg;
+extern int32_t RRSensor_bg;
+extern int32_t LLSensor_bg;
 extern int32_t count;
+extern float fr_thresh;
 
 extern bool L;
 extern bool R;
 extern bool F;
 
-extern float averageL;
-extern float averageR;
+extern float averageLL;
+extern float averageRR;
 extern float averageFL;
 extern float averageFR;
-extern float averageDL;
-extern float averageDR;
+extern float averageL;
+extern float averageR;
 
 
 void readSensor(void);
@@ -54,7 +55,8 @@ bool leftIrBlink();
 void getSensorReadings();
 void stop_it_all(void);
 void calculateAndSaveAverages();
-void irFrontCalibrate(void);
-void irSideCalibrate(void);
+float frontWallCalibrate(void);
+//void irFrontCalibrate(void);
+//void irSideCalibrate(void);
 
 #endif /* INC_READ_SENSORS_H_ */

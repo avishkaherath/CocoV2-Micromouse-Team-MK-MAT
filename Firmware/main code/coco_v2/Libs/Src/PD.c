@@ -7,7 +7,7 @@ static float start_angle = 0;
 
 static MV_Type mv_type = IDLE;
 static float dist_ang;
-float MIDDLE_VALUE_DL = 1050;
+float MIDDLE_VALUE_DL = 3310;  //FOR DIAGONAL 1050
 float fl_offset = 3800;
 float fr_offset = 3800;
 
@@ -113,7 +113,7 @@ void assignParameters(void)
 		{
 			sc_kp = 1.0, sc_kd = 50e-3, sc_red = 400;
 			ac_kp = 1.3, ac_kd = 50e-3, ac_red = 500;	//1e-3
-			ir_kp = 100, ir_kd = 1e-3, ir_red = 1000;
+			ir_kp = 2, ir_kd = 100e-3, ir_red = 1000;   //1e-3
 		}
 		else
 		{
@@ -197,7 +197,7 @@ void speedController(void)
 		}
 		else
 		{
-			LED2_ON;
+//			LED2_ON;
 			PD_correction_ir = 0;
 			angularController();
 		}
@@ -255,21 +255,21 @@ static float ir_error = 0;
 
 bool twoWalls(void)
 {
-	if (((averageL - 500) * (averageL - 4500) < 0) && ((averageR - 500) * (averageR - 4500) < 0))
+	if (((averageLL - 2300) * (averageLL - 4500) < 0) && ((averageRR - 2300) * (averageRR - 4500) < 0))  //900  //2300
 		return true;
 	return false;
 }
 
 bool leftWall(void)
 {
-	if ((averageL - 500) * (averageR - 4500) < 0)
+	if ((averageLL - 2300) * (averageLL - 4500) < 0) //900  //2300
 		return true;
 	return false;
 }
 
 bool rightWall(void)
 {
-	if ((averageR - 500) * (averageR - 4500) < 0)
+	if ((averageRR - 2300) * (averageRR - 4500) < 0) //900  //2300
 		return true;
 	return false;
 }
@@ -282,11 +282,11 @@ bool irController(void)
 	if ((mv_type == STRAIGHT_RUN))
 	{
 		if (twoWalls())
-			ir_error = averageL - averageR;
+			ir_error = averageLL - averageRR;
 		else if (leftWall())
-			ir_error = 2 * (averageL - MIDDLE_VALUE_DL);
+			ir_error = 2 * (averageLL - MIDDLE_VALUE_DL);
 		else if (rightWall())
-			ir_error = 2 * (MIDDLE_VALUE_DL - averageR);
+			ir_error = 2 * (MIDDLE_VALUE_DL - averageRR);
 		else
 		{
 			ir_error = 0;
@@ -294,8 +294,8 @@ bool irController(void)
 		}
 		PD_correction_ir = (ir_kp * ir_error + ir_kd * 1e3 * (ir_error - ir_last_error) / (current_time - previous_time)) / ir_red;
 		ir_last_error = ir_error;
-		if (fabs(PD_correction_ir) > speed_th_ * .1)
-			PD_correction_ir = (PD_correction_ir > 0) ? .1 * speed_th_ : -.1 * speed_th_;
+		if (fabs(PD_correction_ir) > speed_th_ * .3)
+			PD_correction_ir = (PD_correction_ir > 0) ? .3 * speed_th_ : -.3 * speed_th_;
 		return true;
 	}
 	PD_correction_ir = 0;

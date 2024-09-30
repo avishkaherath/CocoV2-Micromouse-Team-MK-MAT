@@ -21,7 +21,7 @@ bool starting = false;
 float startingDist = 8.8;  //8.0
 float edgeToCenter = 17;
 float centerToEdgeSides = 2.1;
-float centerToEdgeForward = 2.2;
+float centerToEdgeForward = 2.15;
 float centerToEdgeBack = 2.5;
 float Angle180 = 180;
 float centerToEdge;
@@ -42,6 +42,8 @@ uint32_t l_pos;
 uint32_t r_pos;
 float omega;
 uint16_t m_reciever,l_reciever,r_reciever,rf_reciever,lf_reciever,dl_reciever,dr_reciever;
+float nearVal;
+float farVal;
 
 void mouseRun();
 
@@ -70,22 +72,27 @@ int cppmain(void)
 	while(1)
 	{
 //		calculateAndSaveAverages();
-//		mouseRun();
-//		HAL_Delay(1);
-		LED2_OFF;
-		if(finishMove(FRONT_ALIGN,16))
-		{
-			STOP_ROBOT;
-			HAL_Delay(1000);
-		}
-
-//		if(runState == 0 && finishMove(STRAIGHT_RUN, edgeToCenter))
+		mouseRun();
+		HAL_Delay(1);
+//		LED2_OFF;
+//		if(finishMove(FRONT_ALIGN,16))
+//		{
+//			STOP_ROBOT;
+//			HAL_Delay(1000);
+//		}
+//		align_select = 1;
+//
+//		if(finishMove(STRAIGHT_RUN, 19.2))
 //		{
 //			STOP_ROBOT;
 //			HAL_Delay(DELAY_MID);
-//			runState = 1;
+//			runState ++;
+//			if(runState == 2)
+//			{
+//				break;
+//			}
 //		}
-//		if(runState == 1 && finishMove(POINT_TURN, 90))
+//		if(runState == 1 && finishMove(STRAIGHT_RUN, centerToEdge))
 //		{
 //			STOP_ROBOT;
 //			HAL_Delay(DELAY_MID);
@@ -97,7 +104,7 @@ int cppmain(void)
 //			HAL_Delay(DELAY_MID);
 //			break;
 //		}
-		HAL_Delay(1);
+//		HAL_Delay(1);
 	}
 }
 
@@ -114,12 +121,12 @@ int initialization_block(void)
 	displayInit();
 	disp_state = DEFAULT;
 
-//	buzzerInit();
+	buzzerInit();
 //	gyroCalibration();
 
 	TIM13_IT_START;
 //	TIM14_IT_START;
-	HAL_Delay(100);
+//	HAL_Delay(100);
 	ALL_LED_OFF;
 
 	return 0;
@@ -128,8 +135,9 @@ int initialization_block(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if (htim == &htim13)
+		readSensor();
+		//gyroUpdate(),
 
-		gyroUpdate(),readSensor();
 //	else if (htim == &htim14)
 		//displayUpdate();
 }
@@ -152,28 +160,130 @@ void mouseRun()
 	{
 
 	case 0: // Idle
+		LED6_ON;
+		calculateAndSaveAverages();
+		displayUpdate();
+		if (buttonPress)
+		{
+			STOP_ROBOT;
+			playSound(TONE4);
+			LED6_OFF;
+			HAL_Delay(500);
+			mouseState = 1;
+			buttonPress = false;
+			l_start = 0;
+		}
+		break;
+
+	case 1:    //near wall calibration
 		LED7_ON;
 		displayUpdate();
+		if(irBlink())
+		{
+			HAL_Delay(2000);
+			nearVal = frontWallCalibrate();
+			mouseState = 2;
+			playSound(TONE1);
+			displayUpdate();
+			HAL_Delay(1000);
+			LED7_OFF;
+		}
 		if (buttonPress)
 		{
 			STOP_ROBOT;
 			playSound(TONE4);
 			LED7_OFF;
 			HAL_Delay(500);
-			mouseState = 8;
+			mouseState = 2;
 			buttonPress = false;
 			l_start = 0;
 		}
 		break;
 
-	case 1: // search Idle
+	case 2:    //far wall calibration
+		LED8_ON;
+		displayUpdate();
+		if(irBlink())
+		{
+			HAL_Delay(2000);
+			farVal = frontWallCalibrate();
+			fr_thresh = (nearVal+farVal)/2;
+			displayUpdate();
+			HAL_Delay(1000);
+			mouseState = 3;
+			playSound(TONE1);
+
+			HAL_Delay(1000);
+			LED8_OFF;
+		}
+		if (buttonPress)
+		{
+			STOP_ROBOT;
+			playSound(TONE4);
+			LED8_OFF;
+			HAL_Delay(500);
+			mouseState = 3;
+			buttonPress = false;
+			l_start = 0;
+		}
+		break;
+
+	case 3:   //set initial
 		LED9_ON;
 		displayUpdate();
 		if (irBlink())
 		{
 			LED9_OFF;
 			HAL_Delay(1000);
-			mouseState = 2;
+			if (ORIENT == 1)
+			{
+				playSound(TONE1);
+				ORIENT = 0;
+			}
+			else
+			{
+				playSound(TONE1);
+				ORIENT = 1;
+			}
+
+			if (ORIENT == 1)
+			{
+				XY.x = 1;
+				XY.y = 0;
+				cells[0][0] = 10;
+			}
+			else
+			{
+				XY.x = 0;
+				XY.y = 1;
+				cells[0][0] = 9;
+			}
+
+			XY_prev.y = 0;
+			XY_prev.x = 0;
+		}
+
+		if (buttonPress)
+		{
+			STOP_ROBOT;
+			playSound(TONE4);
+			LED9_OFF;
+			HAL_Delay(500);
+			mouseState = 4;
+			buttonPress = false;
+			l_start = 0;
+		}
+
+		break;
+
+	case 4: // search Idle
+		LED9_ON;
+		displayUpdate();
+		if (irBlink())
+		{
+			LED9_OFF;
+			HAL_Delay(1000);
+			mouseState = 5;
 
 			if (ORIENT == 1)
 			{
@@ -198,15 +308,16 @@ void mouseRun()
 		{
 			STOP_ROBOT;
 			playSound(TONE4);
+			LED9_OFF;
 			HAL_Delay(500);
-			mouseState = 4;
+			mouseState = 7;
 			buttonPress = false;
 			runState = 0;
 			l_start = 0;
 		}
 		break;
 
-	case 2: // searchForward
+	case 5: // searchForward
 
 		switch (runState)
 		{
@@ -245,7 +356,7 @@ void mouseRun()
 
 				playSound(TONE2);
 
-				mouseState = 3;
+				mouseState = 6;
 				runState = 1;
 				backPtr = 0;
 				LED5_ON;
@@ -256,7 +367,7 @@ void mouseRun()
 		case 2: // move center
 			if (!F)
 			{
-				align_select = true;
+				align_select = 1;
 			}
 
 			if (finishMove(STRAIGHT_RUN, edgeToCenter))
@@ -266,6 +377,36 @@ void mouseRun()
 				HAL_Delay(DELAY_MID);
 				runState = 5;
 			}
+//			if (!F)
+//			{
+//				align_select = true;
+//				if (finishMove(STRAIGHT_RUN, edgeToCenter))
+//				{
+//					STOP_ROBOT;
+//					LED2_OFF;
+//					HAL_Delay(DELAY_MID);
+//					runState = 5;
+//				}
+//			}
+//			else
+//			{
+//				if (finishMove(STRAIGHT_RUN, edgeToCenter - 0.3))
+//				{
+//					STOP_ROBOT;
+//					LED2_OFF;
+//					HAL_Delay(DELAY_MID);
+//					runState = 5;
+//				}
+//			}
+//
+//
+//			if (finishMove(STRAIGHT_RUN, edgeToCenter))
+//			{
+//				STOP_ROBOT;
+//				LED2_OFF;
+//				HAL_Delay(DELAY_MID);
+//				runState = 5;
+//			}
 			break;
 
 		case 5: // front align
@@ -372,13 +513,13 @@ void mouseRun()
 			STOP_ROBOT;
 			playSound(TONE4);
 			HAL_Delay(500);
-			mouseState = 4;
+			mouseState = 7;
 			buttonPress = false;
 			l_start = 0;
 		}
 		break;
 
-	case 3: // search backward
+	case 6: // search backward
 
 		switch (runState)
 		{
@@ -389,6 +530,7 @@ void mouseRun()
 				STOP_ROBOT;
 				HAL_Delay(DELAY_MID);
 				mouseState = 0;
+				playSound(TONE4);
 				ALL_LED_OFF;
 			}
 			break;
@@ -508,22 +650,22 @@ void mouseRun()
 			STOP_ROBOT;
 			playSound(TONE4);
 			HAL_Delay(500);
-			mouseState = 4;
+			mouseState = 7;
 			buttonPress = false;
 			l_start = 0;
 		}
 
 		break;
 
-	case 4: // fast idle
-		displayUpdate();
+	case 7: // fast idle
 		LED10_ON;
+		displayUpdate();
 
 		if (irBlink())
 		{
 			LED10_OFF;
 			HAL_Delay(1000);
-			mouseState = 5;
+			mouseState = 8;
 
 			if (ORIENT == 1)
 			{
@@ -548,9 +690,10 @@ void mouseRun()
 		if (buttonPress)
 		{
 			STOP_ROBOT;
+			LED10_OFF;
 			playSound(TONE4);
 			HAL_Delay(500);
-			mouseState = 7;
+			mouseState = 0;
 
 			buttonPress = false;
 			l_start = 0;
@@ -558,7 +701,7 @@ void mouseRun()
 
 		break;
 
-	case 5: // fastForward
+	case 8: // fastForward
 		switch (runState)
 		{
 
@@ -584,7 +727,7 @@ void mouseRun()
 			{
 				playSound(TONE2);
 				fwdPtr = ptr;
-				mouseState = 6;
+				mouseState = 9;
 				runState = 1;
 				backPtr = 0;
 			}
@@ -595,25 +738,22 @@ void mouseRun()
 			{
 				align_select = true;
 			}
-			if(direction =='F'){
-						if (finishMove(STRAIGHT_RUN, cellDist))
-						{
-
-
-							HAL_Delay(DELAY_MID);
-							runState = 5;
-						}
+			if(direction =='F')
+			{
+				if (finishMove(STRAIGHT_RUN, cellDist))
+				{
+					HAL_Delay(DELAY_MID);
+					runState = 5;
+				}
 			}
-			else{
-							if (finishMove(STRAIGHT_RUN, edgeToCenter))
-						{
-							
-							STOP_ROBOT;
-							
-
-							HAL_Delay(DELAY_MID);
-							runState = 5;
-						}
+			else
+			{
+				if (finishMove(STRAIGHT_RUN, edgeToCenter))
+				{
+					STOP_ROBOT;
+					HAL_Delay(DELAY_MID);
+					runState = 5;
+				}
 			}
 
 			break;
@@ -689,14 +829,15 @@ void mouseRun()
 			{
 				centerToEdge = centerToEdgeForward;
 			}
-			if(direction == 'F'){
-
+			if(direction == 'F')
+			{
 				runState = 1;
 				XY_prev = XY;
 				XY = updateCoordinates(XY, orient);
 
 			}
-			else{
+			else
+			{
 				if (finishMove(STRAIGHT_RUN, centerToEdge))
 				{
 	//				STOP_ROBOT;
@@ -715,14 +856,14 @@ void mouseRun()
 			STOP_ROBOT;
 			playSound(TONE4);
 			HAL_Delay(500);
-			mouseState = 7;
+			mouseState = 0;
 			buttonPress = false;
 			l_start = 0;
 		}
 
 		break;
 
-	case 6: // fastBackward
+	case 9: // fastBackward
 
 		switch (runState)
 		{
@@ -733,6 +874,7 @@ void mouseRun()
 				STOP_ROBOT;
 				HAL_Delay(DELAY_MID);
 				mouseState = 0;
+				playSound(WIN_TONE);
 			}
 			break;
 
@@ -851,15 +993,19 @@ void mouseRun()
 			STOP_ROBOT;
 			playSound(TONE4);
 			HAL_Delay(500);
-			mouseState = 7;
+			mouseState = 0;
 			buttonPress = false;
 			l_start = 0;
 		}
 		break;
 
-	case 7:
+
+	default:
+		break;
+
+//	case 7:
 		//			mouseState = speedAdjust();
-		displayUpdate();
+//		displayUpdate();
 //		if (rightIrBlink()){
 //			playSound(TONE1);
 //			st_speed += 0.1;
@@ -870,114 +1016,111 @@ void mouseRun()
 //			st_speed -= 0.1;
 //			HAL_Delay(500);
 //		}
-		if (irBlink())
-		{
-			STOP_ROBOT;
-			playSound(TONE4);
-			HAL_Delay(500);
-			irSideCalibrate();
-			mouseState = 10;
-			buttonPress = false;
-			l_start = 0;
-		}
+//		if (irBlink())
+//		{
+//			STOP_ROBOT;
+//			playSound(TONE4);
+//			HAL_Delay(500);
+//			irSideCalibrate();
+//			mouseState = 10;
+//			buttonPress = false;
+//			l_start = 0;
+//		}
+//
+//
+//		if (buttonPress)
+//		{
+//			STOP_ROBOT;
+//			playSound(TONE4);
+//			HAL_Delay(500);
+//			mouseState = 0;
+//			buttonPress = false;
+//			l_start = 0;
+//		}
+//		break;
 
+//	case 10:
+//		displayUpdate();
+//		if (buttonPress)
+//		{
+//			STOP_ROBOT;
+//			playSound(TONE4);
+//			HAL_Delay(500);
+//			mouseState = 9;
+//			buttonPress = false;
+//			l_start = 0;
+//		}
+//		break;
+//
+//	case 9:
+//		displayUpdate();
+//		if (irBlink())
+//		{
+//			STOP_ROBOT;
+//			playSound(TONE4);
+//			HAL_Delay(500);
+//			irFrontCalibrate();
+//			mouseState = 0;
+//			buttonPress = false;
+//			l_start = 0;
+//		}
+//
+//		if (buttonPress)
+//		{
+//			STOP_ROBOT;
+//			playSound(TONE4);
+//			HAL_Delay(500);
+//			mouseState = 0;
+//			buttonPress = false;
+//			l_start = 0;
+//		}
+//		break;
 
-		if (buttonPress)
-		{
-			STOP_ROBOT;
-			playSound(TONE4);
-			HAL_Delay(500);
-			mouseState = 0;
-			buttonPress = false;
-			l_start = 0;
-		}
-		break;
-
-	case 10:
-		displayUpdate();
-		if (buttonPress)
-		{
-			STOP_ROBOT;
-			playSound(TONE4);
-			HAL_Delay(500);
-			mouseState = 9;
-			buttonPress = false;
-			l_start = 0;
-		}
-		break;
-
-	case 9:
-		displayUpdate();
-		if (irBlink())
-		{
-			STOP_ROBOT;
-			playSound(TONE4);
-			HAL_Delay(500);
-			irFrontCalibrate();
-			mouseState = 0;
-			buttonPress = false;
-			l_start = 0;
-		}
-
-		if (buttonPress)
-		{
-			STOP_ROBOT;
-			playSound(TONE4);
-			HAL_Delay(500);
-			mouseState = 0;
-			buttonPress = false;
-			l_start = 0;
-		}
-		break;
-
-	case 8: // set initial //////////////////////////////////////////////////////////// ASK FROM ISHRATH //////////////////////////////////////////////////////////
-		LED8_ON;
-		displayUpdate();
-		if (irBlink())
-		{
-			HAL_Delay(1000);
-			if (ORIENT == 1)
-			{
-				playSound(TONE1);
-				ORIENT = 0;
-			}
-			else
-			{
-				playSound(TONE1);
-				ORIENT = 1;
-			}
-
-			if (ORIENT == 1)
-			{
-				XY.x = 1;
-				XY.y = 0;
-				cells[0][0] = 10;
-			}
-			else
-			{
-				XY.x = 0;
-				XY.y = 1;
-				cells[0][0] = 9;
-			}
-
-			XY_prev.y = 0;
-			XY_prev.x = 0;
-		}
-
-		if (buttonPress)
-		{
-			STOP_ROBOT;
-			playSound(TONE4);
-			LED8_OFF;
-			HAL_Delay(500);
-			mouseState = 1;
-			buttonPress = false;
-			l_start = 0;
-		}
-
-		break;
-
-	default:
-		break;
+//	case 8: // set initial //////////////////////////////////////////////////////////// ASK FROM ISHRATH //////////////////////////////////////////////////////////
+//		LED8_ON;
+//		displayUpdate();
+//		if (irBlink())
+//		{
+//			HAL_Delay(1000);
+//			if (ORIENT == 1)
+//			{
+//				playSound(TONE1);
+//				ORIENT = 0;
+//			}
+//			else
+//			{
+//				playSound(TONE1);
+//				ORIENT = 1;
+//			}
+//
+//			if (ORIENT == 1)
+//			{
+//				XY.x = 1;
+//				XY.y = 0;
+//				cells[0][0] = 10;
+//			}
+//			else
+//			{
+//				XY.x = 0;
+//				XY.y = 1;
+//				cells[0][0] = 9;
+//			}
+//
+//			XY_prev.y = 0;
+//			XY_prev.x = 0;
+//		}
+//
+//		if (buttonPress)
+//		{
+//			STOP_ROBOT;
+//			playSound(TONE4);
+//			LED8_OFF;
+//			HAL_Delay(500);
+//			mouseState = 1;
+//			buttonPress = false;
+//			l_start = 0;
+//		}
+//
+//		break;
 	}
 }

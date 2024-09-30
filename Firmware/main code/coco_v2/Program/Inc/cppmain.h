@@ -45,6 +45,8 @@ extern int fwdPtr;
 extern uint32_t left_pos;
 extern uint32_t right_pos;
 extern uint16_t m_reciever,l_reciever,r_reciever,rf_reciever,lf_reciever,dl_reciever,dr_reciever;
+extern float nearVal;
+extern float farVal;
 
 // MAIN LOOP
 int cppmain(void);
