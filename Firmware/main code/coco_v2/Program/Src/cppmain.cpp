@@ -19,7 +19,7 @@ int ORIENT = 0;
 char direction;
 bool starting = false;
 float startingDist = 8.8;  //8.0
-float edgeToCenter = 16.9;  //17
+float edgeToCenter = 16.7;  //17
 float centerToEdgeSides = 2.1;
 float centerToEdgeForward = 2.15;
 float centerToEdgeBack = 2.5;
@@ -75,12 +75,20 @@ int cppmain(void)
 		mouseRun();
 		HAL_Delay(1);
 //		LED2_OFF;
+//		align_select = 1;
+//
+//		if(finishMove(STRAIGHT_RUN, edgeToCenter))
+//		{
+//			STOP_ROBOT;
+//			HAL_Delay(1);
+//			break;
+//		}
 //		if(finishMove(FRONT_ALIGN,16))
 //		{
 //			STOP_ROBOT;
-//			HAL_Delay(1000);
+//			HAL_Delay(1);
+//			break;
 //		}
-//		align_select = 1;
 //
 //		if(finishMove(STRAIGHT_RUN, 19.2))
 //		{
