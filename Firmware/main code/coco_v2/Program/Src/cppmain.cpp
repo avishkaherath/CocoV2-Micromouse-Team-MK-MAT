@@ -19,7 +19,7 @@ int ORIENT = 0;
 char direction;
 bool starting = false;
 float startingDist = 8.8;  //8.0
-float edgeToCenter = 16.9;
+float edgeToCenter = 16.9;  //17
 float centerToEdgeSides = 2.1;
 float centerToEdgeForward = 2.15;
 float centerToEdgeBack = 2.5;
@@ -175,58 +175,7 @@ void mouseRun()
 		}
 		break;
 
-	case 1:    //near wall calibration
-			LED7_ON;
-			displayUpdate();
-			if(irBlink())
-			{
-				LED7_OFF;
-				HAL_Delay(1000);
-				nearVal = frontWallCalibrate();
-				playSound(TONE1);
-				displayUpdate();
-				HAL_Delay(1000);
-				mouseState = 2;
-			}
-			if (buttonPress)
-			{
-				STOP_ROBOT;
-				playSound(TONE4);
-				LED7_OFF;
-				HAL_Delay(500);
-				mouseState = 2;
-				buttonPress = false;
-				l_start = 0;
-			}
-			break;
-
-		case 2:    //far wall calibration
-			LED8_ON;
-			displayUpdate();
-			if(irBlink())
-			{
-				LED8_OFF;
-				HAL_Delay(1000);
-				farVal = frontWallCalibrate();
-				fr_thresh = (nearVal+farVal)/2;
-				playSound(TONE1);
-				displayUpdate();
-				HAL_Delay(1000);
-				mouseState = 3;
-			}
-			if (buttonPress)
-			{
-				STOP_ROBOT;
-				playSound(TONE4);
-				LED8_OFF;
-				HAL_Delay(500);
-				mouseState = 3;
-				buttonPress = false;
-				l_start = 0;
-			}
-			break;
-
-	case 3:   //set initial
+	case 1:   //set initial
 		LED9_ON;
 		displayUpdate();
 		if (irBlink())
@@ -267,21 +216,21 @@ void mouseRun()
 			playSound(TONE4);
 			LED9_OFF;
 			HAL_Delay(500);
-			mouseState = 4;
+			mouseState = 2;
 			buttonPress = false;
 			l_start = 0;
 		}
 
 		break;
 
-	case 4: // search Idle
+	case 2: // search Idle
 		LED9_ON;
 		displayUpdate();
 		if (irBlink())
 		{
 			LED9_OFF;
 			HAL_Delay(1000);
-			mouseState = 5;
+			mouseState = 3;
 
 			if (ORIENT == 1)
 			{
@@ -308,14 +257,15 @@ void mouseRun()
 			playSound(TONE4);
 			LED9_OFF;
 			HAL_Delay(500);
-			mouseState = 7;
+			mouseState = 5;
 			buttonPress = false;
 			runState = 0;
 			l_start = 0;
 		}
 		break;
 
-	case 5: // searchForward
+
+	case 3: // searchForward
 
 		switch (runState)
 		{
@@ -367,7 +317,7 @@ void mouseRun()
 					backtrack();
 					forwardtrack(dumXY, dumXY_prev, dumOrient);
 
-					runState = 7;
+					runState = 5;
 
 				}
 
@@ -508,13 +458,13 @@ void mouseRun()
 			STOP_ROBOT;
 			playSound(TONE4);
 			HAL_Delay(500);
-			mouseState = 7;
+			mouseState = 0;
 			buttonPress = false;
 			l_start = 0;
 		}
 		break;
 
-	case 6: // search backward
+	case 4: // search backward
 
 		switch (runState)
 		{
@@ -645,14 +595,14 @@ void mouseRun()
 			STOP_ROBOT;
 			playSound(TONE4);
 			HAL_Delay(500);
-			mouseState = 7;
+			mouseState = 0;
 			buttonPress = false;
 			l_start = 0;
 		}
 
 		break;
 
-	case 7: // fast idle
+	case 5: // fast idle
 		LED10_ON;
 		displayUpdate();
 
@@ -660,7 +610,7 @@ void mouseRun()
 		{
 			LED10_OFF;
 			HAL_Delay(1000);
-			mouseState = 8;
+			mouseState = 6;
 
 			if (ORIENT == 1)
 			{
@@ -688,7 +638,7 @@ void mouseRun()
 			LED10_OFF;
 			playSound(TONE4);
 			HAL_Delay(500);
-			mouseState = 0;
+			mouseState = 8;
 
 			buttonPress = false;
 			l_start = 0;
@@ -696,7 +646,7 @@ void mouseRun()
 
 		break;
 
-	case 8: // fastForward
+	case 6: // fastForward
 		switch (runState)
 		{
 
@@ -722,7 +672,7 @@ void mouseRun()
 			{
 				playSound(TONE2);
 				fwdPtr = ptr;
-				mouseState = 9;
+				mouseState = 7;
 				runState = 1;
 				backPtr = 0;
 			}
@@ -858,7 +808,7 @@ void mouseRun()
 
 		break;
 
-	case 9: // fastBackward
+	case 7: // fastBackward
 
 		switch (runState)
 		{
@@ -868,8 +818,8 @@ void mouseRun()
 			{
 				STOP_ROBOT;
 				HAL_Delay(DELAY_MID);
-				mouseState = 0;
 				playSound(WIN_TONE);
+				mouseState = 0;
 			}
 			break;
 
@@ -987,6 +937,57 @@ void mouseRun()
 		{
 			STOP_ROBOT;
 			playSound(TONE4);
+			HAL_Delay(500);
+			mouseState = 0;
+			buttonPress = false;
+			l_start = 0;
+		}
+		break;
+
+	case 8:    //near wall calibration
+		LED7_ON;
+		displayUpdate();
+		if(irBlink())
+		{
+			LED7_OFF;
+			HAL_Delay(1000);
+			nearVal = frontWallCalibrate();
+			playSound(TONE1);
+			displayUpdate();
+			HAL_Delay(1000);
+			mouseState = 9;
+		}
+		if (buttonPress)
+		{
+			STOP_ROBOT;
+			playSound(TONE4);
+			LED7_OFF;
+			HAL_Delay(500);
+			mouseState = 9;
+			buttonPress = false;
+			l_start = 0;
+		}
+		break;
+
+	case 9:    //far wall calibration
+		LED8_ON;
+		displayUpdate();
+		if(irBlink())
+		{
+			LED8_OFF;
+			HAL_Delay(1000);
+			farVal = frontWallCalibrate();
+			fr_thresh = (nearVal+farVal)/2;
+			playSound(TONE1);
+			displayUpdate();
+			HAL_Delay(1000);
+			mouseState = 0;
+		}
+		if (buttonPress)
+		{
+			STOP_ROBOT;
+			playSound(TONE4);
+			LED8_OFF;
 			HAL_Delay(500);
 			mouseState = 0;
 			buttonPress = false;

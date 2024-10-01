@@ -232,7 +232,7 @@ void getSensorReadings() {
 
 	calculateAndSaveAverages();
 
-	float t1 = 600.0;  //490   //slit_tuning - 600    //800
+	static float t1 = 600.0;  //490   //slit_tuning - 600    //800
 	static float t2 = 600.0;          //slit_tuning - 600    //800
 //	static float t3 = 485.0;  //350   //slit_tuning - 400    //500
 

@@ -107,20 +107,20 @@ void displayUpdate(void)
 			putString("LL:",70,50,MEDIUM);
 			putInt(averageLL,94,50, MEDIUM);
 			break;
-		case (1):
+		case (8):
 			putString("Near AvgF :",30,15,MEDIUM);
 			putFloat(nearVal,30,40,MEDIUM);break;
-		case (2):
+		case (9):
 			putString("Far AvgF :",30,5,MEDIUM);
 			putFloat(farVal,30,20, MEDIUM);
 
 			putString("Threshold :",30,35,MEDIUM);
 			putFloat(fr_thresh,30,50, MEDIUM);break;
-		case (3):
+		case (1):
 			putString("SET INITIAL", 30, 28, MEDIUM);break;
-		case (4):
+		case (2):
 			putString("SEARCH IDLE", 30, 28, MEDIUM);break;
-		case (7):
+		case (5):
 			putString("FAST IDLE", 35, 28, MEDIUM);break;
 
 //		case (2):
