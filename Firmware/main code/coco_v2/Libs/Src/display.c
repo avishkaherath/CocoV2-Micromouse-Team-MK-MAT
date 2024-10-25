@@ -73,8 +73,8 @@ void displayUpdate(void)
 	{
 	// INITIALIZATION BLOCK: AUDI CAR EXPECTED
 	case (INIT):
-		for (int delta = 0; delta < 5; delta++)
-			ssd1306_DrawCircle(16 * delta + 35, 15, 10, White);
+		putString("TEAM",20,8,LARGE);
+		putString("MK-MAT",20,40,LARGE);
 		break;
 
 	// DEFAULT SCREEN --> BATTERY PERCENTAGE, STATE OF THE ROBOT

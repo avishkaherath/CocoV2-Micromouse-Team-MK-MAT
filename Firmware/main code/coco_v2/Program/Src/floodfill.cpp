@@ -626,6 +626,13 @@ char toMoveFastForward(struct coordinate p, struct coordinate prevPos, int orien
 
 void backtrack()
 {
+	for (int i = 0; i < ROWS; ++i)
+	{
+		for (int j = 0; j < COLUMNS; ++j)
+		{
+			flood[i][j] = -1;
+		}
+	}
 	struct coordinate p;
 	p.y = 0; 	// destination cell (0,0)
 	p.x = 0;
@@ -744,7 +751,13 @@ struct coordinate updateCoordinates(struct coordinate coordi, int orient) {
 	return coordi;
 }
 
-void forwardtrack(struct coordinate dumXY,struct coordinate dumXY_prev, int dumOrient){
+void forwardtrack(struct coordinate dumXY,struct coordinate dumXY_prev, int dumOrient)
+{
+	for (int i = 0; i < ROWS*COLUMNS; ++i){
+		back_path[i] = 'x';
+		fwd_path[i] = 'x';
+	}
+	ptr = 0;
 	while(1){
 		if (backFlood[dumXY.y][dumXY.x]==0){
 			ptr -= 1;

@@ -309,8 +309,8 @@ void mouseRun()
 					dumOrient = orient;
 					playSound(TONE2);
 
-//					backtrack();
-//					forwardtrack(dumXY, dumXY_prev, dumOrient);
+					backtrack();
+					forwardtrack(dumXY, dumXY_prev, dumOrient);
 
 					for (int i = 0; i < ROWS; ++i)
 					{
